@@ -7,16 +7,18 @@ use League\CommonMark\MarkdownConverter;
 use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 
-
-function formatMarkdown($text)
+if (!function_exists('formatMarkdown'))
 {
-    $environment = new Environment();
-    $environment->addExtension(new CommonMarkCoreExtension());
-    $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html', 'js', 'css', 'bash', 'php', 'json']));
-    $environment->addRenderer(IndentedCode::class, new IndentedCodeRenderer(['html', 'js', 'css', 'bash', 'php', 'json']));
-
-    $markdownConverter = new MarkdownConverter($environment);
-
-    return $markdownConverter->convertToHtml($text);
+    function formatMarkdown($text)
+    {
+        $environment = new Environment();
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html', 'js', 'css', 'bash', 'php', 'json']));
+        $environment->addRenderer(IndentedCode::class, new IndentedCodeRenderer(['html', 'js', 'css', 'bash', 'php', 'json']));
+    
+        $markdownConverter = new MarkdownConverter($environment);
+    
+        return $markdownConverter->convertToHtml($text);
+    }
 }
 ?>

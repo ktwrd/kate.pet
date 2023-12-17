@@ -37,52 +37,54 @@ try
         ['github', 'https://github.com/ktwrd'],
         ['kofi_s_tag_dark', 'https://ko-fi.com/ktwrd']
     ));
-
-    if (isset($_META))
+    
+    if (file_exists(K_WEB_ROOT . "/templates/$templateName.tpl"))
     {
-        $smarty->assign('_META', $_META);
-    }
-
-    // handle custom stuff for blogs
-    if (str_starts_with($templateName, 'blog'))
-    {
-        if (!file_exists(K_WEB_ROOT . "/templates/$templateName.tpl"))
+        if (isset($_META))
         {
-            $smarty->display("not_found.tpl");
+            $smarty->assign('_META', $_META);
         }
-
-        if (isset($postContent))
+        // handle custom stuff for blogs
+        if (str_starts_with($templateName, 'blog'))
         {
-            if ($postContent['hide_state'] == 0 || $postContent['hide_state'] == 2)
+
+            if (isset($postContent))
             {
-                $smarty->assign('title', $postContent['subject'] . ' - kate\'s blog');
-                if (isset($postContent['description']))
+                if ($postContent['hide_state'] == 0 || $postContent['hide_state'] == 2)
                 {
-                    $smarty->assign('description', $postContent['description']);
+                    $smarty->assign('title', $postContent['subject'] . ' - kate\'s blog');
+                    if (isset($postContent['description']))
+                    {
+                        $smarty->assign('description', $postContent['description']);
+                    }
+                    else
+                    {
+                        $smarty->assign('description', '');
+                    }
+                    $smarty->display("$templateName.tpl");
                 }
                 else
                 {
-                    $smarty->assign('description', '');
+                    $smarty->display("not_found.tpl");
                 }
-                $smarty->display("$templateName.tpl");
             }
             else
             {
-                $smarty->display("not_found.tpl");
+                $smarty->display("$templateName.tpl");
             }
         }
         else
         {
             $smarty->display("$templateName.tpl");
+
+            $time = explode(' ', microtime());
+            $endtime = $time[1] + $time[0];
+            // echo "Generated in " . round(($endtime-$begintime)*1000,1) . "ms";
         }
     }
     else
     {
-        $smarty->display("$templateName.tpl");
-
-        $time = explode(' ', microtime());
-        $endtime = $time[1] + $time[0];
-        // echo "Generated in " . round(($endtime-$begintime)*1000,1) . "ms";
+        $smarty->display("not_found.tpl");
     }
 }
 catch (Exception $ex)

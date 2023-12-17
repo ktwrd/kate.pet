@@ -23,6 +23,10 @@ body {
 .center {
     text-align: center;
 }
+.d-inline * {
+    display: inline;
+    margin-right: 0.25rem;
+}
 .block {
     padding: .875rem;
     margin: .1875rem 0;

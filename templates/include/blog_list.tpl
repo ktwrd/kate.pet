@@ -1,5 +1,8 @@
 
-<h2>blog posts</h2>
+<div class="d-inline">
+    <h2>blog posts</h2>
+    <a href="/p/blog_rss">rss feed</a>
+</div>
 <div class="blog-list-cards">
     {foreach $postArray as $post}
         <div class="blog-card blog-card--2col">

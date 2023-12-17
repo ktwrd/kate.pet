@@ -71,6 +71,10 @@ try
                 $smarty->display("not_found.tpl");
             }
         }
+        else
+        {
+            $smarty->display("$templateName.tpl");
+        }
     }
     else
     {

@@ -38,7 +38,6 @@ function retrieveBlogPost($postId)
             $post['subject'] = $res['subject'];
             $post['description'] = isset($res['description']) ? $res['description'] : "";
             $post['created_at'] = $res['created_at'];
-            $post['meta'] = $res['meta'];
             if (isset($res['updated_at']))
             {
                 $post['updated_at'] = $res['updated_at'];

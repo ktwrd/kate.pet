@@ -62,6 +62,7 @@ $linkData = array(
 );
 $smarty->assign('pageLinks', $linkData);
 
+$found = 0;
 if (isset($_REQUEST['i']))
 {
     foreach ($linkData as $link)
@@ -71,8 +72,15 @@ if (isset($_REQUEST['i']))
             if ($link['short'] == $_REQUEST['i'])
             {
                 header('Location: ' . $link['link']);
+                $found = 1;
             }
         }
     }
+    if ($found == 0)
+    {
+        $found = 2;
+    }
 }
+
+$smarty->assign('found', $found);
 ?>

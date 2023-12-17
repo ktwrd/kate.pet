@@ -1,0 +1,60 @@
+@import "container.css";
+@import "toolbar.css";
+@import url("bootstrap-polyfill.css");
+:root {
+    --text-font: Arial, Helvetica, sans-serif;
+    --text-color: #fff;
+    --background: #000;
+}
+body {
+    font-family: var(--text-font);
+    background: url("/img/scrolling-bg.gif") repeat;
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+:not(body) {
+    transition: 300ms;
+    transition-timing-function: ease;
+}
+.center {
+    text-align: center;
+}
+.block {
+    padding: .875rem;
+    margin: .1875rem 0;
+    color: #fff;
+    background-color: #1e1e1e;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 1px 0;
+  }
+img {
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+
+    /* Safari seems to support, but seems deprecated and does the same thing as the others. */
+    /* image-rendering: -webkit-optimize-contrast; */
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+.toolbar a:hover {
+    text-decoration: none;
+}
+.tar {
+    text-align: right;
+}
+main {
+    padding-top: 40px;
+}

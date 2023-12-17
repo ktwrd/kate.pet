@@ -1,0 +1,15 @@
+{
+    "name": "ktwrd/blog",
+    "type": "project",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Kate Ward",
+            "email": "kate@dariox.club"
+        }
+    ],
+    "require": {
+        "league/commonmark": "^2.4",
+        "spatie/commonmark-highlighter": "^3.0"
+    }
+}

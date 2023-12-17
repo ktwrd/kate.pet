@@ -1,15 +1,14 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include.php');
-$id = null;
-if (isset($_REQUEST['i']))
-{
-    $id = basename($_REQUEST['i']);
-}
+
+
 $postHideState = 1;
 $showPostListing = False;
-if ($id)
+
+
+if (isset($_REQUEST['i']))
 {
-    $postContent = retrieveBlogPost($id);
+    $postContent = retrieveBlogPost(basename($_REQUEST['i']));
     if ($postContent == null)
     {
         header('Location: /p/blog');
@@ -19,28 +18,22 @@ if ($id)
         $postHideState = isset($postContent['hide_state']) ? $postContent['hide_state'] : 2;
         $smarty->assign('post', $postContent);
         $smarty->assign('postTitle', $postContent['subject'] . ' - kate\'s blog');
-        $smarty->assign('postDescription', $pageDescription);
+        $smarty->assign('postDescription', $postContent['description']);
+    }
+
+    if (displayBlogPostToUser($postContent))
+    {
+        $smarty->assign('title', $postContent['subject'] . ' - kate\'s blog');
+        $smarty->assign('description', $postContent['description']);
     }
 }
 else
 {
     $showPostListing = True;
     $smarty->assign('postArray', getAllBlogPosts());
+    $smarty->assign('title', 'kate\'s blog');
+    $smarty->assign('description', 'sometimes rambles, sometimes important updates. you\'ll never know!');
 }
-
-$pageDescription = '';
-$pageTitle = 'kate\'s blog';
-if ($showPostListing)
-{
-    if ($postHideState != 1)
-    {
-        $pageTitle = 'kate\'s blog - ' . $postContent['subject'];
-        $pageDescription = $postContent['description'];
-        $smarty->assign('pageDescription', $pageDescription);
-    }
-}
-$smarty->assign('title', $pageTitle);
-$smarty->assign('description', $pageDescription);
 
 $smarty->assign('postHideState', $postHideState);
 $smarty->assign('showPostListing', $showPostListing);

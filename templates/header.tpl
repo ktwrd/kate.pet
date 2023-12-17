@@ -8,6 +8,13 @@
         <meta name="name" content="{$title|default:"kate's homepage"}" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="{$title|default:"kate's homepage"}" />
+        <meta name="twitter:creator" content="@seedvevo" />
+
+        {if isset($_META)}
+            {if isset($_META['image'])}
+                <meta property="og:image" content="{$_META['image']}" />
+            {/if}
+        {/if}
 
         <link rel="icon" href="/favicon.png" type="image/png" />
         

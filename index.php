@@ -38,16 +38,39 @@ try
         ['kofi_s_tag_dark', 'https://ko-fi.com/ktwrd']
     ));
 
+    if (isset($_META))
+    {
+        $smarty->assign('_META', $_META);
+    }
+
+    // handle custom stuff for blogs
     if (str_starts_with($templateName, 'blog'))
     {
-        global $template;
+        if (!file_exists(K_WEB_ROOT . "/templates/$templateName.tpl"))
+        {
+            $smarty->display("not_found.tpl");
+        }
 
-        // if (isset($template))
-        //     $smarty->assign('meta', $template->_rootref['META']);
-        // $smarty->assign('title', "$pageTitle");
-        // $smarty->assign('description', "$pageDescription");
-
-        $smarty->display("$templateName.tpl");
+        if (isset($postContent))
+        {
+            if ($postContent['hide_state'] == 0 || $postContent['hide_state'] == 2)
+            {
+                $smarty->assign('title', $postContent['subject'] . ' - kate\'s blog');
+                if (isset($postContent['description']))
+                {
+                    $smarty->assign('description', $postContent['description']);
+                }
+                else
+                {
+                    $smarty->assign('description', '');
+                }
+                $smarty->display("$templateName.tpl");
+            }
+            else
+            {
+                $smarty->display("not_found.tpl");
+            }
+        }
     }
     else
     {

@@ -12,7 +12,17 @@ function createSmarty()
 
     return $smarty;
 }
-
+function displayBlogPostToUser($post)
+{
+    if (isset($post) && $post != null)
+    {
+        if (isset($post['hide_state']))
+        {
+            return $post['hide_state'] == 0 || $post['hide_state'] == 2;
+        }
+    }
+    return false;
+}
 function retrieveBlogPost($postId)
 {
     $post = array();
@@ -28,6 +38,7 @@ function retrieveBlogPost($postId)
             $post['subject'] = $res['subject'];
             $post['description'] = isset($res['description']) ? $res['description'] : "";
             $post['created_at'] = $res['created_at'];
+            $post['meta'] = $res['meta'];
             if (isset($res['updated_at']))
             {
                 $post['updated_at'] = $res['updated_at'];
@@ -45,6 +56,19 @@ function retrieveBlogPost($postId)
             {
                 $post['updated_at_f'] = date('F j, Y', $post['updated_at']);
                 $post['updated_at_fl'] = date('c', $post['updated_at']);
+            }
+
+            if (isset($res['meta']))
+            {
+                if (isset($_META))
+                {
+                    // concat post meta before current meta to override things
+                    $_META = array_merge($res['meta'], $_META);
+                }
+                else
+                {
+                    $_META = $res['meta'];
+                }
             }
         }
     }

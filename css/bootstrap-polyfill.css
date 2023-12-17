@@ -41,7 +41,7 @@
     -webkit-box-flex: 1;
     flex-grow: 1;
     max-width: 100%;
-  }
+}
 .card {
     position: relative;
     display: -ms-flexbox;

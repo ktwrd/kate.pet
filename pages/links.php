@@ -58,6 +58,11 @@ $linkData = array(
         'label' => 'Steam',
         'link' => 'https://steamcommunity.com/id/kate_main',
         'short' => 'steam'
+    ),
+    array(
+        'label' => 'Ko-fi (Donate)',
+        'link' => 'https://ko-fi.com/ktwrd',
+        'short' => 'donate'
     )
 );
 $smarty->assign('pageLinks', $linkData);

@@ -1,7 +1,7 @@
 
 @media (min-width: 576px) {
     .container {
-        max-width: 540px;
+        max-width: 530px;
     }
 }
 @media (min-width: 768px) {
@@ -26,6 +26,12 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+@media (max-width: 576px) {
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
 @media (min-width: 576px) {

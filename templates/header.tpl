@@ -40,5 +40,8 @@
                 <a href="/p/blog">
                     <img src="/img/btn-blog.png" class="fixed" alt="blog" {if $pageName == 'blog'} current {/if} />
                 </a>
+                <a href="/p/since">
+                    <img src="/img/btn-since.png" class="fixed" alt="time since" {if $pageName == 'since'} current {/if} />
+                </a>
             </div>
             <div class="container">

@@ -1,6 +1,7 @@
 @import "container.css";
 @import "toolbar.css";
-@import url("bootstrap-polyfill.css");
+@import "misc.css";
+@import "bootstrap-polyfill.css";
 :root {
     --text-font: Arial, Helvetica, sans-serif;
     --text-color: #fff;
@@ -24,9 +25,6 @@ body {
 :not(body) {
     transition: 300ms;
     transition-timing-function: ease;
-}
-.center {
-    text-align: center;
 }
 .d-inline * {
     display: inline;
@@ -60,9 +58,6 @@ a:hover {
 }
 .toolbar a:hover {
     text-decoration: none;
-}
-.tar {
-    text-align: right;
 }
 main {
     padding-top: 40px;

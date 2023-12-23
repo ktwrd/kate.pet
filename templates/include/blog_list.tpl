@@ -15,11 +15,11 @@
                 </div>
                 <div class="entry-meta tar" style="display: block">
                     {if isset($post['created_at_f'])}
-                        <time class="tar" datetime="{$post['created_at_fl']}">{$post['created_at_f']}</time>
+                        <time class="ta-r" datetime="{$post['created_at_fl']}">{$post['created_at_f']}</time>
                     {/if}
                     {if isset($post['updated_at_f'])}
                         <br/>
-                        <time class="tar" datetime="{$post['updated_at_fl']}">Updated: {$post['updated_at_f']}</time>
+                        <time class="ta-r" datetime="{$post['updated_at_fl']}">Updated: {$post['updated_at_f']}</time>
                     {/if}
                 </div>
             </article>

@@ -1,6 +1,6 @@
 
 <div class="d-inline">
-    <h2>blog posts</h2>
+    <h1 class="italic">blog posts</h1>
     <a href="/p/blog_rss">rss feed</a>
 </div>
 <div class="blog-list-cards">

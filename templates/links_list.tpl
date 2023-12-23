@@ -1,14 +1,11 @@
 {include file="header.tpl" title="kate's homepage - links" description="links to all of my stuff"}
 
+<h1 class="italic">Links</h1>
 <div class="row">
-    <div class="col"></div>
-    <div class="cols-auto">
-        <div class="row">
-            <h1>Links</h1>
-        </div>
+    <div class="cols-auto pl-1">
         {foreach $pageLinks as $link}
             <div class="row">
-                <div class="col-auto" style="font-size: 2rem; padding: 0; margin: 0;">
+                <div class="col-auto" style="font-size: 2rem;">
                 {if isset($link['short'])}
                     <a href="/l/{$link['short']}" style="font-size: 2rem">{$link['label']}</a>
                 {elseif isset($link['link'])}

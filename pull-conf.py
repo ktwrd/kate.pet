@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os
+import os, re
 
 beta_conf_location = "/etc/nginx/conf.d/beta.kate.pet.conf"
 
@@ -11,7 +11,9 @@ if not os.path.exists(beta_conf_location):
 print("reading beta config")
 print("> %s\n" % beta_conf_location)
 beta_conf = open(beta_conf_location, "r")
-content = str(beta_conf.read()).replace("beta.kate.pet", "kate.pet")
+content = str(beta_conf.read())
+content = re.sub(r"<!--.*?-->", '', content, flags=re.DOTALL)
+content = content.replace("beta.kate.pet", "kate.pet")
 beta_conf.close()
 
 print("writing repo conf")

@@ -25,9 +25,6 @@ $smarty->assign('year', date('Y'));
 
 $templateName = $pageName;
 
-// Include script to transform old redirects
-print('<script type="text/javascript" src="/js/old-redirect-transform.js"></script>');
-
 try
 {
     if (file_exists(K_WEB_ROOT . "/pages/$pageName.php"))

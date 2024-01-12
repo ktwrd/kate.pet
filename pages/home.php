@@ -26,5 +26,13 @@ $headerImages = array(
     'stormynights.png',
     'neurodivergent.png'
 );
+
+$smarty->assign('redirectLinks', array(
+    ['discord', 'https://discord.gg/PMrqTQPZFE'],
+    ['xenia_bot', 'https://xenia.kate.pet'],
+    ['mastodon', 'https://dariox.club/@kate'],
+    ['github', 'https://github.com/ktwrd'],
+    ['kofi_s_tag_dark', 'https://ko-fi.com/ktwrd']
+));
 $smarty->assign('selectedHeaderImage', $headerImages[array_rand($headerImages)]);
 ?>

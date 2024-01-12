@@ -29,14 +29,6 @@ try
 {
     if (file_exists(K_WEB_ROOT . "/pages/$pageName.php"))
         include(K_WEB_ROOT . "/pages/$pageName.php");
-
-    $smarty->assign('redirectLinks', array(
-        ['discord', 'https://discord.gg/PMrqTQPZFE'],
-        ['xenia_bot', 'https://xenia.kate.pet'],
-        ['mastodon', 'https://dariox.club/@kate'],
-        ['github', 'https://github.com/ktwrd'],
-        ['kofi_s_tag_dark', 'https://ko-fi.com/ktwrd']
-    ));
     
     if (file_exists(K_WEB_ROOT . "/templates/$templateName.tpl"))
     {

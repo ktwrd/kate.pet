@@ -30,7 +30,8 @@ $headerImages = array(
 $smarty->assign('redirectLinks', array(
     ['discord', 'https://discord.gg/PMrqTQPZFE'],
     ['xenia_bot', 'https://xenia.kate.pet'],
-    ['mastodon', 'https://dariox.club/@kate'],
+    // ['mastodon', 'https://dariox.club/@kate'],
+    ['bluesky', 'https://bsky.app/profile/kate.pet'],
     ['github', 'https://github.com/ktwrd'],
     ['kofi_s_tag_dark', 'https://ko-fi.com/ktwrd']
 ));

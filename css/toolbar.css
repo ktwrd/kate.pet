@@ -6,6 +6,8 @@
     padding: 4px 2px;
     background: rgba(0,0,0, 0.75);
     text-align: center;
+    z-index: 10;
+    height: 18px;
 }
 .toolbar a img {
     height: 32;
@@ -17,4 +19,18 @@
 }
 .toolbar a img[current] {
     border-color: #036ffc;
+}
+
+@media screen and (prefers-color-scheme: light) {
+    .toolbar {
+        background: rgba(255, 255, 255, 0.75);
+    }
+    .toolbar a img {
+        background: black;
+    }
+}
+@media print {
+    .toolbar {
+        display: none;
+    }
 }

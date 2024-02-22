@@ -62,3 +62,25 @@ a:hover {
 main {
     padding-top: 40px;
 }
+
+@media screen and (prefers-color-scheme: light) {
+    body {
+        background: url("/img/scrolling-bg-invert.gif") repeat;
+        color: black;
+    }
+    .block {
+        color: #1e1e1e;
+        background-color: #fff;
+    }
+}
+@media print {
+    .toolbar {
+        display: none;
+    }
+    body {
+        background: transparent;
+    }
+    *:not(a) {
+        color: black !important;
+    }
+}

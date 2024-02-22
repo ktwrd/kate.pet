@@ -107,6 +107,17 @@
     }
 }
 
+@media (min-width: 992px) {
+    [pagename=portfolio] .card-body {
+        max-width: calc((calc(960px + 30px) / 2) - 50px);
+    }
+}
+@media (min-width: 1200px) {
+    [pagename=portfolio] .card-body {
+        max-width: calc((calc(1140px + 30px) / 2) - 50px);
+    }
+}
+
 @media print {
     [pagename=portfolio] .col-auto {
         width: calc(100% - 30px) !important;

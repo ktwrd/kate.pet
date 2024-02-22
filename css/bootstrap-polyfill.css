@@ -81,6 +81,7 @@
     border-radius: 0;
     color: white;
 }
+
 .card-classic .card-header {
     font-weight: bold;
 }
@@ -95,4 +96,19 @@
     font-size: 16px;
     float: right;
     font-weight: normal;
+}
+@media (prefers-color-scheme: light) {
+    .card-classic,
+    .card-classic .card-header,
+    .card-classic .card-body {
+        border-color: black;
+        background: white !important;
+        color: black;
+    }
+}
+
+@media print {
+    [pagename=portfolio] .col-auto {
+        width: calc(100% - 30px) !important;
+    }
 }

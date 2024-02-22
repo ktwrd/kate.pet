@@ -46,4 +46,4 @@
                     <img src="/img/btn-since.png" class="fixed" alt="time since" {if $pageName == 'since'} current {/if} />
                 </a>
             </div>
-            <div class="container">
+            <div class="container" {if isset($pageName)} pageName="{$pageName}" {/if}>

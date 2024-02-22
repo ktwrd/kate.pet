@@ -1,4 +1,5 @@
 {include file="header.tpl" title="$postTitle" description={$post['description']}}
+<link href="/css/blog.css" rel="stylesheet" type="text/css" />
 {if $showPostListing}
     {include file="include/blog_list.tpl" postArray=$postArray}
 {else}

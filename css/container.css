@@ -42,3 +42,9 @@
 .container img {
     max-width: 100%;
 }
+
+@media print {
+    .container {
+        max-width: 100%;
+    }
+}

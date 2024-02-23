@@ -121,6 +121,6 @@
 
 @media print {
     [pagename=portfolio] .col-auto {
-        width: calc(100% - 30px) !important;
+        width: calc(100% - 100px) !important;
     }
 }

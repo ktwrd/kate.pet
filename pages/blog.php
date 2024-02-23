@@ -18,7 +18,9 @@ if (isset($_REQUEST['i']))
         $postHideState = isset($postContent['hide_state']) ? $postContent['hide_state'] : 2;
         $smarty->assign('post', $postContent);
         $smarty->assign('postTitle', $postContent['subject'] . ' - kate\'s blog');
+        $smarty->assign('title', $postContent['subject'] . ' - kate\'s blog');
         $smarty->assign('postDescription', $postContent['description']);
+        $smarty->assign('description', $postContent['description']);
     }
 
     if (displayBlogPostToUser($postContent))

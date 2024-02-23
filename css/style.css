@@ -6,6 +6,7 @@
     --text-font: Arial, Helvetica, sans-serif;
     --text-color: #fff;
     --background: #000;
+    --link-color: #619eff;
 }
 body {
     font-family: var(--text-font);
@@ -48,12 +49,12 @@ img {
     /* image-rendering: -webkit-optimize-contrast; */
 }
 a {
-    color: #007bff;
+    color: var(--link-color);
     text-decoration: none;
     background-color: transparent;
 }
 a:hover {
-    color: #007bff;
+    color: var(--link-color);
     text-decoration: underline;
 }
 .toolbar a:hover {

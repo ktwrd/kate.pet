@@ -10,9 +10,11 @@
                 <h1>
                     <a href="/blog/{$post['id']}">{$post['subject']}</a>
                 </h1>
-                <div class="entry-content">
-                    {$post['description']}
-                </div>
+                {if isset($post['description']) && strlen($post['description']) > 1}
+                    <div class="entry-content">
+                        {$post['description']}
+                    </div>
+                {/if}
                 <div class="entry-meta tar" style="display: block">
                     {if isset($post['created_at_f'])}
                         <time class="ta-r" datetime="{$post['created_at_fl']}">{$post['created_at_f']}</time>

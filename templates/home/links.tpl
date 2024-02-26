@@ -12,7 +12,7 @@
     </ul>
 </div>
 <a href="https://kate.pet" class="eightyeightthirtyone">
-    <img src="https://kate.pet/button.gif" style="margin-top: 1rem;" />
+    <img src="/button02.gif" style="margin-top: 1rem;" />
 </a>
 <style>
 .links a {

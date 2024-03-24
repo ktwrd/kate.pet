@@ -1,7 +1,11 @@
 
 <div class="d-inline">
     <h1 class="italic">blog posts</h1>
-    <a href="/p/blog_rss">rss feed</a>
+    <a href="/blog.atom">
+        <img src="/img/feed.png" class="fixed" style="margin-bottom:-2px;"/>
+    </a>
+    <sup style="position: relative; top: -6px; left: -4px;">rss feed</sup>
+    
 </div>
 <div class="blog-list-cards">
     {foreach $postArray as $post}

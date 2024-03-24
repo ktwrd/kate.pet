@@ -15,6 +15,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>";
 
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include.php');
+header('Content-Type: application/rss+xml');
 
 $blogPosts = getAllBlogPosts();
 foreach ($blogPosts as $post)

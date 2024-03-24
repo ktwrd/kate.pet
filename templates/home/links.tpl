@@ -6,12 +6,13 @@
                 <img
                     src="https://res.kate.pet/image/links/{$link[0]}.png"
                     class="LinkTab"
-                    height="71"/>
+                    height="71"
+                    linkName="{$link[0]}"/>
             </a>
         {/foreach}
     </ul>
 </div>
-<a href="https://kate.pet" class="eightyeightthirtyone">
+<a href="https://kate.pet" class="eight-img">
     <img src="/button02.gif" style="margin-top: 1rem;" />
 </a>
 <style>
@@ -67,7 +68,6 @@ img.LinkTab:hover {
 ul.links {
     display:block;
     background-color: rgba(0,0,0,0);
-    margin: 6px;
 }
 ul.links li {
     vertical-align: top;

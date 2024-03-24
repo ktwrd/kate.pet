@@ -1,9 +1,11 @@
 <?php
 require 'vendor/autoload.php';
 
-// ini_set('display_errors', '1');
-// ini_set('display_startup_errors', '1');
-// error_reporting(E_ALL);
+if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == 'beta.kate.pet') {
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+}
 
 $time = explode(' ', microtime());
 $begintime = $time[1] + $time[0];
@@ -22,6 +24,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/include.php');
 
 $smarty->assign('pageName', $pageName);
 $smarty->assign('year', date('Y'));
+$smarty->assign('navbarData', generate_navbar_data());
 
 $templateName = $pageName;
 

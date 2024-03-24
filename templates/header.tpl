@@ -29,7 +29,38 @@
     <body>
         <a rel="me" href="https://dariox.club/@kate" style="display: none">Mastodon</a>
         <main>
-            <div class="toolbar">
+            <div class="navbar">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-auto navbar-items">
+                        <span class="text">
+                            <img src="/img/homepage-txt-alt.png" class="fixed homepage-txt" alt="kate's website!"/>
+                        </span>
+                        {foreach $navbarData as $item}
+                            <a href="{$item['link']}">
+                                <img src="{$item['img']}" class="fixed" alt="{$item['alt']}" {if $pageName == $item['pagename']} current {/if} />
+                            </a>
+                        {/foreach}
+                        {* <a href="/">
+                            <img src="/img/btn-home.png" class="fixed" alt="homepage" {if $pageName == 'home'} current {/if} />
+                        </a>
+                        <a href="/p/portfolio">
+                            <img src="/img/btn-portfolio.png" class="fixed" alt="portfolio" v-bind:current="$route.path == '/portfolio'" {if $pageName == 'portfolio'} current {/if} />
+                        </a>
+                        <a href="/p/links">
+                            <img src="/img/btn-links.png" class="fixed" alt="various links" v-bind:current="$route.path == '/links'" {if $pageName == 'links'} current {/if} />
+                        </a>
+                        <a href="/p/blog">
+                            <img src="/img/btn-blog.png" class="fixed" alt="blog" {if $pageName == 'blog'} current {/if} />
+                        </a>
+                        <a href="/p/since">
+                            <img src="/img/btn-since.png" class="fixed" alt="time since" {if $pageName == 'since'} current {/if} />
+                        </a> *}
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+            {* <div class="toolbar">
                 <a href="/">
                     <img src="/img/btn-home.png" class="fixed" alt="homepage" {if $pageName == 'home'} current {/if} />
                 </a>
@@ -45,5 +76,5 @@
                 <a href="/p/since">
                     <img src="/img/btn-since.png" class="fixed" alt="time since" {if $pageName == 'since'} current {/if} />
                 </a>
-            </div>
+            </div> *}
             <div class="container" {if isset($pageName)} pageName="{$pageName}" {/if}>

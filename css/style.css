@@ -1,5 +1,5 @@
 @import "container.css";
-@import "toolbar.css";
+@import "navbar.css";
 @import "misc.css";
 @import "bootstrap-polyfill.css";
 :root {
@@ -8,10 +8,24 @@
     --background: #000;
     --link-color: #619eff;
 }
+@media screen and (prefers-color-scheme: light) {
+    :root {
+        --text-color: #fff;
+        --background: #fff;
+        --link-color: #1b40d1;
+    }
+}
+@media print {
+    :root {
+        --link-color: black;
+    }
+}
 body {
     font-family: var(--text-font);
+    background-color: var(--background);
     background: url("/img/scrolling-bg.gif") repeat;
     color: var(--text-color);
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -23,7 +37,7 @@ body {
     line-height: 1.5;
     margin:0;
 }
-:not(body) {
+:not(body, .container, .col, .row, .col-auto, .navbar) {
     transition: 300ms;
     transition-timing-function: ease;
 }
@@ -44,6 +58,7 @@ img {
     image-rendering: auto;
     image-rendering: crisp-edges;
     image-rendering: pixelated;
+    -webkit-user-drag: none;
 
     /* Safari seems to support, but seems deprecated and does the same thing as the others. */
     /* image-rendering: -webkit-optimize-contrast; */
@@ -52,6 +67,11 @@ a {
     color: var(--link-color);
     text-decoration: none;
     background-color: transparent;
+}
+@media print {
+    a {
+        text-decoration: underline;
+    }
 }
 a:hover {
     color: var(--link-color);
@@ -64,7 +84,26 @@ main {
     padding-top: 40px;
 }
 
+.homepage-txt {
+    filter: invert();
+    padding-right: 8px;
+    transition: 200ms;
+}
+.navbar-items .homepage-txt {
+    padding-top: 11px;
+}
+@media screen and (max-width: 580px) {
+    .homepage-txt {
+        scale: 0;
+        width: 0;
+        transition: 200ms;
+    }
+}
+
 @media screen and (prefers-color-scheme: light) {
+    .homepage-txt {
+        filter: none;
+    }
     body {
         background: url("/img/scrolling-bg-invert.gif") repeat;
         color: black;

@@ -103,4 +103,40 @@ function getAllBlogPosts()
     return $result;
 }
 
+function generate_navbar_data() {
+    $data = array(
+        array(
+            'link' => '/',
+            'img' => '/img/btn-home.png',
+            'alt' => 'homepage',
+            'pagename' => 'home'
+        ),
+        array(
+            'link' => '/p/portfolio',
+            'img' => '/img/btn-portfolio.png',
+            'alt' => 'portfolio',
+            'pagename' => 'portfolio'
+        ),
+        array(
+            'link' => '/p/links',
+            'img' => '/img/btn-links.png',
+            'alt' => 'various links',
+            'pagename' => 'links'
+        ),
+        array(
+            'link' => '/p/blog',
+            'img' => '/img/btn-blog.png',
+            'alt' => 'blog',
+            'pagename' => 'blog'
+        ),
+        array(
+            'link' => '/p/since',
+            'img' => '/img/btn-since.png',
+            'alt' => 'time since',
+            'pagename' => 'since'
+        )
+    );
+    return $data;
+}
+
 ?>

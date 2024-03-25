@@ -29,6 +29,15 @@ def get_hide_state():
         return h
 hide_state = get_hide_state()
 
+def get_tags():
+    print('Tags (comma seperated)')
+    h = str(input('>')).split(',')
+    resultArr = []
+    for item in h:
+        resultArr.append("'" + item.strip() + "'")
+    return ', '.join(resultArr)
+post_tags = get_tags()
+
 _target_basename = './blog_posts/%s' % name
 
 fphp = open('%s.php' % _target_basename, 'x')
@@ -40,7 +49,7 @@ fphp.write('\n'.join([
 '    \'description\' => \'\',',
 '    ' + ('\'created_at\' => mktime(%s),' % now.strftime(' %H, %M, %S, %m, %d, %Y').strip(' 0')).strip('mktime( '),
 '    \'hide_state\' => %s,' % hide_state,
-'    \'tags\' => array()',
+'    \'tags\' => array(%s)' % post_tags,
 ');',
 '',
 '?>'

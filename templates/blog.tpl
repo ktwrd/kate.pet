@@ -5,6 +5,8 @@
 {else}
     {include file="include/blog_post.tpl" postHideState=$postHideState post=$post}
     <hr/>
-    <a class="btn btn-sm btn-dark" href="#" style="margin-bottom: 3rem" onclick="history.back()" class="go-back"><< go back</a>
+    <div class="d-inline" style="padding-bottom: 20px">
+        <a class="btn btn-sm btn-dark" href="#" style="margin-bottom: 3rem" onclick="history.back()" class="go-back"><< go back</a>
+    </div>
 {/if}
 {include file="footer.tpl"}

@@ -11,7 +11,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>";
         <description>Recent posts by Kate</description>
         <language>en-us</language>
         <lastBuildDate><?php echo date('D, d M o H:i:s O'); ?></lastBuildDate>
-        <atom:link href="https://kate.pet/p/blog_rss" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kate.pet/blog.atom" rel="self" type="application/rss+xml" />
 
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include.php');
@@ -25,14 +25,24 @@ foreach ($blogPosts as $post)
         $postTitle = $post['subject'];
         $postId = $post['id'];
         $postPubDate = date('D, d M o H:i:s O', $post['created_at']);
+        $postUpdStr = "";
+        if (isset($post['updated_at']))
+        {
+            $postUpdStr = "
+                <updated>".date('D, d M o H:i:s O', $post['updated_at'])."</updated>";
+        }
         $postDesc = $post['description'];
         echo
 "        <item>
                 <title>{$postTitle}</title>
-                <link>https://kate.pet/blog//blog/{$postId}</link>
+                <link>https://kate.pet/blog/{$postId}</link>
                 <pubDate>{$postPubDate}</pubDate>
                 <guid>https://kate.pet/blog/{$postId}</guid>
                 <description>{$postDesc}</description>
+                <author>
+                    <name>Kate Ward</name>
+                    <email>kate@dariox.club</email>
+                </author>".$postUpdStr."
         </item>
 ";
     }

@@ -1,9 +1,9 @@
 <?php
 $linkData = array(
     array(
-        'label' => 'Fedi (Pleroma)',
-        'link' => 'https://xenia.social/kate',
-        'short' => 'pleroma'
+        'label' => 'Mastodon',
+        'link' => 'https://dariox.club/@kate',
+        'short' => 'mastodon'
     ),
     array(
         'label' => 'Lemmy',

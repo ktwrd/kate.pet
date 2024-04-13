@@ -25,6 +25,7 @@ body {
     font-family: var(--text-font);
     background-color: var(--background);
     background: url("/img/scrolling-bg.gif") repeat;
+    background-size: 80px;
     color: var(--text-color);
 
     -webkit-font-smoothing: antialiased;

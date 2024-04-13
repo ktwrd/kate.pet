@@ -3,9 +3,11 @@
 {if $showPostListing}
     {include file="include/blog_list.tpl" postArray=$postArray}
 {else}
-    {include file="include/blog_post.tpl" postHideState=$postHideState post=$post}
+    <div class="blog-content">
+        {include file="include/blog_post.tpl" postHideState=$postHideState post=$post}
+    </div>
     <hr/>
-    <div class="d-inline" style="padding-bottom: 20px">
+    <div class="d-inline" style="padding-bottom: 150px">
         <a class="btn btn-sm btn-dark" href="#" style="margin-bottom: 3rem" onclick="history.back()" class="go-back"><< go back</a>
     </div>
 {/if}

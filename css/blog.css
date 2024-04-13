@@ -73,6 +73,7 @@
     margin: 0;
 }
 .blog-card__box {
+    transition: 0ms;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-color: #363636;
     background-image: -moz-linear-gradient(top, #444444, #222222);
@@ -87,6 +88,35 @@
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.blog-content {
+    --bg-top: #080808aa;
+    --bg-bottom: #0f0f0faa;
+
+    transition: 0ms;
+    padding: 1rem;
+    border-radius: 8px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-image: -moz-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: -webkit-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: -o-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-repeat: repeat-x;
+    backdrop-filter: blur(3px);
+    
+    -webkit-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+       -moz-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.blog-content h1 {
+    margin: 0 0 0.5rem 0;
+}
+@media (prefers-color-scheme: light) {
+    .blog-content {
+        --bg-top: #c9c9c9aa;
+        --bg-bottom: #e6e6e6aa;
+    }
 }
 
 @media (prefers-color-scheme: light) {

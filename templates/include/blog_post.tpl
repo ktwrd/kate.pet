@@ -13,7 +13,7 @@
     <div class="d-inline">
         <strong>Tags:</strong>
         {foreach $post['tags'] as $tag}
-            <a href="/p/blog?tag={strtolower($tag)}" style="font-weight: normal">{$tag}</a>
+            <a class="label" href="/p/blog?tag={strtolower($tag)}" style="font-weight: normal">{$tag}</a>
         {/foreach}
     </div>
     {/if}

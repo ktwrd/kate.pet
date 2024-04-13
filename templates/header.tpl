@@ -6,9 +6,14 @@
         <meta name="description" content="{$description|default:"kate's personal homepage"}" />
         <meta name="theme-color" content="{$metaColor|default:"#000000"}" />
         <meta name="name" content="{$title|default:"kate's homepage"}" />
+        <meta name="robots" content="follow, index" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="{$title|default:"kate's homepage"}" />
         <meta name="twitter:creator" content="@seedvevo" />
+        
+        <meta property="og:description" content="{$description|default:"kate's personal homepage"}" />
+        <meta property="og:title" content="{$title|default:"kate's homepage"}" />
+        <meta property="og:type" content="website" />
 
         {if isset($_META)}
             {if isset($_META['image'])}

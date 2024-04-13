@@ -4,6 +4,7 @@
     left: 0;
     width: 100vw;
     height: 18px;
+    z-index: 10000 !important;
 }
 .navbar .col {
     padding: 0 !important;

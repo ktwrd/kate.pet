@@ -74,7 +74,7 @@ try
 
             $time = explode(' ', microtime());
             $endtime = $time[1] + $time[0];
-            // echo "Generated in " . round(($endtime-$begintime)*1000,1) . "ms";
+            echo "Generated in " . round(($endtime-$begintime)*1000,1) . "ms";
         }
     }
     else

@@ -23,6 +23,14 @@ function displayBlogPostToUser($post)
     }
     return false;
 }
+function show_not_found($smarty) {
+    $pagesAvailable = array(
+        '404/1.tpl',
+        '404/1.tpl'
+    );
+    $chosen = array_rand($pagesAvailable, 1);
+    $smarty->display($pagesAvailable[$chosen]);
+}
 
 function generate_navbar_data() {
     $data = array(

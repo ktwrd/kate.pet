@@ -13,14 +13,13 @@ if (isset($_REQUEST['tag'])) {
 $postHideState = 1;
 $showPostListing = False;
 
-
 if (isset($_REQUEST['i']))
 {
     $postContent = retrieveBlogPost(basename($_REQUEST['i']));
     if ($postContent == null)
     {
-        http_response_code(301);
-        header('Location: /p/blog');
+        show_not_found($smarty);
+        return;
     }
     else
     {
@@ -52,8 +51,8 @@ if (isset($_REQUEST['i']))
     }
     else
     {
-        http_response_code(301);
-        header('Location: /p/blog'); 
+        show_not_found($smarty);
+        return;
     }
 }
 else

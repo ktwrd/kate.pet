@@ -20,4 +20,5 @@ if (!isset($skipWebsite))
 
     $DOMAIN = 'http://' . $base_domain;
 }
+
 ?>

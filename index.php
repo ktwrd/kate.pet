@@ -71,12 +71,12 @@ try
         else
         {
             $smarty->display("$templateName.tpl");
-
         }
     }
     else
     {
-        $smarty->display("not_found.tpl");
+        show_not_found($smarty);
+        // $smarty->display("not_found.tpl");
     }
 }
 catch (Exception $ex)

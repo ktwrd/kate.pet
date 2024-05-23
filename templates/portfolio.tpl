@@ -55,8 +55,8 @@ This list is sorted by it's start date (descending).
                 Another General-purpose FOSS Discord bot written
                 in C# with Discord.NET and MongoDB.<br/>
                 <br/>
-                There is also a dashboard available for the bot,
-                written in C# using ASP.NET MVC, MongoDB, OAuth, and
+                There is also a <a href="https://xb.kate.pet">dashboard</a> available,
+                written in C# using ASP.NET, <a href="https://htmx.org/">htmx</a>, MongoDB, and
                 Discord.NET.
             </div>
         </div>

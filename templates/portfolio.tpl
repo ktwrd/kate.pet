@@ -46,22 +46,6 @@ This list is sorted by it's start date (descending).
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
-                Personal Website v1 (<a href="https://old.kate.pet">see</a>)
-                <div class="card-header-sm">
-                    Jan 2022 - Nov 2023
-                </div>
-            </div>
-            <div class="card-body">
-                Built with Vue.js v2, Bootstrap, and butterchurn.<br/>
-                </br>
-                New versions are published and deployed on every commit
-                with Github Actions and it's hosted with Github Pages.
-            </div>
-        </div>
-    </div>
-    <div class="m-1 col-auto">
-        <div class="card card-classic">
-            <div class="card-header">
                 Xenia Bot (<a href="https://xenia.kate.pet">website</a>, <a href="https://github.com/ktwrd/xeniabot">github</a>)
                 <div class="card-header-sm">
                 Jan 2023 - Current
@@ -130,6 +114,22 @@ This list is sorted by it's start date (descending).
             <div class="card-body">
                 A collection of the 88x31 buttons of the past.
                 Similar to what is at the bottom of my homepage.
+            </div>
+        </div>
+    </div>
+    <div class="m-1 col-auto">
+        <div class="card card-classic">
+            <div class="card-header">
+                Personal Website v1 (<a href="https://old.kate.pet">see</a>)
+                <div class="card-header-sm">
+                    Jan 2022 - Nov 2023
+                </div>
+            </div>
+            <div class="card-body">
+                Built with Vue.js v2, Bootstrap, and butterchurn.<br/>
+                </br>
+                New versions are published and deployed on every commit
+                with Github Actions and it's hosted with Github Pages.
             </div>
         </div>
     </div>

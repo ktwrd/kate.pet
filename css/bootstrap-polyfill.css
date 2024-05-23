@@ -108,6 +108,16 @@
     }
 }
 
+@media (max-width: 572px) {
+    [pagename=portfolio] .col-auto {
+        width: calc(100% - 4px) !important;
+        margin: 4px 2px;
+        padding: 0;
+    }
+    [pagename=portfolio] .row {
+        margin: 0 !important;
+    }
+}
 @media (min-width: 992px) {
     [pagename=portfolio] .card-body {
         max-width: calc((calc(960px + 30px) / 2) - 50px);

@@ -40,7 +40,7 @@ def get_string(
             print('Using default value')
             return defaultValue
     else:
-        return s
+        return s.replace("'", "\\'")
 def get_enum_value_single(
     title='My enum',
     required=False,
@@ -83,7 +83,8 @@ def get_string_arr(
     s = str(input('> ')).split(',')
     resultArr = []
     for item in s:
-        resultArr.append("'" + item.strip() + "'")
+        x = '\'%s\'' % (item.strip().replace("'", "\\'"))
+        resultArr.append(x)
     return resultArr
 
 name = get_string('PostId name', required=False, defaultValue=str(now.strftime('%Y%m%d')))

@@ -8,7 +8,8 @@ foreach (getAllBlogPosts() as $b)
 $filenameExclude = array(
     'sitemap',
     'error',
-    'since'
+    'since',
+    'blog_rss'
 );
 foreach (scandir(K_WEB_ROOT . "/pages/") as $p)
 {
@@ -19,3 +20,5 @@ foreach (scandir(K_WEB_ROOT . "/pages/") as $p)
         }
     }
 }
+echo "https://kate.pet/blog.atom\n"
+    ."https://kate.pet/";

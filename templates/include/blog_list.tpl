@@ -21,15 +21,15 @@
         {/if}
     </div>
 {/if}
-<div class="blog-list-cards">
+<div class="blog-list-cards no-anim">
     {foreach $postArray as $post}
         {if isset($filterTag) && !doesPostHaveTag($post, $filterTag)}
             {if !doesPostHaveTag($post, $filterTag)}
                 {continue}
             {/if}
         {/if}
-        <div class="blog-card blog-card--2col">
-            <article class="blog-card__box block">
+        <div class="blog-card blog-card--2col no-anim">
+            <article class="blog-card__box block no-anim">
                 <h1>
                     <a href="/blog/{$post['id']}">{$post['subject']}</a>
                     {if isNewBlogPost($post)} <img src="https://res.kate.pet/icons/fuge-3.5.6/icons/new-text.png" /> {/if}

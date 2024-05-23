@@ -32,7 +32,7 @@ try
 {
     if (file_exists(K_WEB_ROOT . "/pages/$pageName.php"))
         include(K_WEB_ROOT . "/pages/$pageName.php");
-    
+
     if (file_exists(K_WEB_ROOT . "/templates/$templateName.tpl"))
     {
         if (isset($_META))
@@ -60,7 +60,8 @@ try
                 }
                 else
                 {
-                    $smarty->display("not_found.tpl");
+                    show_not_found($smarty);
+                    // $smarty->display("not_found.tpl");
                 }
             }
             else

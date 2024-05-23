@@ -15,9 +15,9 @@ For a development environment you must have the following installed;
     - php-fpm
     - composer ([see](https://getcomposer.org/download/))
 
-copy `nginx.conf` to where your nginx configs go (and replace `kate.pet` with whatever domain you wish) and make sure that `fastcgi_pass` is using the correct socket location.
-
-make sure you install dependencies with `composer install`
+1. copy `.env.example` to `.env` and replace the proper variable with your own (like `WEB_ROOT` with where you cloned this repo.)
+2. copy `nginx.conf` to where your nginx configs go (and replace `kate.pet` with whatever domain you wish) and make sure that `fastcgi_pass` is using the correct socket location.
+3. make sure you install dependencies with `composer install`
 
 and you should be set :3
 

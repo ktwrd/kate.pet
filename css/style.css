@@ -98,7 +98,8 @@ main {
 @media screen and (max-width: 580px) {
     .homepage-txt {
         scale: 0;
-        width: 0;
+        width: 0px !important;
+        display: none;
         transition: 200ms;
     }
 }

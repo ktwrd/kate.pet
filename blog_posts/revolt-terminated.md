@@ -8,6 +8,6 @@ This means that all bots I own, and all servers I own, are now in a state of lim
 
 The reasoning for my account to be terminated is invalid and I believe that it's a made up reason just to get me off the platform.
 
-This just shows even more proof that Revolt staff are immature, corrupt, and are unprofessional about things. Along with that, all the comments about revolt staff acting like shitheads is very correct (in relation to [this blog post](https://rentry.org/rebolt) from another user who was terminated).
+This just shows even more proof that Revolt staff are immature, corrupt, and are unprofessional about things. Along with that, all the comments about revolt staff acting like shitheads is very correct (in relation to [this blog post](web.archive.org/web/20240128112827/https://rentry.org/rebolt) from another user who was terminated).
 
 Myself and many other people have jumped ship back to Discord or other *more secure* chat platforms that actually give a shit about privacy (like Matrix and Signal). If you are currently a Revolt user, I strongly suggest that you jump this burning ship as well. The Revolt team are very unexperienced and it seems like it's going down in the same way that [lightspeed](https://lightspeed.tv) did, which is insert's previously failed project that they have now fully abandoned. If you do not want to leave revolt, I'd suggest cutting ties with toxic staff members and lurk in the shadows and use tor (like me).

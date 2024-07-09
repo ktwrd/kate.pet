@@ -88,8 +88,21 @@ function dateDifference(dt1, dt2)
 
     return ret;
 }
+/**
+ * @description
+ * Pluralize things.
+ * @param {number|string} thing Thing to pluralize. When a string, will use the length of it.
+ * @returns `s` when the assumed value of `thing` (or the length of it when it's a string) is greater than `1`. Otherwise an empty string is removed.
+ */
+function pluralize(thing) {
+    var s = thing;
+    if (typeof thing == 'string') {
+        s = thing.length;
+    }
+    return s > 1 ? 's' : '';
+}
 
-document.querySelectorAll('[data-component=time-since-container]').forEach(_ie => {
+const timeSinceContainerItems = document.querySelectorAll('[data-component=time-since-container]').forEach(_ie => {
     const element = _ie;
     const innerElement = (() =>
     {

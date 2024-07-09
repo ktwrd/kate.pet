@@ -83,3 +83,9 @@
                 </a>
             </div> *}
             <div class="container" {if isset($pageName)} pageName="{$pageName}" {/if}>
+            {if isset($js_required)}
+                <h1 aria-label="js-required" class="center">Javascript is required for this page.</h1>
+                <script type="text/javascript">
+                    document.querySelector('[aria-label=js-required]').remove()
+                </script>
+            {/if}

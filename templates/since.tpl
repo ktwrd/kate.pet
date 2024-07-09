@@ -1,4 +1,4 @@
-{include file="header.tpl" title="kate's timeline" description="time since notable stuff has happened"}
+{include file="header.tpl" title="kate's timeline" description="time since notable stuff has happened" js_required=""}
 
 <h1 class="italic">time since</h1>
 <div class="center">
@@ -9,7 +9,11 @@
             <div class="row">
                 <div class="col"></div>
                 <div class="col-auto pr-1">
-                    <div data-component="time-since-container" data-timestamp="{$i[0]}"></div>
+                    <div data-component="time-since-container" data-timestamp="{$i[0]}"
+                    {if sizeof($i) >= 3}
+                        data-complete-text="{$i[2]}"
+                    {/if}
+                    ></div>
                 </div>
                 <div class="col"></div>
             </div>

@@ -102,8 +102,12 @@ function pluralize(thing) {
     return s > 1 ? 's' : '';
 }
 
-const timeSinceContainerItems = document.querySelectorAll('[data-component=time-since-container]').forEach(_ie => {
+const timeSinceContainerItems = document.querySelectorAll('[data-component=time-since-container]');
+var elemIE = 0;
+timeSinceContainerItems.forEach(_ie => {
     const element = _ie;
+const elementIndex = parseInt(elemIE.toString());
+    elemIE++;
     const innerElement = (() =>
     {
         var t = element.querySelector('[data-tag=inner-text]')

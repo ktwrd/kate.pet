@@ -106,7 +106,7 @@ const timeSinceContainerItems = document.querySelectorAll('[data-component=time-
 var elemIE = 0;
 timeSinceContainerItems.forEach(_ie => {
     const element = _ie;
-const elementIndex = parseInt(elemIE.toString());
+    const elementIndex = parseInt(elemIE.toString());
     elemIE++;
     const innerElement = (() =>
     {
@@ -125,7 +125,7 @@ const elementIndex = parseInt(elemIE.toString());
         let startDate = new Date(0)
         startDate.setUTCMilliseconds(element.attributes['data-timestamp'].value * 1000)
         let nowDate = new Date()
-if (nowDate >= startDate) {
+        if (nowDate >= startDate) {
             if (element.attributes['data-complete-text']) {
 
                 // when text content is null/undefined or it's empty, then remove the main element
@@ -157,24 +157,24 @@ if (nowDate >= startDate) {
 
         let str = []
         if (years > 0) {
-            str.push(`${years} year${years > 1 ? 's' : ''}`)
+            str.push(`${years} year${pluralize(years)}`)
         }
         if (months > 0) {
-            str.push(`${months} month${months > 1 ? 's' : ''}`)
+            str.push(`${months} month${pluralize(months)}`)
         }
         if (weeks > 0) {
-            str.push(`${weeks} week${weeks > 1 ? 's' : ''}`)
+            str.push(`${weeks} week${pluralize(weeks)}`)
         }
         if (days > 0) {
-            str.push(`${days} day${days > 1 ? 's' : ''}`)
+            str.push(`${days} day${pluralize(days)}`)
         }
         if (hours > 0) {
-            str.push(`${hours} hour${hours > 1 ? 's' : ''}`)
+            str.push(`${hours} hour${pluralize(hours)}`)
         }
         if (minutes > 0) {
-            str.push(`${minutes} minute${minutes > 1 ? 's' : ''}`)
+            str.push(`${minutes} minute${pluralize(minutes)}`)
         }
-        str.push(`${seconds} second${seconds > 1 ? 's' : ''}`)
+        str.push(`${seconds} second${pluralize(seconds)}`)
 
         innerElement.innerHTML = str.join(', ')
     }

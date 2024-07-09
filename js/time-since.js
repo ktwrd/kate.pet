@@ -125,6 +125,25 @@ const elementIndex = parseInt(elemIE.toString());
         let startDate = new Date(0)
         startDate.setUTCMilliseconds(element.attributes['data-timestamp'].value * 1000)
         let nowDate = new Date()
+if (nowDate >= startDate) {
+            if (element.attributes['data-complete-text']) {
+
+                // when text content is null/undefined or it's empty, then remove the main element
+                // for this instance of `time-since-container`.
+                var completeTextContent = element.attributes['data-complete-text'].toString();
+                if (!completeTextContent || (completeTextContent && completeTextContent.trim() < 1)) {
+                    console.debug(`Removing element at index ${elementIndex} since 'data-complete-text' is empty and the countdown is done.`);
+                    element.remove();
+                    return;
+                }
+
+                // otherwise we just set the content of the innerElement to the value of the
+                // `data-complete-text` attribute.
+                innerElement.innerHTML = element.attributes['data-complete-text'];
+                element.attributes['data-timer-complete'] = 'data-timer-complete';
+                return;
+            }
+        }
 
         // Time calculations for days, hours, minutes and seconds
         var diff = dateDifference(startDate, nowDate);

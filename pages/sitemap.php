@@ -9,7 +9,8 @@ $filenameExclude = array(
     'sitemap',
     'error',
     'since',
-    'blog_rss'
+    'blog_rss',
+    'sitemap'
 );
 foreach (scandir(K_WEB_ROOT . "/pages/") as $p)
 {

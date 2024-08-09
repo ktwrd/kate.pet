@@ -106,6 +106,10 @@ main {
     image-rendering: auto !important;
 }
 
+img[alt=rustlang-logo] {
+    filter: invert();
+}
+
 @media screen and (max-width: 580px) {
     .homepage-txt {
         scale: 0;

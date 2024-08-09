@@ -3,6 +3,7 @@
 @import "misc.css";
 @import "bootstrap-polyfill.css";
 @import "bootstrap-label.css";
+@import "bootstrap-tooltip.css";
 :root {
     --text-font: Arial, Helvetica, sans-serif;
     --text-color: #fff;

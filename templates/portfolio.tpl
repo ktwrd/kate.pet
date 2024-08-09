@@ -1,28 +1,46 @@
-{include file="header.tpl" title="kate's portfolio" description="all of the notable stuff i've worked on in the past few years."}
+{include 
+    file="header.tpl" 
+    title="kate's portfolio" 
+    description="all of the notable stuff i've worked on in the past few years."
+    use_jquery=""
+    use_bootstrap_js=""}
 <h1 class="italic">portfolio</h1>
 <strong>note:</strong> this <i>isn't a full/complete list</i> of all projects i've contributed to, it's a truncated list of the things i'm actually proud of.<br/>
-This list is sorted by it's start date (descending).
 
 <div class="row d-flex flex-row">
     <div class="m-1 col-auto">
-        <div class="card card-classic">
+        <div class="card card-classic" id="beans-rs">
             <div class="card-header">
-                Xenia Bot Website (<a href="https://github.com/ktwrd/XeniaBot-Website">git repo</a>)
+                <img src="/img/openfortress-logo.png" class="img-sm" alt="openfortress-logo" /> beans-rs (<a href="https://github.com/ktwrd/beans-rs">git repo</a>)
                 <div class="card-header-sm">
-                    Jan 2024 - Current
+                    May 2024 - Current
                 </div>
             </div>
             <div class="card-body">
-                Fork of <a href="https://github.com/ktwrd/kate.pet">Personal Website v2</a>, with extra features such as;
-                <ul>
-                    <li>Guides</li>
-                    <li>Reusable Blog System</li>
-                    <li>Blog System Tags</li>
-                    <li>Blog Author System</li>
-                </ul>
-                The previous Xenia Bot website (now offline and private), was just a blog with some links.
-                This new website makes Xenia feel more professional and developed, while acting as a hub
-                for information relating to Xenia.
+                Rewrite of the <a href="https://github.com/int-72h/ofinstaller-beans">beans</a> installer for <a href="https://openfortress.fun">Open Fortress</a> in Rust<br/>
+                <br/>
+                Brings many improvements to stability, performance, and doesn't get blocked by Windows Defender (since the old version used pyinstaller). It also has lower memory/CPU overhead when compared
+                to the original installer, and only depends on glibc on Linux.<br/>
+                <br/>
+                Also includes a GUI written with FLTK for it's dialog system, but not a fully flegded one since this will get replaced by <a href="https://github.com/adastralgroup/">Adastral</a> at some point.
+            </div>
+        </div>
+    </div>
+    <div class="m-1 col-auto">
+        <div class="card card-classic" id="cockatoo">
+            <div class="card-header">
+                <img src="/img/adastral-logo.png" class="img-sm" alt="adastral-logo"/> Cockatoo
+                <div class="card-header-sm">
+                    June 2024 - Current
+                </div>
+            </div>
+            <div class="card-body">
+                Version and Release Management for <a href="https://adastral.net">Adastral</a>. In-use for generating patches, and releases for (currently) Source Engine Mods. Is also used for the management of brandings
+                for usage in the <a href="https://github.com/AdastralGroup/osprey">Adastral Launcher</a>.<br/>
+                Uses MongoDB, Bootstrap, C# ASP.NET Core MVC, HTMX, and Authentik/OIDC.
+                <sup>pretty much OpenSoftwareLauncher but better</sup><br/>
+                <br/>
+                <b>Note:</b> Currently closed-source since it is still in development, and doesn't have all the required features for a <code>1.0</code> release.
             </div>
         </div>
     </div>
@@ -39,6 +57,24 @@ This list is sorted by it's start date (descending).
                 <br/>
                 Intended to be a powerful utility for Linux users that were Windows users that are used to <a href="https://getsharex.com">ShareX</a>.<br/>
                 <small>Fork of <a href="https://github.com/sharexin/sharexin">sharexin</a> with more features and QoL improvements.</small>
+            </div>
+        </div>
+    </div>
+    <div class="m-1 col-auto">
+        <div class="card card-classic">
+            <div class="card-header">
+                Xenia Bot (<a href="https://xenia.kate.pet">website</a>, <a href="https://github.com/ktwrd/xeniabot">github</a>)
+                <div class="card-header-sm">
+                Jan 2023 - Current
+                </div>
+            </div>
+            <div class="card-body">
+                Another General-purpose FOSS Discord bot written
+                in C# with Discord.NET and MongoDB.<br/>
+                <br/>
+                There is also a <a href="https://xb.kate.pet">dashboard</a> available,
+                written in C# using ASP.NET, <a href="https://htmx.org/">htmx</a>, MongoDB, and
+                Discord.NET.
             </div>
         </div>
     </div>
@@ -62,18 +98,22 @@ This list is sorted by it's start date (descending).
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
-                Xenia Bot (<a href="https://xenia.kate.pet">website</a>, <a href="https://github.com/ktwrd/xeniabot">github</a>)
+                Xenia Bot Website (<a href="https://github.com/ktwrd/XeniaBot-Website">git repo</a>)
                 <div class="card-header-sm">
-                Jan 2023 - Current
+                    Jan 2024 - Current
                 </div>
             </div>
             <div class="card-body">
-                Another General-purpose FOSS Discord bot written
-                in C# with Discord.NET and MongoDB.<br/>
-                <br/>
-                There is also a <a href="https://xb.kate.pet">dashboard</a> available,
-                written in C# using ASP.NET, <a href="https://htmx.org/">htmx</a>, MongoDB, and
-                Discord.NET.
+                Fork of <a href="https://github.com/ktwrd/kate.pet">Personal Website v2</a>, with extra features such as;
+                <ul>
+                    <li>Guides</li>
+                    <li>Reusable Blog System</li>
+                    <li>Blog System Tags</li>
+                    <li>Blog Author System</li>
+                </ul>
+                The previous Xenia Bot website (now offline and private), was just a blog with some links.
+                This new website makes Xenia feel more professional and developed, while acting as a hub
+                for information relating to Xenia.
             </div>
         </div>
     </div>
@@ -172,5 +212,18 @@ This list is sorted by it's start date (descending).
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        $('.card#beans-rs [alt=openfortress-logo]').tooltip({
+            placement: 'bottom',
+            title: 'Created for Open Fortress'
+        });
+        $('.card#cockatoo [alt=adastral-logo]').tooltip({
+            placement: 'bottom',
+            title: 'Developed in collaboration with Adastral Group'
+        })
+    });
+</script>
 
 {include file="footer.tpl"}

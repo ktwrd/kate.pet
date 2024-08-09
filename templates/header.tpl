@@ -30,6 +30,7 @@
         <title>{$title|default:"kate's homepage"}</title>
 
         <script type="text/javascript" src="/js/old-redirect-transform.js"></script>
+        <script type="text/javascript" src="/js/nodrag.js"></script>
     </head>
     <body>
         <a rel="me" href="https://dariox.club/@kate" style="display: none">Mastodon</a>

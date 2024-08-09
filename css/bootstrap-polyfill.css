@@ -77,8 +77,15 @@
     padding: 1.25rem;
 }
 .card-classic {
-    background: black;
-    border: 1px solid white;
+    background-color: black;
+    background-image: linear-gradient(rgb(15, 15, 15, 0.5), rgb(25, 25, 25, 0.5)) !important;
+    backdrop-filter: blur(5px);
+    border: 1px solid #f0f0f0;
+    border-bottom-color: #a0a0a0;
+    border-right-color: #a0a0a0;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+       -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
     border-radius: 0;
     color: white;
 }
@@ -90,21 +97,33 @@
 .card-classic .card-body {
     text-align: left;
     padding: 2px 4px;
-    border-bottom: 1px solid #aaa;
-    background: black;
+    border-bottom: 1px solid #909090;
+    /* background: black; */
 }
 .card-classic .card-header-sm {
     font-size: 16px;
     float: right;
     font-weight: normal;
 }
-@media (prefers-color-scheme: light) {
-    .card-classic,
-    .card-classic .card-header,
-    .card-classic .card-body {
-        border-color: black;
-        background: white !important;
+@media screen and (prefers-color-scheme: light) {
+    .card-classic {
+        background-color: white;
+        background-image: linear-gradient(rgb(255, 255, 255, 0.5), rgb(225, 225, 225, 0.5)) !important;
+        border: 1px solid #0f0f0f;
+        border-bottom-color: #0a0a0a;
+        border-right-color: #0a0a0a;
         color: black;
+    }
+}
+@media print {
+    .card-classic {
+        color: black;
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
+        background-image: none;
+        background-color: transparent;
+        backdrop-filter: none;
     }
 }
 

@@ -62,10 +62,10 @@ img {
     image-rendering: crisp-edges;
     image-rendering: pixelated;
     -webkit-user-select: none !important;
-    -khtml-user-select: none !important;
-    -moz-user-select: none !important;
-    -o-user-select: none !important;
-    user-select: none !important;
+     -khtml-user-select: none !important;
+       -moz-user-select: none !important;
+         -o-user-select: none !important;
+            user-select: none !important;
 
     /* Safari seems to support, but seems deprecated and does the same thing as the others. */
     /* image-rendering: -webkit-optimize-contrast; */
@@ -120,6 +120,9 @@ img[alt=rustlang-logo] {
 }
 
 @media screen and (prefers-color-scheme: light) {
+    img[alt=rustlang-logo] {
+        filter: none;
+    }
     .homepage-txt {
         filter: none;
     }
@@ -133,6 +136,9 @@ img[alt=rustlang-logo] {
     }
 }
 @media print {
+    img[alt=rustlang-logo] {
+        filter: none;
+    }
     .toolbar {
         display: none;
     }
@@ -141,5 +147,9 @@ img[alt=rustlang-logo] {
     }
     *:not(a) {
         color: black !important;
+    }
+    main {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
     }
 }

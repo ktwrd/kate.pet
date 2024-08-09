@@ -11,7 +11,9 @@
     <div class="m-1 col-auto">
         <div class="card card-classic" id="beans-rs">
             <div class="card-header">
-                <img src="/img/openfortress-logo.png" class="img-sm" alt="openfortress-logo" /> beans-rs (<a href="https://github.com/ktwrd/beans-rs">git repo</a>)
+                <img src="/img/openfortress-logo.png" class="img-sm" alt="openfortress-logo" />
+                <img src="/img/rustlang-logo.svg" class="img-sm" alt="rustlang-logo"/>
+                beans-rs (<a href="https://github.com/ktwrd/beans-rs">git repo</a>)
                 <div class="card-header-sm">
                     May 2024 - Current
                 </div>
@@ -29,7 +31,9 @@
     <div class="m-1 col-auto">
         <div class="card card-classic" id="cockatoo">
             <div class="card-header">
-                <img src="/img/adastral-logo.png" class="img-sm" alt="adastral-logo"/> Cockatoo
+                <img src="/img/adastral-logo.png" class="img-sm" alt="adastral-logo"/>
+                <img src="/img/csharp-logo.svg" class="img-sm" alt="csharp-logo"/>
+                Cockatoo
                 <div class="card-header-sm">
                     June 2024 - Current
                 </div>
@@ -47,10 +51,11 @@
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
-            rustgrab (<a href="https://github.com/ktwrd/rustgrab">git repo</a>)
-            <div class="card-header-sm">
-                May 2024 - Current
-            </div>
+                <img src="/img/rustlang-logo.svg" class="img-sm" alt="rustlang-logo"/>
+                rustgrab (<a href="https://github.com/ktwrd/rustgrab">git repo</a>)
+                <div class="card-header-sm">
+                    May 2024 - Current
+                </div>
             </div>
             <div class="card-body">
                 Screenshot and File Upload Utility written in Rust.<br/>
@@ -63,6 +68,7 @@
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
+                <img src="/img/csharp-logo.svg" class="img-sm" alt="csharp-logo"/>
                 Xenia Bot (<a href="https://xenia.kate.pet">website</a>, <a href="https://github.com/ktwrd/xeniabot">github</a>)
                 <div class="card-header-sm">
                 Jan 2023 - Current
@@ -81,6 +87,7 @@
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
+                <img src="/img/php-logo.svg" class="img-sm" alt="php-logo"/>
                 Personal Website v2 (<a href="https://github.com/ktwrd/kate.pet">git repo</a>)
                 <div class="card-header-sm">
                     Dec 2023 - Current
@@ -98,6 +105,7 @@
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
+                <img src="/img/php-logo.svg" class="img-sm" alt="php-logo"/>
                 Xenia Bot Website (<a href="https://github.com/ktwrd/XeniaBot-Website">git repo</a>)
                 <div class="card-header-sm">
                     Jan 2024 - Current
@@ -120,6 +128,8 @@
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
+                <img src="/img/rustlang-logo.svg" class="img-sm" alt="rustlang-logo"/>
+                <img src="/img/csharp-logo.svg" class="img-sm" alt="csharp-logo"/>
                 Custom DRM and Copy Protection
                 <div class="card-header-sm">
                 May 2023 - Aug 2023
@@ -142,6 +152,9 @@
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
+                <img src="/img/js-logo.svg" class="img-sm" alt="js-logo"/>
+                <img src="/img/vue-logo.svg" class="img-sm" alt="vue-logo"/>
+                <img src="/img/electron-logo.svg" class="img-sm" alt="electron-logo"/>
                 SixGrid (<a href="https://sixgrid.kate.pet">website</a>, <a href="https://github.com/sixgrid">github</a>)
                 <div class="card-header-sm">
                     Dec 2020 - Current
@@ -162,6 +175,7 @@
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
+                <img src="/img/js-logo.svg" class="img-sm" alt="js-logo"/>
                 88x31 (<a href="https://88x31.kate.pet">website</a>)
                 <div class="card-header-sm">
                     Aug 2022 - Current
@@ -176,6 +190,8 @@
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
+                <img src="/img/js-logo.svg" class="img-sm" alt="js-logo"/>
+                <img src="/img/vue-logo.svg" class="img-sm" alt="vue-logo"/>
                 Personal Website v1 (<a href="https://old.kate.pet">see</a>)
                 <div class="card-header-sm">
                     Jan 2022 - Nov 2023
@@ -192,6 +208,7 @@
     <div class="m-1 col-auto">
         <div class="card card-classic">
             <div class="card-header">
+                <img src="/img/csharp-logo.svg" class="img-sm" alt="csharp-logo"/>
                 OpenSoftwareLauncher (<a href="https://github.com/ktwrd/opensoftwarelauncher">github</a>)
                 <div class="card-header-sm">
                     Sep 2022 - Jan 2023
@@ -222,7 +239,31 @@
         $('.card#cockatoo [alt=adastral-logo]').tooltip({
             placement: 'bottom',
             title: 'Developed in collaboration with Adastral Group'
-        })
+        });
+        $('[alt=csharp-logo]').tooltip({
+            placement: 'bottom',
+            title: 'Made with C#'
+        });
+        $('[alt=rustlang-logo]').tooltip({
+            placement: 'bottom',
+            title: 'Made with Rust'
+        });
+        $('[alt=php-logo]').tooltip({
+            placement: 'bottom',
+            title: 'Made with PHP'
+        });
+        $('[alt=js-logo]').tooltip({
+            placement: 'bottom',
+            title: 'Made with JavaScript'
+        });
+        $('[alt=vue-logo]').tooltip({
+            placement: 'bottom',
+            title: 'Made with Vue.JS'
+        });
+        $('[alt=electron-logo]').tooltip({
+            placement: 'bottom',
+            title: 'Made with Electron'
+        });
     });
 </script>
 

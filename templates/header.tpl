@@ -31,6 +31,15 @@
 
         <script type="text/javascript" src="/js/old-redirect-transform.js"></script>
         <script type="text/javascript" src="/js/nodrag.js"></script>
+        {if isset($use_jquery) || isset($use_bootstrap_js)}
+            <!-- jQuery v3.7.1 -->
+            <script type="text/javascript" src="/js/lib/jquery.min.js"></script>
+        {/if}
+        {if isset($use_bootstrap_js)}
+            <!-- Boootstrap v4, Popper.JS v1.12.9 -->
+            <script type="text/javascript" src="/js/lib/popper.min.js"></script>
+            <script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
+        {/if}
     </head>
     <body>
         <a rel="me" href="https://dariox.club/@kate" style="display: none">Mastodon</a>

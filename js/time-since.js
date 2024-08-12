@@ -130,7 +130,7 @@ timeSinceContainerItems.forEach(_ie => {
 
                 // when text content is null/undefined or it's empty, then remove the main element
                 // for this instance of `time-since-container`.
-                var completeTextContent = element.attributes['data-complete-text'].toString();
+                var completeTextContent = element.attributes['data-complete-text'].value.toString();
                 if (!completeTextContent || (completeTextContent && completeTextContent.trim() < 1)) {
                     console.debug(`Removing element at index ${elementIndex} since 'data-complete-text' is empty and the countdown is done.`);
                     element.remove();
@@ -139,7 +139,7 @@ timeSinceContainerItems.forEach(_ie => {
 
                 // otherwise we just set the content of the innerElement to the value of the
                 // `data-complete-text` attribute.
-                innerElement.innerHTML = element.attributes['data-complete-text'];
+                innerElement.innerHTML = element.attributes['data-complete-text'].value;
                 element.attributes['data-timer-complete'] = 'data-timer-complete';
                 return;
             }

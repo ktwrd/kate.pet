@@ -1,7 +1,7 @@
 @import "container.css";
 @import "navbar.css";
 @import "misc.css";
-@import "bootstrap-polyfill.css";
+@import "bootstrap.css";
 @import "bootstrap-label.css";
 @import "bootstrap-tooltip.css";
 :root {

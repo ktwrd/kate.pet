@@ -1,5 +1,5 @@
-@import "bootstrap-polyfill-spacing.css";
-@import "bootstrap-polyfill-btn.css";
+@import "bootstrap-spacing.css";
+@import "bootstrap-btn.css";
 .flex-row {
     -ms-flex-direction: row !important;
     -webkit-box-orient: horizontal !important;

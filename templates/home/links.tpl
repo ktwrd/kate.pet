@@ -6,6 +6,7 @@
                 <img
                     src="https://res.kate.pet/image/links/{$link[0]}.png"
                     class="LinkTab"
+                    width="200"
                     height="71"
                     linkName="{$link[0]}"/>
             </a>
@@ -18,6 +19,8 @@
 <style>
 .links a {
     text-decoration: none;
+    height: min(71px, 15vw);
+    width: min(200px, calc((200/71) * 15vw));
 }
 /* LinkTab hover animation */
 .LinkTab {
@@ -33,7 +36,7 @@
 }
 .LinkTab {
     height: min(71px, 15vw);
-    max-width: min(200px, calc((200/71) * 15vw));
+    width: min(200px, calc((200/71) * 15vw));
     --anim-filter-pre:  brightness(75%)
                         grayscale(100%)
                         sepia(10%);

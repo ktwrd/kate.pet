@@ -33,7 +33,7 @@
             <div class="card-header">
                 <img src="/img/adastral-logo.png" class="img-sm" alt="adastral-logo"/>
                 <img src="/img/csharp-logo.svg" class="img-sm" alt="csharp-logo"/>
-                Cockatoo
+                Cockatoo (<a href="https://github.com/AdastralGroup/Cockatoo">git repo</a>)
                 <div class="card-header-sm">
                     June 2024 - Current
                 </div>
@@ -41,10 +41,8 @@
             <div class="card-body">
                 Version and Release Management for <a href="https://adastral.net">Adastral</a>. In-use for generating patches, and releases for (currently) Source Engine Mods. Is also used for the management of brandings
                 for usage in the <a href="https://github.com/AdastralGroup/osprey">Adastral Launcher</a>.<br/>
-                Uses MongoDB, Bootstrap, C# ASP.NET Core MVC, HTMX, and Authentik/OIDC.
-                <sup>pretty much OpenSoftwareLauncher but better</sup><br/>
-                <br/>
-                <b>Note:</b> Currently closed-source since it is still in development, and doesn't have all the required features for a <code>1.0</code> release.
+                Uses MongoDB, Bootstrap, C# ASP.NET Core MVC, HTMX, and OAuth2/LDAP Authentication.
+                <sup>pretty much OpenSoftwareLauncher but better</sup>
             </div>
         </div>
     </div>

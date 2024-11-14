@@ -1,5 +1,6 @@
 @import "bootstrap-spacing.css";
 @import "bootstrap-btn.css";
+@import "bootstrap-table.css";
 .flex-row {
     -ms-flex-direction: row !important;
     -webkit-box-orient: horizontal !important;

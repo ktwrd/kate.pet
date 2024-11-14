@@ -76,7 +76,10 @@ function getAllBlogPosts()
                 array(
                     'id' => $pn
                 ));
-                array_push($result, $pm);
+                if ($p['hide_state'] != 1 && $p['hide_state'] != 2)
+                {
+                    array_push($result, $pm);
+                }
             }
         }
     }

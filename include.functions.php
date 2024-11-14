@@ -38,31 +38,36 @@ function generate_navbar_data() {
             'link' => '/',
             'img' => '/img/btn-home.png',
             'alt' => 'homepage',
-            'pagename' => 'home'
+            'pagename' => 'home',
+            'icon_url' => '/img/icon_home_32x.png'
         ),
         array(
             'link' => '/p/portfolio',
             'img' => '/img/btn-portfolio.png',
             'alt' => 'portfolio',
-            'pagename' => 'portfolio'
+            'pagename' => 'portfolio',
+            'icon_url' => '/img/icon_portfolio_32x.png'
         ),
         array(
             'link' => '/p/links',
             'img' => '/img/btn-links.png',
             'alt' => 'various links',
-            'pagename' => 'links'
+            'pagename' => 'links',
+            'icon_url' => '/img/icon_links_32x.png'
         ),
         array(
             'link' => '/p/blog',
             'img' => '/img/btn-blog.png',
             'alt' => 'blog',
-            'pagename' => 'blog'
+            'pagename' => 'blog',
+            'icon_url' => '/img/icon_blog_32x.png'
         ),
         array(
             'link' => '/p/since',
             'img' => '/img/btn-since.png',
             'alt' => 'time since',
-            'pagename' => 'since'
+            'pagename' => 'since',
+            'icon_url' => '/img/icon_since_32x.png'
         )
     );
     return $data;

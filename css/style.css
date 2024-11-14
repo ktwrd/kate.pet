@@ -110,6 +110,11 @@ img[alt=rustlang-logo] {
     filter: invert();
 }
 
+img.label-icon {
+    border: 0;
+    vertical-align: middle;
+}
+
 @media screen and (max-width: 580px) {
     .homepage-txt {
         scale: 0;

@@ -48,50 +48,28 @@
                 <div class="row">
                     <div class="col"></div>
                     <div class="col-auto navbar-items">
-                        <span class="text">
-                            <img src="/img/homepage-txt-alt.png" class="fixed homepage-txt" alt="kate's website!"/>
+                        <span class="text navbar-page-text">
+                            kate's homepage
                         </span>
                         {foreach $navbarData as $item}
-                            <a href="{$item['link']}">
-                                <img src="{$item['img']}" class="fixed" alt="{$item['alt']}" {if $pageName == $item['pagename']} current {/if} />
+                            <a  {if $pageName == $item['pagename']}
+                                    class="label label-primary"
+                                {else}
+                                    class="label"
+                                {/if}
+                                href="{$item['link']}">
+
+                                {if isset($item['icon_url'])}
+                                    <img class="label-icon" src="{$item['icon_url']}" width="12px" height="12px" />
+                                {/if}
+
+                                {$item['alt']}
                             </a>
                         {/foreach}
-                        {* <a href="/">
-                            <img src="/img/btn-home.png" class="fixed" alt="homepage" {if $pageName == 'home'} current {/if} />
-                        </a>
-                        <a href="/p/portfolio">
-                            <img src="/img/btn-portfolio.png" class="fixed" alt="portfolio" v-bind:current="$route.path == '/portfolio'" {if $pageName == 'portfolio'} current {/if} />
-                        </a>
-                        <a href="/p/links">
-                            <img src="/img/btn-links.png" class="fixed" alt="various links" v-bind:current="$route.path == '/links'" {if $pageName == 'links'} current {/if} />
-                        </a>
-                        <a href="/p/blog">
-                            <img src="/img/btn-blog.png" class="fixed" alt="blog" {if $pageName == 'blog'} current {/if} />
-                        </a>
-                        <a href="/p/since">
-                            <img src="/img/btn-since.png" class="fixed" alt="time since" {if $pageName == 'since'} current {/if} />
-                        </a> *}
                     </div>
                     <div class="col"></div>
                 </div>
             </div>
-            {* <div class="toolbar">
-                <a href="/">
-                    <img src="/img/btn-home.png" class="fixed" alt="homepage" {if $pageName == 'home'} current {/if} />
-                </a>
-                <a href="/p/portfolio">
-                    <img src="/img/btn-portfolio.png" class="fixed" alt="portfolio" v-bind:current="$route.path == '/portfolio'" {if $pageName == 'portfolio'} current {/if} />
-                </a>
-                <a href="/p/links">
-                    <img src="/img/btn-links.png" class="fixed" alt="various links" v-bind:current="$route.path == '/links'" {if $pageName == 'links'} current {/if} />
-                </a>
-                <a href="/p/blog">
-                    <img src="/img/btn-blog.png" class="fixed" alt="blog" {if $pageName == 'blog'} current {/if} />
-                </a>
-                <a href="/p/since">
-                    <img src="/img/btn-since.png" class="fixed" alt="time since" {if $pageName == 'since'} current {/if} />
-                </a>
-            </div> *}
             <div class="container" {if isset($pageName)} pageName="{$pageName}" {/if}>
             {if isset($js_required)}
                 <h1 aria-label="js-required" class="center">Javascript is required for this page.</h1>

@@ -107,6 +107,18 @@ main {
     image-rendering: auto !important;
 }
 
+.card p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+.card-body p:last-of-type {
+    margin-bottom: 0;
+}
+.card-body ul {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
 img[alt=rustlang-logo] {
     filter: invert();
 }

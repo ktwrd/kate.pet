@@ -25,7 +25,8 @@
 body {
     font-family: var(--text-font);
     background-color: var(--background);
-    background: url("/img/scrolling-bg.gif") repeat;
+    background-image: url("/img/scrolling-bg.gif");
+    background-repeat: repeat;
     background-size: 80px;
     color: var(--text-color);
 
@@ -132,7 +133,8 @@ img.label-icon {
         filter: none;
     }
     body {
-        background: url("/img/scrolling-bg-invert.gif") repeat;
+        background-color: white;
+        background-image: url("/img/scrolling-bg-invert.gif") repeat;
         color: black;
     }
     .block {
@@ -148,6 +150,7 @@ img.label-icon {
         display: none;
     }
     body {
+        background-image: none;
         background: transparent;
     }
     *:not(a) {

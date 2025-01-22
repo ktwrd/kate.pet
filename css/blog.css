@@ -152,6 +152,26 @@
 .blog-content h1 {
     margin: 0 0 0.5rem 0;
 }
+
+p[field=description] {
+    margin: 0 0 16px 0;
+    padding: 6px 12px;
+    max-width: fit-content;
+    
+    border-radius: 8px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    background-image: -moz-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: -webkit-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: -o-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-repeat: repeat-x;
+    backdrop-filter: blur(3px);
+    
+    -webkit-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+       -moz-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
 @media (prefers-color-scheme: light) {
     .blog-content {
         --bg-top: #c9c9c9aa;

@@ -1,6 +1,9 @@
 
 <div class='blog-header'>
     <h1 field='title'>{$post['subject']}</h1>
+    {if isset($post['description']) && strlen($post['description']) > 0}
+        <p field='description'>{$post['description']}</p>
+    {/if}
     {if isset($post['created_at_f'])}
         <h3 field='created_at'>
             {if isset($post['updated_at_f'])}Created: {/if}

@@ -18,6 +18,9 @@
         {if isset($_META)}
             {if isset($_META['image'])}
                 <meta property="og:image" content="{$_META['image']}" />
+                <meta id="embed-image" property="og:image" content="{$_META['image']}"/>
+                <meta id="discord" name="twitter:image" content="{$_META['image']}"/>
+                <meta img="image-src" name="twitter:image:src" content="{$_META['image']}"/>
             {/if}
         {/if}
 

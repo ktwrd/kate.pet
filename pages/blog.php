@@ -48,6 +48,9 @@ if (isset($_REQUEST['i']))
         {
             $smarty->assign('description', $defaultDescription);
         }
+        if (isset($postContent['embed_image'])) {
+            $_META['image']=$postContent['embed_image'];
+        }
     }
     else
     {

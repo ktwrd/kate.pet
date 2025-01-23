@@ -24,6 +24,11 @@ function retrieveBlogPost($postId)
             {
                 $post['updated_at'] = $res['updated_at'];
             }
+            if (isset($res['embed_image'])) {
+                if (str_ends_with($res['embed_image'], '.png')) {
+                    $post['embed_image'] = $res['embed_image'];
+                }
+            }
             $post['tags'] = array();
             if (isset($res['tags'])) {
                 $post['tags'] = $res['tags'];
@@ -48,7 +53,7 @@ function retrieveBlogPost($postId)
                 if (isset($_META))
                 {
                     // concat post meta before current meta to override things
-                    $_META = array_merge($res['meta'], $_META);
+                    array_merge($res['meta'], $_META);
                 }
                 else
                 {

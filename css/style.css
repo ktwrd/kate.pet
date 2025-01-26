@@ -10,9 +10,9 @@
     --background: #000;
     --link-color: #619eff;
 }
-@media screen and (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
     :root {
-        --text-color: #fff;
+        --text-color: #000;
         --background: #fff;
         --link-color: #1b40d1;
     }
@@ -137,7 +137,7 @@ img.label-icon {
     }
 }
 
-@media screen and (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
     img[alt=rustlang-logo] {
         filter: none;
     }
@@ -146,7 +146,7 @@ img.label-icon {
     }
     body {
         background-color: white;
-        background-image: url("/img/scrolling-bg-invert.gif") repeat;
+        background-image: url("/img/scrolling-bg-invert.gif");
         color: black;
     }
     .block {

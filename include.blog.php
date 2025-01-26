@@ -49,6 +49,46 @@ function retrieveBlogPost($postId)
                 $post['updated_at_fl'] = date('c', $post['updated_at']);
             }
 
+            if (isset($res['comment_cfg'])) {
+                $comment_config=$res['comment_cfg'];
+                if (isset($comment_config['system'])) {
+                    $cfg_system = $comment_config['system'];
+                    $cfg_system_formatted = 'comment_cfg -> system:'.$cfg_system.' ';
+                    if ($cfg_system == 'utterances') {
+                        $utterances_cfg = array(
+                            'enable' => 1,
+                            'repo' => CFG_UTTERANCES_REPO,
+                            'label' => 'comment section - blog post',
+                            'theme' => 'preferred-color-scheme',
+                        );
+                        if (isset($comment_config['issue_number'])) {
+                            $utterances_cfg['issue_number'] = $comment_config['issue_number'];
+                        } elseif (isset($comment_config['issue_term'])) {
+                            $utterances_cfg['issue_term'] = $comment_config['issue_term']; 
+                        } else {
+                            $utterances_cfg['enable'] = 0;
+                            array_push($post['internal_errors'],
+                            $cfg_system_formatted.'not sure how to configure utterances. tried `issue_number` and `issue_term`');
+                        }
+
+                        if ($utterances_cfg['enable'] == 1) {
+                            $post['utterances_cfg'] = $utterances_cfg;
+                        } else {
+                            array_push($post['internal_errors'],
+                            $cfg_system_formatted.'disabled due to one or more configuration error/warning.');
+                        }
+                    } else {
+                        array_push($post['internal_warnings'],
+                        'comment_cfg: unknown value for "system" ('.$cfg_system.')');
+                    }
+                }
+                else {
+                    array_push($post['internal_errors'],
+                    'comment_cfg: missing value for "system"');
+                }
+                
+            }
+
             if (isset($res['meta']))
             {
                 if (isset($_META))

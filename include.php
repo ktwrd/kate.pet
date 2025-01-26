@@ -1,5 +1,6 @@
 <?php
 @define('K_WEB_ROOT', dirname(__FILE__));
+@define('CFG_UTTERANCES_REPO', 'ktwrd/kate.pet');
 
 if (!headers_sent())
     header('Content-type: text/html; charset=UTF-8');

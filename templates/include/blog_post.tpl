@@ -39,3 +39,47 @@
     {/if}
     {$post['text']}
 </div>
+
+{if isset($post['utterances_cfg'])}
+    {if isset($post['utterances_cfg']['issue_number'])}
+        <hr/>
+        {if isset($post['utterances_cfg']['label'])}
+            <script src="https://utteranc.es/client.js"
+                    repo="{$post['utterances_cfg']['repo']}"
+                    issue-number="{$post['utterances_cfg']['issue_number']}"
+                    label="{$post['utterances_cfg']['label']}"
+                    theme="preferred-color-scheme"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        {else}
+            <script src="https://utteranc.es/client.js"
+                    repo="{$post['utterances_cfg']['repo']}"
+                    issue-number="{$post['utterances_cfg']['issue_number']}"
+                    theme="preferred-color-scheme"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        {/if}
+    {elseif isset($post['utterances_cfg']['issue_term'])}
+        <hr/>
+        {if isset($post['utterances_cfg']['label'])}
+            <script src="https://utteranc.es/client.js"
+                    repo="{$post['utterances_cfg']['repo']}"
+                    issue-term="{$post['utterances_cfg']['issue_term']}"
+                    label="{$post['utterances_cfg']['label']}"
+                    theme="preferred-color-scheme"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        {else}
+            <script src="https://utteranc.es/client.js"
+                    repo="{$post['utterances_cfg']['repo']}"
+                    issue-term="{$post['utterances_cfg']['issue_term']}"
+                    theme="preferred-color-scheme"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        {/if}
+    {/if}
+{/if}

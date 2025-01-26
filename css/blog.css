@@ -133,6 +133,9 @@
 .blog-content {
     --bg-top: #080808aa;
     --bg-bottom: #0f0f0faa;
+    --shadow-top: rgba(255, 255, 255, 0.2);
+    --shadow-bottom: rgba(0, 0, 0, 0.05);
+    --border-color: rgba(200, 200, 200, 0.15);
 
     transition: 0ms;
     padding: 1rem;
@@ -144,16 +147,23 @@
     background-image: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
     background-repeat: repeat-x;
     backdrop-filter: blur(3px);
+    border: 1px solid var(--border-color);
     
-    -webkit-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-       -moz-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
+       -moz-box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
+            box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
 }
 .blog-content h1 {
     margin: 0 0 0.5rem 0;
 }
 
 p[field=description] {
+    --bg-top: #080808aa;
+    --bg-bottom: #0f0f0faa;
+    --shadow-top: rgba(255, 255, 255, 0.3);
+    --shadow-bottom: rgba(0, 0, 0, 0.15);
+    --border-color: rgba(200, 200, 200, 0.15);
+
     margin: 0 0 16px 0;
     padding: 6px 12px;
     max-width: fit-content;
@@ -166,21 +176,93 @@ p[field=description] {
     background-image: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
     background-repeat: repeat-x;
     backdrop-filter: blur(3px);
+    border: 1px solid var(--border-color);
     
-    -webkit-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
-       -moz-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
-            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
+       -moz-box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
+            box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
+}
+
+.blog-post-error {
+    --bg-top: rgb(200,30,30);
+    --bg-bottom: rgb(150,5,5);
+    --shadow-top: rgba(255, 255, 255, 0.3);
+    --shadow-bottom: rgba(0, 0, 0, 0.15);
+
+    margin: 0.125rem 0.5rem;
+    padding: 0.125rem 0.5rem;
+    max-width: fit-content;
+    border-radius: 0.5rem 0.125rem;
+
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    background-image: -moz-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: -webkit-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: -o-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    
+    -webkit-box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
+       -moz-box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
+            box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
+}
+.blog-post-warn {
+    --bg-top: rgb(200,120,30);
+    --bg-bottom: rgb(160,90,5);
+    --shadow-top: rgba(255, 255, 255, 0.3);
+    --shadow-bottom: rgba(0, 0, 0, 0.15);
+
+    margin: 0.125rem 0.5rem;
+    padding: 0.125rem 0.5rem;
+    max-width: fit-content;
+    border-radius: 0.5rem 0.125rem;
+
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    background-image: -moz-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: -webkit-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: -o-linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-image: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    
+    -webkit-box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
+       -moz-box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
+            box-shadow: inset 0 1px 2px var(--shadow-top), 0 1px 2px var(--shadow-bottom);
 }
 
 @media (prefers-color-scheme: light) {
-    .blog-content {
+    .blog-content,
+    p[field=description] {
         --bg-top: #c9c9c9aa;
-        --bg-bottom: #e6e6e6aa;
+        --bg-bottom: #efefefaa;
+        --border-color: rgba(0, 0, 0, 0.25);
+    }
+    .blog-post-error {
+        --bg-top: rgb(255,120,120);
+        --bg-bottom: rgb(200,60,60);
+        color: black;
+    }
+    .blog-post-warn {
+        --bg-top: rgb(240, 150, 100);
+        --bg-bottom: rgb(255, 190, 100);
+        color: black;
     }
 }
 
 @media print {
-    .go-back {
+    .go-back,
+    .blog-post-error,
+    .blog-post-warn,
+    .utterances {
         display: none !important;
+    }
+    .blog-body,
+    .blog-header,
+    .blog-content,
+    p[field=description],
+    .label {
+        border: none;
+        border-radius: 0;
+        text-shadow: none;
+        background-image: none;
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
     }
 }

@@ -15,7 +15,8 @@ function retrieveBlogPost($postId)
         if ($generate_blog_post != null)
         {
             $res = $generate_blog_post;
-
+            $post['internal_warnings'] = array();
+            $post['internal_errors'] = array();
             $post['text'] = formatMarkdown(file_get_contents(K_WEB_ROOT. "/blog_posts/$postId.md"));
             $post['subject'] = $res['subject'];
             $post['description'] = isset($res['description']) ? $res['description'] : "";

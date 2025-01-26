@@ -1,6 +1,6 @@
 <small>to my employer reading this blog post, all of my work relating to this blog post **was not** done on company time and hardware</small>
 
-For the past ~6 months I've been working more with [Adastral Group](https://adastral.net) on a backend management system for the Adastral Launcher. Recently, I have reached the point where said management system is stable enough for a public[^note3] release. With that being said, I have the opportunity to discuss some cool stuff that myself (and the team) have been working on in the shadows.
+For the past 6-12 months I've been working more with [Adastral Group](https://adastral.net) on a backend management system for the Adastral Launcher. Recently, I have reached the point where said management system is stable enough for a public[^note3] release. With that being said, I have the opportunity to discuss some cool stuff that myself (and the team) have been working on in the shadows.
 
 Under the hood, Adastral mainly depends on [butler](https://github.com/itchio/butler)[^note2], which is the patching software made by the developers at [itch.io](https://itch.io). The founder of Adastral, intcoms, has already mentioned some optimizations that he has made to butler in his own blog post[^note1], but I've been working on something that will make Adastral much better than any other sourcemod launcher in the long-term (and software distribution methods in general).
 

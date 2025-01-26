@@ -23,5 +23,19 @@
 </div>
 <hr/>
 <div class='blog-body'>
+    {if count($post['internal_warnings']) > 0}
+        {foreach $post['internal_warnings'] as $postWarning}
+            <div class='blog-post-warn'>
+                {$postWarning}
+            </div>
+        {/foreach}
+    {/if}
+    {if count($post['internal_errors']) > 0}
+        {foreach $post['internal_errors'] as $postError}
+            <div class='blog-post-error'>
+                {$postError}
+            </div>
+        {/foreach}
+    {/if}
     {$post['text']}
 </div>

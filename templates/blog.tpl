@@ -8,7 +8,7 @@
     </div>
     <hr/>
     <div class="d-inline" style="padding-bottom: 150px">
-        <a class="btn btn-sm btn-dark" href="#" style="margin-bottom: 3rem" onclick="history.back()" class="go-back"><< go back</a>
+        <a class="btn btn-sm btn-dark go-back" href="#" style="margin-bottom: 3rem" onclick="history.back()"><< go back</a>
     </div>
 {/if}
 {include file="footer.tpl"}

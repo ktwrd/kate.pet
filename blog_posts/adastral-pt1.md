@@ -1,8 +1,8 @@
 <small>to my employer reading this blog post, all of my work relating to this blog post **was not** done on company time and hardware</small>
 
-For the past 6-12 months I've been working more with [Adastral Group](https://adastral.net) on a backend management system for the Adastral Launcher. Recently, I have reached the point where said management system is stable enough for a public[^note3] release. With that being said, I have the opportunity to discuss some cool stuff that myself (and the team) have been working on in the shadows.
+For the past 6-12 months I've been working more with [Adastral Group](https://adastral.net) on a backend management system for the Adastral Launcher. Recently, I have reached the point where said management system is stable enough for a public[^cockatoo-release] release. With that being said, I have the opportunity to discuss some cool stuff that myself (and the team) have been working on in the shadows.
 
-Under the hood, Adastral mainly depends on [butler](https://github.com/itchio/butler)[^note2], which is the patching software made by the developers at [itch.io](https://itch.io). The founder of Adastral, intcoms, has already mentioned some optimizations that he has made to butler in his own blog post[^note1], but I've been working on something that will make Adastral much better than any other sourcemod launcher in the long-term (and software distribution methods in general).
+Under the hood, Adastral mainly depends on [butler](https://github.com/itchio/butler)[^kmatter-2], which is the patching software made by the developers at [itch.io](https://itch.io). The founder of Adastral, intcoms, has already mentioned some optimizations that he has made to butler in his own blog post[^kmatter-1], but I've been working on something that will make Adastral much better than any other sourcemod launcher in the long-term (and software distribution methods in general).
 
 Intcoms found multiple issues with butler that make it unnecessarily slow for our use case, which is for large-ish game updated (e.g; Open Fortress v19 to v21). This is frustrating when we are testing our software, and when the end-user is installing or updating their game. For context, most of our Open Fortress players usually have relatively low-spec computers when compared to players of most AAA games, since that is what usually attracts people to playing *some* Source Engine mods.
 
@@ -10,7 +10,7 @@ There are numerous issues with our current usage of butler, which are:
 - Slow patch generation time
 - Slow patch apply time (compared to Steam)
 - Large patch size
-- Previous versions need to be fully extracted into a directory[^note4]
+- Previous versions need to be fully extracted into a directory[^butler-offline-diffing]
 
 Intcoms has fixed some of these issues by replacing the hashing algorithm that's currently used (md5) with highwayhash, which has significantly increased the patch time, and generation time. But this isn't enough for me; I want it to be faster, I want the files to be smaller, I want it to be **the best**.
 
@@ -21,11 +21,11 @@ It took about 4 weeks of tinkering and trying my best to remember what I did to 
 
 ## How it works
 
-This patching library/method/system, called Northam (because of Adastral's naming scheme[^note5]), is about 12x-17x faster than Steam when I benchmarked it recently with the new Factorio update. (From build `15397692`[^factorio-patch1] to `16181832`[^factorio-patch2])
+This patching library/method/system, called Northam (because of Adastral's naming scheme[^adastral-naming-scheme]), is about 12x-17x faster than Steam when I benchmarked it recently with the new Factorio update. (From build `15397692`[^factorio-patch1] to `16181832`[^factorio-patch2])
 
 Steam took 3min 35s for the "Updating", "Patching", and "Installing" stages (as reported by the status text below the "Manage Downloads" button). Northam took 2.59s to verify the game files, and 9.86s to apply said patch. The download size for Northam was ~1.3gb (which included deltas, new files, and files to delete), and Steam's reported download size was ~1.1gb (with a ~200mb `.delta` file).
 
-Northam uses a modified version of the rdiff algorithm that is used in rsync and depends heavily on C#'s `Parallel.ForEach` method to ensure that multithreaded systems can benefit greatly[^note6] by using Northam instead of a different patching library. The chunk size that is being used for diffing files is 256kb and the patch/signature files are binary formatted to ensure that it can be read as fast as possible (which takes ~800ms for a 164mb file).
+Northam uses a modified version of the rdiff algorithm that is used in rsync and depends heavily on C#'s `Parallel.ForEach` method to ensure that multithreaded systems can benefit greatly[^parallel-foreach] by using Northam instead of a different patching library. The chunk size that is being used for diffing files is 256kb and the patch/signature files are binary formatted to ensure that it can be read as fast as possible (which takes ~800ms for a 164mb file).
 
 Not everything will be revealed on how Northam works under the hood since it's currently faster than anything we're currently using (and Steam)
 
@@ -144,12 +144,12 @@ Terminal Recordings
 ## Remarks
 If you want to know details about Adastral-related releases, you can join the discord server which is available on the [Adastral Website](https://adastral.net), or you can follow the [GitHub Organization](https://github.com/AdastralGroup) and it's respective repositories.
 
-[^note1]: [kmatter.net \(June 12, 2024). Optimizing Butler for fun and profit](https://kmatter.net/posts/2024-06-12-optimising-butler-pt2/). [Archived](https://archive.is/ztpQD)
-[^note2]: [kmatter.net \(January 7, 2024). A Year and a bit: What's happened?](https://kmatter.net/posts/2024-01-07-a-year-and-a-half/). [Archived](https://archive.is/fXfTM)
-[^note3]: [GitHub.com \(October 24. 2024). Release 2024.10: Cockatoo Goes Public](https://github.com/AdastralGroup/Cockatoo/releases/tag/2024.10). [Archived](https://archive.is/56kss)
-[^note4]: [Offline usage \(diffing & patching) - The butler manual](https://itch.io/docs/butler/offline.html). [Archived](https://archive.is/Wfo08)
-[^note5]: [GitHub.com \(October 31. 2023). The Adastral Sort-of-Technical Document \(aka The Blue Book). What's with the names?](https://github.com/AdastralGroup/adastral-docs/blob/main/bluebook.md#whats-with-the-names). [Archived](https://archive.is/tANUe)
-[^note6]: [Microsoft Learn. Parallel.ForEach Method \(System.Threading.Tasks). "Remarks" section](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.parallel.foreach?view=net-8.0). [Archived](https://archive.is/wZKxz)
+[^kmatter-1]: [kmatter.net \(June 12, 2024). Optimizing Butler for fun and profit](https://kmatter.net/posts/2024-06-12-optimising-butler-pt2/). [Archived](https://archive.is/ztpQD)
+[^kmatter-2]: [kmatter.net \(January 7, 2024). A Year and a bit: What's happened?](https://kmatter.net/posts/2024-01-07-a-year-and-a-half/). [Archived](https://archive.is/fXfTM)
+[^cockatoo-release]: [GitHub.com \(October 24. 2024). Release 2024.10: Cockatoo Goes Public](https://github.com/AdastralGroup/Cockatoo/releases/tag/2024.10). [Archived](https://archive.is/56kss)
+[^butler-offline-diffing]: [Offline usage \(diffing & patching) - The butler manual](https://itch.io/docs/butler/offline.html). [Archived](https://archive.is/Wfo08)
+[^adastral-naming-scheme]: [GitHub.com \(October 31. 2023). The Adastral Sort-of-Technical Document \(aka The Blue Book). What's with the names?](https://github.com/AdastralGroup/adastral-docs/blob/main/bluebook.md#whats-with-the-names). [Archived](https://archive.is/tANUe)
+[^parallel-foreach]: [Microsoft Learn. Parallel.ForEach Method \(System.Threading.Tasks). "Remarks" section](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.parallel.foreach?view=net-8.0). [Archived](https://archive.is/wZKxz)
 
 [^factorio-patch1]: [SteamDB.info \(August 27. 2024). Version 1.1.110 released as stable - Factorio](https://steamdb.info/patchnotes/15397692/)
 [^factorio-patch2]: [SteamDB.info \(November 8. 2024). Version 2.0.15 released as stable - Factorio](https://steamdb.info/patchnotes/16303643/)

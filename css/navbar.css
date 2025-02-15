@@ -8,7 +8,7 @@
 
     --navbar-height-scale: 1;
 }
-@media (max-width: 527px) {
+@media (max-width: 530px) {
     .navbar {
         --navbar-height-scale: 1.8;
     }

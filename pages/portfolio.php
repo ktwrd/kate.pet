@@ -36,6 +36,17 @@ $data_raw = array(
     ],
     [
         'icons' => [
+            ['csharp-logo', 'csharp-logo.svg']
+        ],
+        'name' => 'kasta',
+        'display_name' => 'Kasta',
+        'links' => [
+            ['git', 'https://github.com/ktwrd/Kasta']
+        ],
+        'header-sm' => 'Nov 2024 - Current'
+    ],
+    [
+        'icons' => [
             ['csharp-logo', 'csharp-logo.svg'],
         ],
         'name' => 'xenia-bot',

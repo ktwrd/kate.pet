@@ -1,5 +1,5 @@
             </div>
         </main>
+        <script>hljs.highlightAll();</script>
     </body>
-    <script>hljs.highlightAll();</script>
 </html>

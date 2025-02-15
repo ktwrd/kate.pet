@@ -40,7 +40,7 @@
             placement: 'bottom',
             title: 'Created for Open Fortress'
         });
-        $('.card#cockatoo [alt=adastral-logo]').tooltip({
+        $('[alt=adastral-logo]').tooltip({
             placement: 'bottom',
             title: 'Developed in collaboration with Adastral Group'
         });

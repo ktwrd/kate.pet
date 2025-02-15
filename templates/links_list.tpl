@@ -1,36 +1,51 @@
 {include file="header.tpl" title="kate's homepage - links" description="links to all of my stuff"}
 
 <h1 class="italic">Links</h1>
-<div class="row">
-    <div class="cols-auto pl-1">
-        {foreach $pageLinks as $link}
-            <div class="row">
-                <div class="col-auto" style="font-size: 2rem;">
-                {if isset($link['short'])}
-                    <a href="/l/{$link['short']}" style="font-size: 2rem">{$link['label']}</a>
-                {elseif isset($link['link'])}
-                    <a href="{$link['link']}" style="font-size: 2rem">{$link['label']}</a>
-                {else}
-                    {$link['label']}
-                {/if}
-                </div>
-                {if isset($link['text'])}
-                    <div class="col-auto">
-                        <code class="codething">{$link['text']}</code>
-                    </div>
-                {/if}
+<p>
+<i>just a collection of all my links to my active social media pages & projects</i>
+</p>
+
+<div class="row d-flex flex-row">
+{foreach $data as $group}
+    <div class="m-1 col-auto">
+        <div class="card card-classic" id="{$group['id']}">
+            <div class="card-header">
+                {$group['name']}
             </div>
-        {/foreach}
+            <div class="card-body">
+                <table>
+                    {foreach $group['items'] as $item}
+                        <tr>
+                        {if isset($item['link'])}
+                            {if isset($item['link_txt'])}
+                                <td>{$item['name']}</td>
+                                <td><a href="/l/{$item['id']}">{$item['link_txt']}</a></td>
+                            {else}
+                                <td colspan="2"><a href="/l/{$item['id']}">{$item['name']}</a></td>
+                            {/if}
+                        {elseif isset($item['txt'])}
+                            <td>{$item['name']}</td>
+                            <td><code>{$item['txt']}</code></td>
+                        {/if}
+                        </tr>
+                    {/foreach}
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="col"></div>
+{/foreach}
 </div>
+
 <style>
-.codething {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin-top: 0.25rem;
-    /* margin-bottom: 0.5rem; */
-    display: block;
+h1 {
+    margin: 0;
+    margin-left: 1rem;
+}
+p {
+    margin: 0;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 </style>
 

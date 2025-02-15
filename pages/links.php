@@ -34,10 +34,10 @@ $linkData = array(
         'label' => 'Email',
         'text' => 'kate@dariox.club',
     ),
-    array(
-        'label' => 'XMPP',
-        'text' => 'kate@redfur.cloud'
-    ),
+    // array(
+    //     'label' => 'XMPP',
+    //     'text' => 'kate@redfur.cloud'
+    // ),
     array(
         'label' => 'Pronouns',
         'link' => 'https://en.pronouns.page/@seedvevo',

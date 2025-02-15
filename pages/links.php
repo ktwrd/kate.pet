@@ -125,7 +125,7 @@ if (isset($_REQUEST['i']))
                 continue;
             }
             if (isset($linkItem['link']) && isset($linkItem['id'])) {
-                if ($linkItem[id] == $_REQUEST['i']) {
+                if ($linkItem['id'] == $_REQUEST['i']) {
                     header('Location: ' . $linkItem['link']);
                     $found = 1;
                 } else {

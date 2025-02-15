@@ -6,7 +6,13 @@ $generate_blog_post = array(
     'created_at' => mktime(14, 19, 11, 01, 22, 2025),
     'hide_state' => 0,
     'tags' => array('Development','Announcement'),
-    'embed_image' => '/img/blog/firefox_1506_K10H17LkIG.png'
+    'embed_image' => '/img/blog/firefox_1506_K10H17LkIG.png',
+    'comment_cfg' => array(
+        'system' => 'utterances',
+        'issue_number' => '2',
+        'repo' => 'ktwrd/kate.pet',
+        'label' => 'comment section - blog post'
+    )
 );  
 
 ?>

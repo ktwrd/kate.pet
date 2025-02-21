@@ -3,12 +3,12 @@
     <ul>
         {foreach $eightButtons as $btn}
             <li>
-                {if isset($btn[1])}
-                    <a href="{$btn[1]}" class="eight-img">
-                        <img src="{$btn[0]}" height="31" />
+                {if isset($btn[3])}
+                    <a href="{$btn[3]}" class="eight-img">
+                        <img src="{$btn[2]}" width="{$btn[0]}" height="{$btn[1]}" />
                     </a>
                 {else}
-                    <img class="eight-img" src="{$btn[0]}" />
+                    <img class="eight-img" src="{$btn[2]}" width="{$btn[0]}" height="{$btn[1]}" />
                 {/if}
             </li>
         {/foreach}

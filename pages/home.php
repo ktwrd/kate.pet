@@ -2,29 +2,29 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include.php');
 
 $smarty->assign('eightButtons', array(
-    ['https://res.kate.pet/88x31/casey.png', 'https://casey.pet'],
-    ['https://res.kate.pet/88x31/emma.gif', 'https://heckscaper.com'],
-    ['https://res.kate.pet/88x31/exopet_newbutton.gif', 'https://exo.pet'],
-    ['https://res.kate.pet/88x31/lapfoxgrad.gif', 'https://halleylabs.com'],
-    ['https://res.kate.pet/88x31/niku.png', 'https://nikutrax.neocities.org'],
-    ['https://88x31.kate.pet/niv-banner.gif', 'https://niv.gay/'],
-    ['https://res.kate.pet/88x31/sanya.png', 'https://sanya.gay'],
-    ['https://res.kate.pet/88x31/flag-trans.png'],
-    ['https://res.kate.pet/88x31/flag-pan.png'],
-    ['https://res.kate.pet/88x31/roly-saynotoweb3.gif', 'https://yesterweb.org/no-to-web3/'],
-    ['https://res.kate.pet/88x31/therian.png', 'https://otherkin.fandom.com/wiki/Therians'],
-    ['https://88x31.kate.pet/redhat.gif'],
-    ['https://res.kate.pet/88x31/CGG_big.gif', 'https://kernel.org'],
-    ['https://res.kate.pet/88x31/vscode.gif', 'https://code.visualstudio.com'],
-    ['https://88x31.kate.pet/php.gif', 'https://php.net']
+    [88, 31, 'https://res.kate.pet/88x31/casey.png', 'https://casey.pet',],
+    [88, 31, 'https://res.kate.pet/88x31/emma.gif', 'https://heckscaper.com'],
+    [88, 31, 'https://res.kate.pet/88x31/exopet_newbutton.gif', 'https://exo.pet'],
+    [88, 31, 'https://res.kate.pet/88x31/lapfoxgrad.gif', 'https://halleylabs.com'],
+    [88, 31, 'https://res.kate.pet/88x31/niku.png', 'https://nikutrax.neocities.org'],
+    [88, 31, 'https://88x31.kate.pet/niv-banner.gif', 'https://niv.gay/'],
+    [88, 31, 'https://res.kate.pet/88x31/sanya.png', 'https://sanya.gay'],
+    [88, 31, 'https://res.kate.pet/88x31/flag-trans.png'],
+    [88, 31, 'https://res.kate.pet/88x31/flag-pan.png'],
+    [88, 31, 'https://res.kate.pet/88x31/roly-saynotoweb3.gif', 'https://yesterweb.org/no-to-web3/'],
+    [88, 31, 'https://res.kate.pet/88x31/therian.png', 'https://otherkin.fandom.com/wiki/Therians'],
+    [88, 31, 'https://88x31.kate.pet/redhat.gif'],
+    [120, 31, 'https://res.kate.pet/88x31/CGG_big.gif', 'https://kernel.org'],
+    [88, 31, 'https://res.kate.pet/88x31/vscode.gif', 'https://code.visualstudio.com'],
+    [88, 31, 'https://88x31.kate.pet/php.gif', 'https://php.net']
 ));
 $headerImages = array(
-    'this-user-likes-to-awoo.png',
-    'ioletsgo1.png',
-    'cathodegaytube-splash.png',
-    'sky.png',
-    'stormynights.png',
-    'neurodivergent.png'
+    ['this-user-likes-to-awoo.png', 239, 49],
+    ['ioletsgo1.png', 978, 1036],
+    ['cathodegaytube-splash.png', 524, 700],
+    ['sky.png', 239, 49],
+    ['stormynights.png', 240, 55],
+    ['neurodivergent.png', 240, 47]
 );
 
 $smarty->assign('redirectLinks', array(

@@ -14,7 +14,7 @@
     </ul>
 </div>
 <a href="https://kate.pet" class="eight-img">
-    <img src="/button02.gif" style="margin-top: 1rem;" />
+    <img src="/button02.gif" style="margin-top: 1rem;" width="88" height="31" />
 </a>
 <style>
 .links a {

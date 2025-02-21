@@ -1,5 +1,5 @@
 <div class="headerImage">
-    <img src="https://res.kate.pet/image/{$image}" />
+    <img src="https://res.kate.pet/image/{$image[0]}" width="{$image[1]}" height="{$image[2]}" />
 </div>
 <style>
 .headerImage {

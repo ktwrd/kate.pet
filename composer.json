@@ -10,6 +10,7 @@
     ],
     "require": {
         "league/commonmark": "^2.4",
-        "spatie/commonmark-highlighter": "^3.0"
+        "spatie/commonmark-highlighter": "^3.0",
+        "matthiasmullie/minify": "^1.3"
     }
 }

@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="/highlight/styles/vs2015.css">
         <script src="/highlight/highlight.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/style.php" />
         <title>{$title|default:"kate's homepage"}</title>
 
         <script type="text/javascript" src="/js/old-redirect-transform.js"></script>

@@ -5,11 +5,11 @@ This news was quite shocking for a lot of us, so we all started scrambling for a
 ```text
 Hello,
 
-GitHub is meant to be used as a collaborating and hosting tool for 
-software developers. We're unable to see activity on your account 
-that inidcates that it's being used for the intended purpose. For 
-this reason we will not be removing the restrictions from this 
-account at this time.
+GitHub is meant to be used as a collaborating and hosting tool 
+for software developers. We're unable to see activity on your 
+account that indicates that it's being used for the intended 
+purpose. For this reason we will not be removing the restrictions 
+from this account at this time.
 ```
 
 After reading that, a lot of the other devs were quite shocked, since we've all been actively pushing commits, creating issues, commenting on issues, modifying issues, and using GitHub for it's intended purpose! Hell, Fraeven made commits to the sdk13-gigalib ([mirror](https://git.redfur.cloud/openfortress/sdk13-gigalib)) repository a couple of days ago.

@@ -1,0 +1,3 @@
+An Arena Shooter in the style of Team Fortress 2, running on the Source Engine.
+
+Currently assisting with shipping Open Fortress on steam (bug fixes, minor enhancements, etc...), internal tools for building game content (for steampipe builds), maintaining engine patches/detours/hooks for custom anti-cheat/QoL improvements, assisting w/ general web development, and content moderation/game support on Steam Discussions and the official Discord server.

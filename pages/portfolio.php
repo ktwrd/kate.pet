@@ -1,6 +1,16 @@
 <?php
 
 $data_raw = array(
+    [
+        'icons' => [
+            ['openfortress-logo', 'openfortress-logo.png'],
+            ['cpp-logo', 'cpp-logo.svg']
+        ],
+        'name' => 'open-fortress',
+        'display_name' => 'Open Fortress',
+        'links' => [['website', 'https://openfortress.fun']],
+        'header-sm' => 'May 2024 - Current'
+    ],
     array(
         'icons' => array(
             array('openfortress-logo', 'openfortress-logo.png'),

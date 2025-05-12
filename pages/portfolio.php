@@ -8,7 +8,10 @@ $data_raw = array(
         ],
         'name' => 'open-fortress',
         'display_name' => 'Open Fortress',
-        'links' => [['website', 'https://openfortress.fun']],
+        'links' => [
+            ['website', 'https://openfortress.fun'],
+            ['steam', 'https://store.steampowered.com/app/3561320/Open_Fortress/']
+        ],
         'header-sm' => 'May 2024 - Current'
     ],
     array(

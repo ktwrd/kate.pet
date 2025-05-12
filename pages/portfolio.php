@@ -32,7 +32,8 @@ $data_raw = array(
         'links' => [
             ['git', 'https://github.com/AdastralGroup/Cockatoo']
         ],
-        'header-sm' => 'June 2024 - Current'
+        'header-sm' => 'June 2024 - Feb 2025',
+        'archived' => 1
     ],
     [
         'icons' => [
@@ -63,7 +64,8 @@ $data_raw = array(
         'name' => 'northam',
         'display_name' => 'Northam',
         'links' => [],
-        'header-sm' => 'Sep 2024 - Current'
+        'header-sm' => 'Sep 2024 - Feb 2025',
+        'archived' => 1
     ],
     [
         'icons' => [
@@ -106,7 +108,8 @@ $data_raw = array(
         ],
         'name' => 'ekls-drm',
         'display_name' => 'Custom DRM and Copy Protection',
-        'header-sm' => 'May 2023 - Aug 2023'
+        'header-sm' => 'May 2023 - Aug 2023',
+        'archived' => 1
     ],
     [
         'icons' => [
@@ -120,7 +123,8 @@ $data_raw = array(
             ['website', 'https://sixgrid.kate.pet'],
             ['git', 'https://github.com/SixGrid']
         ],
-        'header-sm' => 'Dec 2020 - Current'
+        'header-sm' => 'Dec 2020 - Apr 2024',
+        'archived' => 1
     ],
     [
         'icons' => [
@@ -130,7 +134,8 @@ $data_raw = array(
         'links' => [
             ['website', 'https://88x31.kate.pet']
         ],
-        'header-sm' => 'Aug 2022 - Current'
+        'header-sm' => 'Aug 2022 - Current',
+        'archived' => 1
     ],
     [
         'icons' => [
@@ -142,7 +147,8 @@ $data_raw = array(
         'links' => [
             ['see', 'https://old.kate.pet']
         ],
-        'header-sm' => 'Jan 2022 - Nov 2023'
+        'header-sm' => 'Jan 2022 - Nov 2023',
+        'archived' => 1
     ],
     [
         'icons' => [
@@ -153,9 +159,11 @@ $data_raw = array(
         'links' => [
             ['git', 'https://github.com/ktwrd/OpenSoftwareLauncher']
         ],
-        'header-sm' => 'Sep 2022 - Jan 2023'
+        'header-sm' => 'Sep 2022 - Jan 2023',
+        'archived' => 1
     ]
 );
+
 $data = array();
 foreach ($data_raw as $d)
 {
@@ -174,6 +182,9 @@ foreach ($data_raw as $d)
     if (!isset($d['header-sm']))
     {
         $d['header-sm'] = '';
+    }
+    if (!isset($d['archived'])) {
+        $d['archived'] = 0;
     }
 
     $post_name_brackets = array();

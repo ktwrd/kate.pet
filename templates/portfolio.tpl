@@ -9,6 +9,7 @@
 
 <div class="row d-flex flex-row">
     {foreach $portfolio_data as $item}
+        {if $item['archived'] == 0}
         <div class="m-1 col-auto">
             <div class="card card-classic" id="{$item['name']}">
                 <div class="card-header">
@@ -31,6 +32,39 @@
                 </div>
             </div>
         </div>
+        {/if}
+    {/foreach}
+</div>
+<br/>
+<br/>
+<hr/>
+<h3 id="inactive" >archived/inactive projects</h3>
+<div class="row d-flex flex-row">
+    {foreach $portfolio_data as $item}
+        {if $item['archived'] == 1}
+        <div class="m-1 col-auto">
+            <div class="card card-classic" id="{$item['name']}">
+                <div class="card-header">
+                    {foreach $item['icons'] as $icon}
+                        <img src="/img/{$icon[1]}" class="img-sm" alt="{$icon[0]}" />
+                    {/foreach}
+                    {if isset($item['display_name'])}
+                        {$item['display_name']}
+                    {else}
+                        {$item['name']}
+                    {/if}
+                    {if isset($item['header-sm'])}
+                        <div class="card-header-sm">
+                            {$item['header-sm']}
+                        </div>
+                    {/if}
+                </div>
+                <div class="card-body">
+                    {$item['content']}
+                </div>
+            </div>
+        </div>
+        {/if}
     {/foreach}
 </div>
 

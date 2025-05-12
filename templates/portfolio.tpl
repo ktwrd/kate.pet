@@ -74,6 +74,10 @@
             placement: 'bottom',
             title: 'Created for Open Fortress'
         });
+        $('[alt=source-engine]').tooltip({
+            placement: 'bottom',
+            title: 'Created in the Source Engine'
+        });
         $('[alt=adastral-logo]').tooltip({
             placement: 'bottom',
             title: 'Developed in collaboration with Adastral Group'

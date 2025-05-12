@@ -4,7 +4,8 @@ $data_raw = array(
     [
         'icons' => [
             ['openfortress-logo', 'openfortress-logo.png'],
-            ['cpp-logo', 'cpp-logo.svg']
+            ['cpp-logo', 'cpp-logo.svg'],
+            ['source-engine', '24px-Icon-Source.png']
         ],
         'name' => 'open-fortress',
         'display_name' => 'Open Fortress',

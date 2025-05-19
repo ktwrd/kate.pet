@@ -32,7 +32,7 @@ $linkData = array(
             ],
             [
                 'name' => '4chan',
-                'txt' => 'kate !!DI0PM78d0GV'
+                'txt' => 'kate !!VLYeqd98O/o'
             ]
         ]
     ],

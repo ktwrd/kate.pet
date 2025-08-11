@@ -5,7 +5,7 @@
 
 Our Github organization *was* restored, but all existing issues on all repositories are invisible, which is a pain in the ass. Since this incident, we've now migrated to a private Gitea instance for tracking internal issues and bugs. I would strongly recomend that you use a private Gitea instance as a backup for your Github repositories and projects.
 
-This slightly impacted our ability to work on the Steam Release for Open Fortress, but it hasn't crippled us. Infact, [a blog post was published recently](https://steamcommunity.com/gid/103582791475086610/announcements/detail/515216422280888824) about our progress so far for the Steam Release.
+This slightly impacted our ability to work on the Steam Release for Open Fortress (since we *used to* use Github for Project/Task Tracking), but it hasn't crippled us. Infact, [a blog post was published recently](https://steamcommunity.com/gid/103582791475086610/announcements/detail/515216422280888824) about our progress so far for the Steam Release.
 
 ## Blog Post
 

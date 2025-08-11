@@ -74,6 +74,10 @@
             placement: 'bottom',
             title: 'Created for Open Fortress'
         });
+        $('[alt=cpp-logo]').tooltip({
+            placement: 'bottom',
+            title: 'Uses C++'
+        });
         $('[alt=source-engine]').tooltip({
             placement: 'bottom',
             title: 'Created in the Source Engine'

@@ -92,7 +92,7 @@ $data_raw = array(
         'links' => [
             ['git', 'https://github.com/ktwrd/kate.pet']
         ],
-        'header-sm' => 'Dec 2023 - current'
+        'header-sm' => 'Dec 2023 - Current'
     ],
     [
         'icons' => [
@@ -103,11 +103,22 @@ $data_raw = array(
         'links' => [
             ['git', 'https://github.com/ktwrd/XeniaBot-Website']
         ],
-        'header-sm' => 'Jan 2024 - current'
+        'header-sm' => 'Jan 2024 - Current'
     ],
     [
         'icons' => [
-            ['rust-logo', 'rust-logo.svg'],
+            ['csharp-logo', 'csharp-logo.svg'],
+        ],
+        'name' => 'kate-shared-lib',
+        'display_name' => 'kate.shared C# Library',
+        'links' => [
+            ['git', 'https://github.com/ktwrd/csharp-kate.shared']
+        ],
+        'header-sm' => 'Jul 2022 - Current'
+    ],
+    [
+        'icons' => [
+            ['rustlang-logo', 'rustlang-logo.svg'],
             ['csharp-logo', 'csharp-logo.svg']
         ],
         'name' => 'ekls-drm',

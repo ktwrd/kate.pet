@@ -1,3 +1,14 @@
+
+## Update
+
+**11th August 2025, 11am AWST**
+
+Our Github organization *was* restored, but all existing issues on all repositories are invisible, which is a pain in the ass. Since this incident, we've now migrated to a private Gitea instance for tracking internal issues and bugs. I would strongly recomend that you use a private Gitea instance as a backup for your Github repositories and projects.
+
+This slightly impacted our ability to work on the Steam Release for Open Fortress, but it hasn't crippled us. Infact, [a blog post was published recently](https://steamcommunity.com/gid/103582791475086610/announcements/detail/515216422280888824) about our progress so far for the Steam Release.
+
+## Blog Post
+
 This morning at 11:32am AWST (UTC+08:00), [Fraeven](https://bsky.app/profile/fraeven.dev) (one of the Open Fortress) developers, pinged myself and [Elliot](https://bsky.app/profile/elliotskeleton.bsky.social) (one of the project leads) asking if we can access the Open Fortress GitHub. I could, Elliot could not. At that point, we had no idea what had happened, except that for no reason, some of our developers has their accounts suspended.
 
 This news was quite shocking for a lot of us, so we all started scrambling for answers. After checking each member in the organization, all but one owner of the organization has their GitHub account suspended. This also included 2 other notable OF Team members, [Stachekip](https://bsky.app/profile/stachekip.bsky.social) and [Kay](https://bsky.app/profile/kaydemonlp.bsky.social). The reason that GitHub gave the affected accounts was the following:

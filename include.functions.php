@@ -26,7 +26,6 @@ function displayBlogPostToUser($post)
 function show_not_found($smarty) {
     $pagesAvailable = array(
         '404/1.tpl',
-        '404/1.tpl'
     );
     $chosen = array_rand($pagesAvailable, 1);
     $smarty->display($pagesAvailable[$chosen]);
@@ -36,35 +35,30 @@ function generate_navbar_data() {
     $data = array(
         array(
             'link' => '/',
-            'img' => '/img/btn-home.png',
             'alt' => 'homepage',
             'pagename' => 'home',
             'icon_url' => '/img/icon_home_32x.png'
         ),
         array(
             'link' => '/p/portfolio',
-            'img' => '/img/btn-portfolio.png',
             'alt' => 'portfolio',
             'pagename' => 'portfolio',
             'icon_url' => '/img/icon_portfolio_32x.png'
         ),
         array(
             'link' => '/p/links',
-            'img' => '/img/btn-links.png',
             'alt' => 'various links',
             'pagename' => 'links',
             'icon_url' => '/img/icon_links_32x.png'
         ),
         array(
             'link' => '/p/blog',
-            'img' => '/img/btn-blog.png',
             'alt' => 'blog',
             'pagename' => 'blog',
             'icon_url' => '/img/icon_blog_32x.png'
         ),
         array(
             'link' => '/p/since',
-            'img' => '/img/btn-since.png',
             'alt' => 'time since',
             'pagename' => 'since',
             'icon_url' => '/img/icon_since_32x.png'

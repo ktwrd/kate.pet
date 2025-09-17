@@ -12,6 +12,9 @@
     display: -webkit-box !important;
     display: flex !important;
 }
+.justify-content-center {
+    justify-content: center !important;
+}
 .row {
     display: -ms-flexbox;
     display: -webkit-box;

@@ -3,3 +3,4 @@ composer.phar
 /vendor/
 nginx.current.conf
 .env
+nginx.local.conf

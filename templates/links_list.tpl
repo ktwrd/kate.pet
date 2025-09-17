@@ -5,7 +5,7 @@
 <i>just a collection of all my links to my active social media pages & projects</i>
 </p>
 
-<div class="row d-flex flex-row">
+<div class="row d-flex flex-row justify-content-center">
 {foreach $data as $group}
     <div class="m-1 col-auto">
         <div class="card card-classic" id="{$group['id']}">

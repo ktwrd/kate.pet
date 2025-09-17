@@ -6,3 +6,9 @@
 <meta property="og:description" content="page not found ;w;" />
 <meta property="og:title" content="kate's homepage" />
 <meta property="og:type" content="website" />
+<style>
+body {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+</style>

@@ -46,9 +46,9 @@ $linkData = array(
                 'link' => 'https://github.com/ktwrd'
             ],
             [
-                'name' => 'Gitlab',
-                'id' => 'gitlab',
-                'link' => 'https://gitlab.com/ktwrd'
+                'name' => 'Gitea',
+                'id' => 'gitea',
+                'link' => 'https://git.redfur.cloud/kate'
             ]
         ]
     ],
@@ -62,14 +62,9 @@ $linkData = array(
                 'link' => 'https://xenia.kate.pet'
             ],
             [
-                'name' => 'Uptime',
-                'id' => 'uptime',
-                'link' => 'https://uptime.dxcdn.net/status/kate'
-            ],
-            [
-                'name' => 'Sixgrid',
-                'id' => 'sixgrid',
-                'link' => 'https://sixgrid.kate.pet'
+                'name' => 'Kasta',
+                'id' => 'kasta',
+                'link' => 'https://github.com/ktwrd/Kasta'
             ]
         ]
     ],
@@ -97,11 +92,6 @@ $linkData = array(
                 'id' => 'discord',
                 'link' => 'https://discord.gg/PMrqTQPZFE'
             ],
-            // [
-            //     'name' => 'Pronouns',
-            //     'id' => 'pronouns',
-            //     'link' => 'https://en.pronouns.page/@seedvevo'
-            // ],
             [
                 'name' => 'Email',
                 'id' => 'email',

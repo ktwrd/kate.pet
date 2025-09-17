@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 
-if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == 'beta.kate.pet') {
+if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == 'beta.kate.pet' || $_SERVER['SERVER_NAME'] == 'local.kate.pet') {
     ini_set('display_errors', '1');
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
@@ -61,8 +61,7 @@ try
                 }
                 else
                 {
-                    show_not_found($smarty);
-                    // $smarty->display("not_found.tpl");
+                    return;
                 }
             }
             else
@@ -78,6 +77,7 @@ try
     else
     {
         show_not_found($smarty);
+        return;
         // $smarty->display("not_found.tpl");
     }
 }

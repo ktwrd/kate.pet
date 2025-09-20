@@ -29,7 +29,7 @@ foreach ($blogPosts as $post)
         array_push($dateArray, $post['updated_at']);
     }
 }
-rsort($dateArray);
+rsort($dateArray, SORT_NUMERIC);
 echo date(DateTime::RFC822, $dateArray[0]);
 ?></lastBuildDate>
         <atom:link href="https://kate.pet/blog.atom" rel="self" type="application/rss+xml" />

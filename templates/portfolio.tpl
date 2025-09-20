@@ -7,9 +7,15 @@
 <h1 class="italic">portfolio</h1>
 <strong>note:</strong> this <i>isn't a full/complete list</i> of all projects i've contributed to, it's a truncated list of the things i'm actually proud of.<br/>
 
+{if count($unknown_tags) != 0}
+<div class='error-container'>
+    <strong>missing tags:</strong> {join(', ', $unknown_tags)}
+</div>
+{/if}
+
 {foreach $sections as $k => $section}
 {if $section['archived_items_count'] != count($section['items'])}
-{include file="portfolio_section.tpl" group=$section}
+{include file="portfolio_section.tpl" group=$section dsTags=$data_tags}
 {if $k != count($sections)}
 <hr/>
 {/if}
@@ -22,7 +28,7 @@
     <hr/>
     {foreach $sections as $k => $section}
         {if $section['archived_items_count'] == count($section['items'])}
-            {include file="portfolio_section.tpl" group=$section}
+            {include file="portfolio_section.tpl" group=$section dsTags=$data_tags}
             {if $k < (count($sections) - 1)}<hr/>{/if}
         {/if}
     {/foreach}

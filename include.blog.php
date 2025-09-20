@@ -17,7 +17,7 @@ function retrieveBlogPost($postId)
             $res = $generate_blog_post;
             $post['internal_warnings'] = array();
             $post['internal_errors'] = array();
-            $post['text'] = formatMarkdown(file_get_contents(K_WEB_ROOT. "/blog_posts/$postId.md"));
+            $post['text'] = formatMarkdown(file_get_contents(K_WEB_ROOT. "/blog_posts/$postId.md"), MDF_DEFAULT | MDF_EXT_TOC);
             $post['subject'] = $res['subject'];
             $post['description'] = isset($res['description']) ? $res['description'] : "";
             $post['created_at'] = $res['created_at'];

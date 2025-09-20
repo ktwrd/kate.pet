@@ -1,4 +1,4 @@
-Version and Release Management for [Adastral](https://adastral.net). In-use for generating patches, and releases for (currently) Source Engine Mods. Is also used for the management of brandings
+Version and Release Management for [Adastral](https://adastral.net). In-use for generating patches, and releases for (currently) Source Engine Mods. Is also used for the management of branding
 for usage in the [Adastral Launcher](https://github.com/AdastralGroup/osprey).
 
 Uses MongoDB, Bootstrap, C# ASP.NET Core MVC, HTMX, and OAuth2/LDAP Authentication.

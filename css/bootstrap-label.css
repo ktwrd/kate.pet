@@ -28,6 +28,10 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
+.label.label-lg {
+  padding: 4px 8px;
+  font-size: 14px;
+}
 .label[href],
 .badge[href] {
     background-color: #808080;

@@ -1,0 +1,12 @@
+{
+    "spellright.language": [],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "cSpell.words": [
+        "Minalyze",
+        "steampipe"
+    ]
+}

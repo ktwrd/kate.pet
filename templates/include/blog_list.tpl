@@ -23,6 +23,9 @@
 {/if}
 <div class="blog-list-cards no-anim">
     {foreach $postArray as $post}
+        {if !isset($post) || !isset($post['id']) || !isset($post['subject'])}
+            {continue}
+        {/if}
         {if isset($filterTag) && !doesPostHaveTag($post, $filterTag)}
             {if !doesPostHaveTag($post, $filterTag)}
                 {continue}
@@ -32,10 +35,12 @@
             <article class="blog-card__box block no-anim">
                 <h1>
                     <a href="/blog/{$post['id']}">{$post['subject']}</a>
-                    {if isNewBlogPost($post)} <img src="https://res.kate.pet/icons/fuge-3.5.6/icons/new-text.png" /> {/if}
+                    {if isNewBlogPost($post)} <img src="img/icon-new-text.png" /> {/if}
                 </h1>
                 <div class="entry-content">
+                    {if isset($post['description'])}
                     {$post['description']}
+                    {/if}
                 </div>
                 <div class="entry-meta tar" style="display: block">
                     {if isset($post['created_at_f'])}

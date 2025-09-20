@@ -9,7 +9,11 @@ $data_personal = array(
         'links' => [
             ['git', 'https://github.com/ktwrd/rustgrab']
         ],
-        'header-sm' => 'May 2024 - Current'
+        'header-sm' => 'May 2024 - Current',
+        'tags' => [
+            'rust',
+            'fltk'
+        ]
     ],
     [
         'icons' => [
@@ -20,7 +24,15 @@ $data_personal = array(
         'links' => [
             ['git', 'https://github.com/ktwrd/Kasta']
         ],
-        'header-sm' => 'Nov 2024 - Current'
+        'header-sm' => 'Nov 2024 - Current',
+        'tags' => [
+            'csharp',
+            'docker',
+            'asp.net core',
+            'asp.net mvc',
+            'redis',
+            'asp.net identity'
+        ]
     ],
     [
         'icons' => [
@@ -32,7 +44,14 @@ $data_personal = array(
             ['website', 'https://xenia.kate.pet'],
             ['git', 'https://github.com/ktwrd/xeniabot']
         ],
-        'header-sm' => 'Jan 2023 - Current'
+        'header-sm' => 'Jan 2023 - Current',
+        'tags' => [
+            'csharp',
+            'mongodb',
+            'docker',
+            'asp.net core',
+            'asp.net mvc',
+        ]
     ],
     [
         'icons' => [
@@ -43,7 +62,10 @@ $data_personal = array(
         'links' => [
             ['git', 'https://github.com/ktwrd/kate.pet']
         ],
-        'header-sm' => 'Dec 2023 - Current'
+        'header-sm' => 'Dec 2023 - Current',
+        'tags' => [
+            'php'
+        ]
     ],
     [
         'icons' => [
@@ -54,7 +76,10 @@ $data_personal = array(
         'links' => [
             ['git', 'https://github.com/ktwrd/XeniaBot-Website']
         ],
-        'header-sm' => 'Jan 2024 - Current'
+        'header-sm' => 'Jan 2024 - Current',
+        'tags' => [
+            'php'
+        ]
     ],
     [
         'icons' => [
@@ -65,7 +90,10 @@ $data_personal = array(
         'links' => [
             ['git', 'https://github.com/ktwrd/csharp-kate.shared']
         ],
-        'header-sm' => 'Jul 2022 - Current'
+        'header-sm' => 'Jul 2022 - Current',
+        'tags' => [
+            'csharp'
+        ]
     ],
     [
         'icons' => [
@@ -80,7 +108,12 @@ $data_personal = array(
             ['git', 'https://github.com/SixGrid']
         ],
         'header-sm' => 'Dec 2020 - Apr 2024',
-        'archived' => 1
+        'archived' => 1,
+        'tags' => [
+            'javascript',
+            'vue.js',
+            'electron'
+        ]
     ],
     [
         'icons' => [
@@ -91,7 +124,11 @@ $data_personal = array(
             ['website', 'https://88x31.kate.pet']
         ],
         'header-sm' => 'Aug 2022 - Current',
-        'archived' => 1
+        'archived' => 1,
+        'tags' => [
+            'javascript',
+            'deno'
+        ]
     ],
     [
         'icons' => [
@@ -104,7 +141,11 @@ $data_personal = array(
             ['see', 'https://old.kate.pet']
         ],
         'header-sm' => 'Jan 2022 - Nov 2023',
-        'archived' => 1
+        'archived' => 1,
+        'tags' => [
+            'javascript',
+            'vue.js'
+        ]
     ],
 );
 
@@ -117,7 +158,13 @@ $data_work = array(
         'name' => 'ekls-drm',
         'display_name' => 'Custom DRM and Copy Protection',
         'header-sm' => 'May 2023 - Aug 2023',
-        'archived' => 1
+        'archived' => 1,
+        'tags' => [
+            'csharp',
+            'filemaker',
+            'rust',
+            'dotnet-aot'
+        ]
     ],
     [
         'icons' => [
@@ -129,7 +176,14 @@ $data_work = array(
             ['git', 'https://github.com/ktwrd/OpenSoftwareLauncher']
         ],
         'header-sm' => 'Sep 2022 - Jan 2023',
-        'archived' => 1
+        'archived' => 1,
+        'tags' => [
+            'csharp',
+            'asp.net core',
+            'asp.net web api',
+            'mongodb',
+            'winforms'
+        ]
     ]
 );
 
@@ -145,7 +199,12 @@ $data_adastral = array(
             ['git', 'https://github.com/AdastralGroup/Cockatoo']
         ],
         'header-sm' => 'June 2024 - Feb 2025',
-        'archived' => 1
+        'archived' => 1,
+        'tags' => [
+            'csharp',
+            'asp.net core',
+            'mongodb'
+        ]
     ],
     [
         'icons' => [
@@ -156,7 +215,10 @@ $data_adastral = array(
         'display_name' => 'Northam',
         'links' => [],
         'header-sm' => 'Sep 2024 - Feb 2025',
-        'archived' => 1
+        'archived' => 1,
+        'tags' => [
+            'csharp'
+        ]
     ],
 );
 
@@ -173,7 +235,8 @@ $data_gpg = array(
             ['website', 'https://openfortress.fun'],
             ['steam', 'https://store.steampowered.com/app/3561320/Open_Fortress/']
         ],
-        'header-sm' => 'May 2024 - Current'
+        'header-sm' => 'May 2024 - Current',
+        'tags' => ['cpp', 'source-engine']
     ],
     [
         'icons' => [
@@ -181,7 +244,14 @@ $data_gpg = array(
         ],
         'name' => 'getpsyched-partnerapp',
         'display_name' => 'Get Psyched! Partner App',
-        'header-sm' => 'April 2025 - Current'
+        'header-sm' => 'April 2025 - Current',
+        'tags' => [
+            'asp.net identity',
+            'asp.net mvc',
+            'csharp',
+            'typescript',
+            'htmx'
+        ]
     ],
     array(
         'icons' => array(
@@ -193,6 +263,10 @@ $data_gpg = array(
             ['git', 'https://github.com/ktwrd/beans-rs']
         ),
         'header-sm' => 'May 2024 - Current',
+        'tags' => [
+            'rust',
+            'fltk'
+        ]
     ),
 );
 
@@ -218,6 +292,10 @@ function process_data_items($items) {
         if (!isset($d['archived'])) {
             $d['archived'] = 0;
         }
+        if (!isset($d['tags'])) {
+            $d['tags'] = array();
+        }
+        sort($d['tags'], SORT_NATURAL | SORT_FLAG_CASE);
 
         $post_name_brackets = array();
         if (isset($d['links']))
@@ -273,22 +351,149 @@ $data = [
     ]
 ];
 
+$dataTags = [
+    'csharp' => [
+        'id' => 'lang-csharp',
+        'name' => 'C#'
+    ],
+    'asp.net core' => [
+        'id' => 'framework-aspdotnet-core',
+        'name' => 'ASP.NET Core'
+    ],
+    'efcore' => [
+        'id' => 'lib-entityframeworkcore',
+        'name' => 'EF Core'
+    ],
+    'mongodb' => [
+        'id' => 'db-mongodb',
+        'name' => 'MongoDB'
+    ],
+    'postgres' => [
+        'id' => 'db-postgres',
+        'name' => 'PostgreSQL'
+    ],
+    'rust' => [
+        'id' => 'lang-rust',
+        'name' => 'Rust'
+    ],
+    'javascript' => [
+        'id' => 'lang-js',
+        'name' => 'JavaScript'
+    ],
+    'php' => [
+        'id' => 'lang-php',
+        'name' => 'PHP'
+    ],
+    'filemaker' => [
+        'id' => 'platform-filemaker',
+        'name' => 'FileMaker'
+    ],
+    'dotnet-aot' => [
+        'id' => 'lang-dotnet-aot',
+        'name' => '.NET AoT'
+    ],
+    'winforms' => [
+        'id' => 'framework-winforms',
+        'name' => 'WinForms'
+    ],
+    'fltk' => [
+        'id' => 'lib-fltk',
+        'name' => 'FLTK'
+    ],
+    'docker' => [
+        'id' => 'platform-docker',
+        'name' => 'Docker'
+    ],
+    'asp.net mvc' => [
+        'id' => 'framework-aspnet-mvc',
+        'name' => 'ASP.NET MVC'
+    ],
+    'redis' => [
+        'id' => 'software-redis',
+        'name' => 'Redis'
+    ],
+    'asp.net identity' => [
+        'id' => 'framework-aspnet-identity',
+        'name' => 'ASP.NET Identity'
+    ],
+    'vue.js' => [
+        'id' => 'lib-vuejs',
+        'name' => 'Vue.js'
+    ],
+    'electron' => [
+        'id' => 'platform-electron',
+        'name' => 'Electron'
+    ],
+    'deno' => [
+        'id' => 'runtime-deno',
+        'name' => 'Deno (runtime)'
+    ],
+    'asp.net web api' => [
+        'id' => 'framework-aspnet-webapi',
+        'name' => 'ASP.NET Web API'
+    ],
+    'cpp' => [
+        'id' => 'lang-cpp',
+        'name' => 'C++'
+    ],
+    'source-engine' => [
+        'id' => 'engine-valvesource',
+        'name' => 'Source Engine'
+    ],
+    'htmx' => [
+        'id' => 'lib-htmx',
+        'name' => 'HTMX'
+    ],
+    'typescript' => [
+        'id' => 'framework-typescript',
+        'name' => 'TypeScript'
+    ]
+];
+function containsTag($data, $tag) {
+    foreach ($data as $k => $_) {
+        if ($k == $tag) {
+            return true;
+        }
+    }
+    return false;
+}
+
+$unknownTags = [];
+foreach ($data as $d) {
+    foreach ($d['items'] as $i) {
+        if (isset($i['tags'])) {
+            foreach ($i['tags'] as $t) {
+                if (!containsTag($dataTags, $t) && !in_array($t, $unknownTags)) {
+                    array_push($unknownTags, $t);
+                }
+            }
+        }
+    }
+}
+
 $require_archive_section = 0;
 foreach ($data as $k => $d) {
     if (isset($d['description'])) {
         $data[$k]['description'] = formatMarkdown($d['description']);
-        $archived_item_count = 0;
-        foreach ($d['items'] as $i) {
-            if ($i['archived'] == 1) {
-                $archived_item_count++;
-            }
+    }
+
+    if (!isset($d['items'])) {
+        $data[$k]['items'] = [];
+    }
+
+    $archived_item_count = 0;
+    foreach ($d['items'] as $i) {
+        if ($i['archived'] == 1) {
+            $archived_item_count++;
         }
-        $data[$k]['archived_items_count'] = $archived_item_count;
-        if ($data[$k]['archived_items_count'] == count($d['items'])) {
-            $require_archive_section = 1;
-        }
+    }
+    $data[$k]['archived_items_count'] = $archived_item_count;
+    if ($data[$k]['archived_items_count'] == count($d['items'])) {
+        $require_archive_section = 1;
     }
 }
 
 $smarty->assign('sections', $data);
 $smarty->assign('require_archive_section', $require_archive_section);
+$smarty->assign('data_tags', $dataTags);
+$smarty->assign('unknown_tags', $unknownTags);

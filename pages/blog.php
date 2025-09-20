@@ -4,8 +4,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/include.php');
 $defaultTitle = "kate's blog";
 $defaultDescription = "sometimes rambles, sometimes important updates. you'll never know!";
 
+$filterTag = NULL;
 if (isset($_REQUEST['tag'])) {
-    $smarty->assign('filterTag', $_REQUEST['tag']);
+    $filterTag = strtolower($_REQUEST['tag']);
+    $smarty->assign('filterTag', $filterTag);
 } else {
     $smarty->assign('filterTag', NULL);
 }
@@ -64,7 +66,16 @@ if (isset($_REQUEST['i']))
 else
 {
     $showPostListing = True;
-    $postArray = getAllBlogPosts();
+    $postArray = [];
+    foreach (getAllBlogPosts() as $post) {
+        if (isset($filterTag) && !doesPostHaveTag($post, $filterTag)) {
+            continue;
+        }
+        if (isNewBlogPost($post)) {
+            $post['_new'] = true;
+        }
+        array_push($postArray, $post);
+    }
     $postTagArray = array();
     foreach ($postArray as $p) {
         foreach ($p['tags'] as $t) {
@@ -72,6 +83,9 @@ else
         }
     }
     $postTagArray = array_unique($postTagArray);
+    foreach ($postTagArray as $k => $p) {
+        $postTagArray[$k] = [$p, strtolower($p)];
+    }
     $smarty->assign('postTagArray', $postTagArray);
     $smarty->assign('postArray', $postArray);
     $smarty->assign('title', $defaultTitle);
@@ -80,4 +94,3 @@ else
 
 $smarty->assign('postHideState', $postHideState);
 $smarty->assign('showPostListing', $showPostListing);
-?>

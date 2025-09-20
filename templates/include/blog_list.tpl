@@ -9,33 +9,32 @@
     <div class="d-inline">
         <strong>Tags:</strong>
         {foreach $postTagArray as $tag}
-            {if isset($filterTag) && strtolower($filterTag) == strtolower($tag)}
-                <a class="label label-info" href="/p/blog?tag={strtolower($tag)}" style="font-weight: bold;">{$tag}</a>
+            {if $filterTag === $tag[1]}
+                <a class="label label-info" href="/p/blog?tag={$tag[1]}" style="font-weight: bold;">{$tag[0]}</a>
             {else}
-                <a class="label" href="/p/blog?tag={strtolower($tag)}">{$tag}</a>
+                <a class="label" href="/p/blog?tag={$tag[1]}">{$tag[0]}</a>
             {/if}
         {/foreach}
         {if isset($filterTag)}
             <br/>
             <a href="/p/blog">deselect tag</a>
+        {else}
+            <br/>
+            <br/>
         {/if}
     </div>
 {/if}
+<div class="label label-primary">{count($postArray)} blog post{if count($postArray) != 1}s{/if}</div>
 <div class="blog-list-cards no-anim">
     {foreach $postArray as $post}
         {if !isset($post) || !isset($post['id']) || !isset($post['subject'])}
             {continue}
         {/if}
-        {if isset($filterTag) && !doesPostHaveTag($post, $filterTag)}
-            {if !doesPostHaveTag($post, $filterTag)}
-                {continue}
-            {/if}
-        {/if}
         <div class="blog-card blog-card--2col no-anim">
             <article class="blog-card__box block no-anim">
                 <h1>
                     <a href="/blog/{$post['id']}">{$post['subject']}</a>
-                    {if isNewBlogPost($post)} <img src="img/icon-new-text.png" /> {/if}
+                    {if isset($post['_new'])} <img src="img/icon-new-text.png" /> {/if}
                 </h1>
                 <div class="entry-content">
                     {if isset($post['description'])}
@@ -53,7 +52,7 @@
                         <div class="blog-listing__item-tags">
                             Tags
                             {foreach $post['tags'] as $t}
-                                <a class="label" href="/p/blog?tag={strtolower($t)}">{$t}</a>
+                                <a class="label" href="/p/blog?tag={lower($t)}">{$t}</a>
                             {/foreach}
                         </div>
                     {/if}

@@ -1,0 +1,431 @@
+{
+    "items": [
+        {
+            "id": "open-fortress",
+            "name": "Open Fortress",
+            "links": {
+                "website": "https://openfortress.fun",
+                "steam": "https://store.steampowered.com/app/3561320/Open_Fortress/"
+            },
+            "active": ["2025/05", null],
+            "icons": ["openfortress", "cpp-logo", "source-engine"],
+            "tags": [
+                "lang-cpp",
+                "gameengine-sourceengine"
+            ]
+        },
+        {
+            "id": "getpsyched-partnerapp",
+            "name": "Get Psyched! Partner App",
+            "active": ["2025/04", null],
+            "icons": [ "csharp-logo" ],
+            "tags": [
+                "framework-aspnet-identity",
+                "framework-aspnet-mvc",
+                "lang-csharp",
+                "lang-typescript",
+                "lib-htmx",
+                "db-postgres"
+            ]
+        },
+        {
+            "id": "beans-rs",
+            "name": "beans.rs",
+            "links": {
+                "github": "https://github.com/ktwrd/beans-rs"
+            },
+            "active": ["2025/05", null],
+            "icons": ["rustlang-logo", "openfortress"],
+            "tags": [
+                "lang-rust",
+                "lib-fltk"
+            ]
+        },
+
+        {
+            "id": "cockatoo",
+            "name": "Cockatoo",
+            "links": {
+                "git": "https://github.com/BlueBoxTeam/Cockatoo"
+            },
+            "active": ["2024/06", "2025/02"],
+            "archived": true,
+            "icons": ["adastral-logo", "csharp-logo"],
+            "tags": [
+                "lang-csharp",
+                "framework-aspnet-mvc",
+                "framework-aspnet-webapi",
+                "db-mongodb"
+            ]
+        },
+        {
+            "id": "northam",
+            "name": "Northam",
+            "links": {
+                "git": "https://github.com/BlueBoxTeam/Cockatoo"
+            },
+            "active": ["2024/09", "2025/02"],
+            "archived": true,
+            "icons": ["adastral-logo", "csharp-logo"],
+            "tags": [
+                "lang-csharp"
+            ]
+        },
+
+        {
+            "id": "ekls-drm",
+            "name": "Custom DRM and Copy Protection",
+            "active": ["2023/05", "2023/08"],
+            "archived": true,
+            "icons": ["rustlang-logo", "csharp-logo"],
+            "tags": [
+                "lang-csharp",
+                "lang-rust",
+                "platform-filemaker",
+                "runtime-dotnet-aot"
+            ]
+        },
+        {
+            "id": "opensoftwarelauncher",
+            "name": "OpenSoftwareLauncher",
+            "active": ["2022/09", "2023/01"],
+            "archived": true,
+            "icons": ["csharp-logo"],
+            "tags": [
+                "lang-csharp",
+                "framework-aspnet-webapi",
+                "framework-winforms",
+                "db-mongodb"
+            ]
+        },
+
+        {
+            "id": "rustgrab",
+            "name": "rustgrab",
+            "links": {
+                "git": "https://github.com/ktwrd/rustgrab"
+            },
+            "active": ["2024/05", null],
+            "icons": ["rustlang-logo"],
+            "tags": [
+                "lang-rust",
+                "lib-fltk"
+            ]
+        },
+        {
+            "id": "kasta",
+            "name": "Kasta",
+            "links": {
+                "git": "https://github.com/ktwrd/Kasta"
+            },
+            "active": ["2024/11", null],
+            "icons": ["csharp-logo"],
+            "tags": [
+                "lang-csharp",
+                "platform-docker",
+                "db-postgres",
+                "framework-aspnet-mvc",
+                "framework-aspnet-identity",
+                "cache-redis"
+            ]
+        },
+        {
+            "id": "xenia-bot",
+            "name": "Xenia Bot",
+            "links": {
+                "website": "https://xenia.kate.pet",
+                "git": "https://github.com/ktwrd/xeniabot"
+            },
+            "active": ["2023/01", null],
+            "icons": ["csharp-logo"],
+            "tags": [
+                "lang-csharp",
+                "db-mongodb",
+                "platform-docker",
+                "framework-aspnet-mvc"
+            ]
+        },
+        {
+            "id": "website-v2",
+            "name": "Personal Website v2",
+            "links": {
+                "git": "https://github.com/ktwrd/kate.pet/"
+            },
+            "active": ["2023/12", null],
+            "icons": ["php-logo"],
+            "tags": [
+                "lang-php"
+            ]
+        },
+        {
+            "id": "xenia-bot-website",
+            "name": "Xenia Bot Website",
+            "links": {
+                "git": "https://github.com/ktwrd/XeniaBot-Website"
+            },
+            "active": ["2024/01", null],
+            "icons": ["php-logo"],
+            "tags": [
+                "lang-php"
+            ]
+        },
+        {
+            "id": "kate-shared-lib",
+            "name": "kate.shared C# Library",
+            "links": {
+                "git": "https://github.com/ktwrd/csharp-kate.shared"
+            },
+            "active": ["2022/07", null],
+            "icons": ["csharp-logo"],
+            "tags": [
+                "lang-csharp"
+            ]
+        },
+        {
+            "id": "sixgrid",
+            "name": "SixGrid",
+            "links": {
+                "website": "https://sixgrid.kate.pet",
+                "git": "https://github.com/SixGrid"
+            },
+            "active": ["2020/12", "2024/04"],
+            "archived": true,
+            "icons": [
+                "js-logo",
+                "vue-logo",
+                "electron-logo"
+            ],
+            "tags": [
+                "lang-javascript",
+                "lib-vuejs",
+                "platform-electron"
+            ]
+        },
+        {
+            "id": "88x31",
+            "name": "88x31",
+            "links": {
+                "website": "https://88x31.kate.pet"
+            },
+            "active": ["2022/08", null],
+            "icons": ["js-logo"],
+            "tags": [
+                "lang-javascript",
+                "runtime-deno"
+            ]
+        },
+        {
+            "id": "website-v1",
+            "name": "Personal Website v1",
+            "active": ["2022/01", "2023/11"],
+            "icons": ["js-logo", "vue-logo"],
+            "tags": [
+                "lang-javascript",
+                "lib-vuejs"
+            ]
+        }
+    ],
+    "sections": [
+        {
+            "id": "personal",
+            "name": "Personal Projects",
+            "$ref_items": [
+                "kasta",
+                "rustgrab",
+                "xenia-bot",
+                "kate-shared-lib",
+                "website-v2",
+                "xenia-bot-website",
+                "88x31",
+                "website-v1",
+                "sixgrid"
+            ]
+        },
+        {
+            "id": "work",
+            "name": "Day-Job Projects",
+            "description": "Various projects I've worked on with previous (and maybe current) employers. This is not a complete list, and you can request for my résumé by [sending me an email](mailto:kate@dariox.club).",
+            "$ref_items": [
+                "ekls-drm",
+                "opensoftwarelauncher"
+            ]
+        },
+        {
+            "id": "get-psyched-games",
+            "name": "Get Psyched! Games",
+            "description": "The development team behind [Open Fortress](https://openfortress.fun).",
+            "website": "https://getpsyched.games",
+            "$ref_items": [
+                "open-fortress",
+                "getpsyched-partnerapp",
+                "beans-rs"
+            ]
+        },
+        {
+            "id": "adastral-group",
+            "name": "Adastral Group",
+            "description": "A non-profit group aiming for a unified, efficient, convenient downloading experience for sourcemods.",
+            "website": "https://adastral.net",
+            "$ref_items": [
+                "cockatoo",
+                "northam"
+            ]
+        }
+    ],
+    "tags": {
+        "lang-csharp": {
+            "type": "language",
+            "name": "C#"
+        },
+        "lang-rust": {
+            "type": "language",
+            "name": "Rust"
+        },
+        "lang-javascript": {
+            "type": "language",
+            "name": "JavaScript"
+        },
+        "lang-typescript": {
+            "type": "language",
+            "name": "TypeScript"
+        },
+        "lang-php": {
+            "type": "language",
+            "name": "PHP"
+        },
+        "lang-cpp": {
+            "type": "language",
+            "name": "C++"
+        },
+        "runtime-deno": {
+            "type": "runtime",
+            "name": "Deno (runtime)"
+        },
+        "runtime-dotnet": {
+            "type": "runtime",
+            "name": ".NET Core"
+        },
+        "runtime-dotnet-aot": {
+            "type": "runtime",
+            "name": ".NET AoT"
+        },
+
+        "db-mongodb": {
+            "type": "database",
+            "name": "MongoDB"
+        },
+        "db-postgres": {
+            "type": "database",
+            "name": "PostgreSQL"
+        },
+        "cache-redis": {
+            "type": "cache",
+            "name": "Redis"
+        },
+
+        "gameengine-sourceengine": {
+            "type": "game-engine",
+            "name": "Source Engine"
+        },
+
+
+        "platform-filemaker": {
+            "type": "platform",
+            "name": "FileMaker"
+        },
+        "platform-electron": {
+            "type": "platform",
+            "name": "Electron"
+        },
+        "platform-docker": {
+            "type": "platform",
+            "name": "Docker"
+        },
+
+        "lib-efcore": {
+            "type": "library",
+            "name": "EF Core",
+            "tooltip": "Entity Framework Core"
+        },
+        "lib-htmx": {
+            "type": "library",
+            "name": "htmx",
+            "website": "https://htmx.org"
+        },
+        "lib-vuejs": {
+            "type": "library",
+            "name": "Vue.js"
+        },
+        "lib-fltk": {
+            "type": "library",
+            "name": "FLTK"
+        },
+
+        "framework-aspnet-mvc": {
+            "type": "framework",
+            "name": "ASP.NET MVC"
+        },
+        "framework-aspnet-webapi": {
+            "type": "framework",
+            "name": "ASP.NET Web API"
+        },
+        "framework-aspnet-identity": {
+            "type": "framework",
+            "name": "ASP.NET Identity"
+        },
+        "framework-winforms": {
+            "type": "framework",
+            "name": "WinForms"
+        },
+        "framework-winforms-netcore": {
+            "type": "framework",
+            "name": "WinForms (.NET Core)"
+        },
+        "framework-winforms-netfx": {
+            "type": "framework",
+            "name": "WinForms (.NET Framework)"
+        }
+    },
+    "icons": {
+        "openfortress": {
+            "filename": "openfortress-logo.png",
+            "alt": "Open Fortress"
+        },
+        "cpp-logo": {
+            "filename": "cpp-logo.svg",
+            "alt": "C++ Logo"
+        },
+        "source-engine": {
+            "filename": "24px-Icon-Source.png",
+            "alt": "Source Engine Logo"
+        },
+        "csharp-logo": {
+            "filename": "csharp-logo.svg",
+            "alt": "C# Logo"
+        },
+        "rustlang-logo": {
+            "filename": "rustlang-logo.svg",
+            "alt": "Rust Language Logo"
+        },
+        "adastral-logo": {
+            "filename": "adastral-logo.png",
+            "alt": "Adastral Logo"
+        },
+        "php-logo": {
+            "filename": "php-logo.svg",
+            "alt": "PHP Logo"
+        },
+        "js-logo": {
+            "filename": "js-logo.svg",
+            "alt": "JavaScript Logo"
+        },
+        "vue-logo": {
+            "filename": "vue-logo.svg",
+            "alt": "Vue.js Logo"
+        },
+        "electron-logo": {
+            "filename": "electron-logo.svg",
+            "alt": "Electron Logo"
+        }
+    }
+}

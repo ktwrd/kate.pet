@@ -1,499 +1,349 @@
 <?php
 
-$data_personal = array(
-    [
-        'icons' => [
-            ['rustlang-logo', 'rustlang-logo.svg']
-        ],
-        'name' => 'rustgrab',
-        'links' => [
-            ['git', 'https://github.com/ktwrd/rustgrab']
-        ],
-        'header-sm' => 'May 2024 - Current',
-        'tags' => [
-            'rust',
-            'fltk'
-        ]
-    ],
-    [
-        'icons' => [
-            ['csharp-logo', 'csharp-logo.svg']
-        ],
-        'name' => 'kasta',
-        'display_name' => 'Kasta',
-        'links' => [
-            ['git', 'https://github.com/ktwrd/Kasta']
-        ],
-        'header-sm' => 'Nov 2024 - Current',
-        'tags' => [
-            'csharp',
-            'docker',
-            'asp.net core',
-            'asp.net mvc',
-            'redis',
-            'asp.net identity'
-        ]
-    ],
-    [
-        'icons' => [
-            ['csharp-logo', 'csharp-logo.svg'],
-        ],
-        'name' => 'xenia-bot',
-        'display_name' => 'Xenia Bot',
-        'links' => [
-            ['website', 'https://xenia.kate.pet'],
-            ['git', 'https://github.com/ktwrd/xeniabot']
-        ],
-        'header-sm' => 'Jan 2023 - Current',
-        'tags' => [
-            'csharp',
-            'mongodb',
-            'docker',
-            'asp.net core',
-            'asp.net mvc',
-        ]
-    ],
-    [
-        'icons' => [
-            ['php-logo', 'php-logo.svg']
-        ],
-        'name' => 'website-v2',
-        'display_name' => 'Personal Website v2',
-        'links' => [
-            ['git', 'https://github.com/ktwrd/kate.pet']
-        ],
-        'header-sm' => 'Dec 2023 - Current',
-        'tags' => [
-            'php'
-        ]
-    ],
-    [
-        'icons' => [
-            ['php-logo', 'php-logo.svg']
-        ],
-        'name' => 'xenia-bot-website',
-        'display_name' => 'Xenia Bot Website',
-        'links' => [
-            ['git', 'https://github.com/ktwrd/XeniaBot-Website']
-        ],
-        'header-sm' => 'Jan 2024 - Current',
-        'tags' => [
-            'php'
-        ]
-    ],
-    [
-        'icons' => [
-            ['csharp-logo', 'csharp-logo.svg'],
-        ],
-        'name' => 'kate-shared-lib',
-        'display_name' => 'kate.shared C# Library',
-        'links' => [
-            ['git', 'https://github.com/ktwrd/csharp-kate.shared']
-        ],
-        'header-sm' => 'Jul 2022 - Current',
-        'tags' => [
-            'csharp'
-        ]
-    ],
-    [
-        'icons' => [
-            ['js-logo', 'js-logo.svg'],
-            ['vue-logo', 'vue-logo.svg'],
-            ['electron-logo', 'electron-logo.svg']
-        ],
-        'name' => 'sixgrid',
-        'display_name' => 'SixGrid',
-        'links' => [
-            ['website', 'https://sixgrid.kate.pet'],
-            ['git', 'https://github.com/SixGrid']
-        ],
-        'header-sm' => 'Dec 2020 - Apr 2024',
-        'archived' => 1,
-        'tags' => [
-            'javascript',
-            'vue.js',
-            'electron'
-        ]
-    ],
-    [
-        'icons' => [
-            ['js-logo', 'js-logo.svg']
-        ],
-        'name' => '88x31',
-        'links' => [
-            ['website', 'https://88x31.kate.pet']
-        ],
-        'header-sm' => 'Aug 2022 - Current',
-        'archived' => 1,
-        'tags' => [
-            'javascript',
-            'deno'
-        ]
-    ],
-    [
-        'icons' => [
-            ['js-logo', 'js-logo.svg'],
-            ['vue-logo', 'vue-logo.svg']
-        ],
-        'name' => 'website-v1',
-        'display_name' => 'Personal Website v1',
-        'links' => [
-            ['see', 'https://old.kate.pet']
-        ],
-        'header-sm' => 'Jan 2022 - Nov 2023',
-        'archived' => 1,
-        'tags' => [
-            'javascript',
-            'vue.js'
-        ]
-    ],
-);
+class PortfolioSectionItemLink {
+    function __construct($json) {
+        $this->name = $json[0];
+        $this->url = $json[1];
+    }
 
-$data_work = array(
-    [
-        'icons' => [
-            ['rustlang-logo', 'rustlang-logo.svg'],
-            ['csharp-logo', 'csharp-logo.svg']
-        ],
-        'name' => 'ekls-drm',
-        'display_name' => 'Custom DRM and Copy Protection',
-        'header-sm' => 'May 2023 - Aug 2023',
-        'archived' => 1,
-        'tags' => [
-            'csharp',
-            'filemaker',
-            'rust',
-            'dotnet-aot'
-        ]
-    ],
-    [
-        'icons' => [
-            ['csharp-logo', 'csharp-logo.svg']
-        ],
-        'name' => 'osl',
-        'display_name' => 'OpenSoftwareLauncher',
-        'links' => [
-            ['git', 'https://github.com/ktwrd/OpenSoftwareLauncher']
-        ],
-        'header-sm' => 'Sep 2022 - Jan 2023',
-        'archived' => 1,
-        'tags' => [
-            'csharp',
-            'asp.net core',
-            'asp.net web api',
-            'mongodb',
-            'winforms'
-        ]
-    ]
-);
+    /** @var string */
+    public $name;
+    /** @var string */
+    public $url;
+}
+class PortfolioSectionItemActive {
+    function __construct($json) {
+        $this->is = isset($json) && is_array($json) && count($json) == 2;
+        $this->start = null;
+        $this->end = null;
 
-$data_adastral = array(
-    [
-        'icons' => [
-            ['adastral-logo', 'adastral-logo.png'],
-            ['csharp-logo', 'csharp-logo.svg']
-        ],
-        'name' => 'cockatoo',
-        'display_name' => 'Cockatoo',
-        'links' => [
-            ['git', 'https://github.com/AdastralGroup/Cockatoo']
-        ],
-        'header-sm' => 'June 2024 - Feb 2025',
-        'archived' => 1,
-        'tags' => [
-            'csharp',
-            'asp.net core',
-            'mongodb'
-        ]
-    ],
-    [
-        'icons' => [
-            ['adastral-logo', 'adastral-logo.png'],
-            ['csharp-logo', 'csharp-logo.svg']
-        ],
-        'name' => 'northam',
-        'display_name' => 'Northam',
-        'links' => [],
-        'header-sm' => 'Sep 2024 - Feb 2025',
-        'archived' => 1,
-        'tags' => [
-            'csharp'
-        ]
-    ],
-);
-
-$data_gpg = array(
-    [
-        'icons' => [
-            ['openfortress-logo', 'openfortress-logo.png'],
-            ['cpp-logo', 'cpp-logo.svg'],
-            ['source-engine', '24px-Icon-Source.png']
-        ],
-        'name' => 'open-fortress',
-        'display_name' => 'Open Fortress',
-        'links' => [
-            ['website', 'https://openfortress.fun'],
-            ['steam', 'https://store.steampowered.com/app/3561320/Open_Fortress/']
-        ],
-        'header-sm' => 'May 2024 - Current',
-        'tags' => ['cpp', 'source-engine']
-    ],
-    [
-        'icons' => [
-            ['csharp-logo', 'csharp-logo.svg']
-        ],
-        'name' => 'getpsyched-partnerapp',
-        'display_name' => 'Get Psyched! Partner App',
-        'header-sm' => 'April 2025 - Current',
-        'tags' => [
-            'asp.net identity',
-            'asp.net mvc',
-            'csharp',
-            'typescript',
-            'htmx'
-        ]
-    ],
-    array(
-        'icons' => array(
-            array('openfortress-logo', 'openfortress-logo.png'),
-            array('rustlang-logo', 'rustlang-logo.svg')
-        ),
-        'name' => 'beans-rs',
-        'links' => array(
-            ['git', 'https://github.com/ktwrd/beans-rs']
-        ),
-        'header-sm' => 'May 2024 - Current',
-        'tags' => [
-            'rust',
-            'fltk'
-        ]
-    ),
-);
-
-function process_data_items($items) {
-    $result = array();
-    foreach ($items as $d) {
-        $n = $d['name'];
-        $file_content = file_get_contents(K_WEB_ROOT. "/pages/portfolio/$n.md");
-        $d['content'] = formatMarkdown($file_content);
-        unset($file_content);
-        if (!isset($d['icons']))
-        {
-            $d['icons'] = array();
-        }
-        if (!isset($d['repo']))
-        {
-            $d['repo'] = '';
-        }
-        if (!isset($d['header-sm']))
-        {
-            $d['header-sm'] = '';
-        }
-        if (!isset($d['archived'])) {
-            $d['archived'] = 0;
-        }
-        if (!isset($d['tags'])) {
-            $d['tags'] = array();
-        }
-        sort($d['tags'], SORT_NATURAL | SORT_FLAG_CASE);
-
-        $post_name_brackets = array();
-        if (isset($d['links']))
-        {
-            foreach ($d['links'] as $link)
-            {
-                $a = $link[0];
-                $b = $link[1];
-                array_push($post_name_brackets, "<a href=\"$b\">$a</a>");
+        if ($this->is) {
+            $this->start = DateTimeImmutable::createFromFormat('Y/m', $json[0]);
+            if (isset($json[1]) && $json[1] != null) {
+                $this->end = DateTimeImmutable::createFromFormat('Y/m', $json[1]);
             }
         }
-        if (count($post_name_brackets) > 0)
-        {
-            $display_name = $d['name'];
-            if (isset($d['display_name']))
-            {
-                if (strlen($d['display_name']) > 0)
-                {
-                    $display_name = $d['display_name'];
+    }
+
+    /** @var bool */
+    public $is;
+
+    /**
+     * Only null when: $is == false
+     * 
+     * When displaying, only care about the year & month.
+     * @var DateTime|null
+     */
+    public $start;
+    /**
+     * When null, the project is still ongoing.
+     * @var DateTime|null
+     */
+    public $end;
+
+    /** @return bool */
+    public function canFormat() {
+        return $this->is && $this->start != null;
+    }
+
+    /** @return string */
+    public function format() {
+        if (!$this->canFormat()) return '';
+        $s = $this->start->format('Y M') . ' - ';
+        if ($this->end == null) {
+            return $s . 'Current';
+        }
+        return $s . $this->end->format('Y M');
+    }
+}
+
+class PortfolioSectionItem {
+    public function __construct($json) {
+        $this->id = $json['id'];
+        if (isset($json['name'])) {
+            $this->name = $json['name'];
+        } else {
+            $this->name = $this->id;
+        }
+
+        // parse tags
+        $this->tags = array();
+        if (isset($json['tags']) && is_array($json['tags'])) {
+            $this->tags = $json['tags'];
+            array_unique($this->tags);
+        }
+
+        // parse icons
+        $this->icons = array();
+        if (isset($json['icons']) && is_array($json['icons'])) {
+            $this->icons = $json['icons'];
+            array_unique($this->icons, SORT_REGULAR);
+        }
+
+        // parse links
+        $this->links = array();
+        if (isset($json['links']) && is_array($json['links'])) {
+            foreach ($json['links'] as $jk => $jv) {
+                array_push($this->links, new PortfolioSectionItemLink([$jk, $jv]));
+            }
+        }
+
+        if (isset($json['active']) && is_array($json['active'])) {
+            $this->active = new PortfolioSectionItemActive($json['active']);
+        } else {
+            $this->active = new PortfolioSectionItemActive(array());
+        }
+
+        $this->content = self::readContent($this->id);
+    }
+    private static function readContent($id) {
+        return formatMarkdown(
+            file_get_contents(K_WEB_ROOT. "/pages/portfolio/$id.md")
+        );
+    }
+
+    public $id;
+    public $name;
+
+    /** @var PortfolioSectionItemActive */
+    public $active;
+    /** @var string[] */
+    public $tags = [];
+    /** @var string[] */
+    public $icons = [];
+    /** @var PortfolioSectionItemLink[] */
+    public $links = [];
+    
+    public $content;
+
+
+    public function isArchived() {
+        return $this->active->is == false
+            || $this->active->end != null;
+    }
+}
+
+class PortfolioSection {
+    function __construct($json) {
+        $this->id = $json['id'];
+        $this->name = $json['name'];
+        $this->description = null;
+        $this->website = null;
+        
+        if (isset($json['description'])) {
+            $this->description = formatMarkdown($json['description']);
+        }
+        if (isset($json['website'])) {
+            $this->website = $json['website'];
+        }
+        if (isset($json['items']) && is_array($json['items'])) {
+            foreach ($json['items'] as $jsonItem) {
+                array_push($this->items, new PortfolioSectionItem($jsonItem));
+            }
+        }
+        if (isset($json['$ref_items']) && is_array($json['$ref_items'])) {
+            $this->refItemIds = $json['$ref_items'];
+        }
+    }
+
+    /** @var string */
+    public $id;
+    /** @var string */
+    public $name;
+    /** @var string|null */
+    public $description;
+    /** @var string|null */
+    public $website;
+
+    /** @var PortfolioSectionItem[] */
+    public $items = [];
+
+    /** 
+     * Array if item Ids (PortfolioSectionItem->$id) that should be included in this section.
+     * @var string[]
+     */
+    public $refItemIds = [];
+
+    /** @param string $id */
+    public function containsItemById($id) {
+        foreach ($this->items as $i) {
+            if ($i->id == $id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** @param PortfolioSectionItem[] $items */
+    public function populateFromReferences($items) {
+        foreach ($this->refItemIds as $refItemId) {
+            $found = false;
+            foreach ($items as $item) {
+                if ($found) continue;
+                if ($item->id != $refItemId) continue;
+                if (self::containsItemById($item->id)) continue;
+
+                array_push($this->items, $item);
+                $found = true;
+                // remove current item ref. easier to find out invalid references
+                $this->refItemIds = array_diff($this->refItemIds, [$refItemId]);
+            }
+        }
+    }
+
+    public function isArchived() {
+        $c = 0;
+        foreach ($this->items as $item) {
+            if ($item->isArchived()) {
+                $c += 1;
+            }
+        }
+        return $c == count($this->items);
+    }
+}
+class PortfolioIcon {
+    function __construct($json) {
+        $this->id = $json[0];
+        $this->filename = $json[1]['filename'];
+        $this->altText = null;
+        if (isset($json[1]['alt']) && strlen($json[1]['alt']) > 0) {
+            $this->altText = $json[1]['alt'];
+        }
+    }
+
+    public $id;
+    public $filename;
+    public $altText;
+    public function getUrl() {
+        return '/img/' . $this->filename; 
+    }
+    public function getAlt() {
+        if (isset($this->altText) && strlen($this->altText) > 0) {
+            return $this->altText;
+        }
+        return $this->id;
+    }
+}
+
+class PortfolioTag {
+    function __construct($json) {
+        $this->id = $json[0];
+        $this->type = $json[1]['type'];
+        $this->name = $json[1]['name'];
+        $this->website = null;
+        if (isset($json[1]['website']) && strlen($json[1]['website']) > 0) {
+            $this->website = $json[1]['website'];
+        }
+    }
+
+    /** @var string */
+    public $id;
+    /** @var string */
+    public $type;
+    /** @var string */
+    public $name;
+    /** @var string|null */
+    public $website;
+}
+
+class PortfolioData {
+    function __construct($json) {
+        $items = [];
+        if (isset($json['items']) && is_array($json['items'])) {
+            foreach ($json['items'] as $jsonItem) {
+                array_push($items, new PortfolioSectionItem($jsonItem));
+            }
+        }
+
+        if (isset($json['sections']) && is_array($json['sections'])) {
+            foreach ($json['sections'] as $jsonSection) {
+                $s = new PortfolioSection($jsonSection);
+                if (count($s->refItemIds) > 0) {
+                    $s->populateFromReferences($items);
                 }
-            }
-
-            $bracket_join = join(", ", $post_name_brackets);
-            $d['display_name'] = "$display_name ($bracket_join)";
-        }
-
-        array_push($result, $d);
-    }
-    return $result;
-}
-
-$data = [
-    [
-        'name' => 'Personal Projects',
-        'items' => process_data_items($data_personal)
-    ],
-    [
-        'name' => 'Get Psyched! Games',
-        'description' => 'The development team behind [Open Fortress](https://openfortress.fun).',
-        'website' => 'https://getpsyched.games',
-        'items' => process_data_items($data_gpg)
-    ],
-    [
-        'name' => 'Adastral Group',
-        'description' => 'Software development group initially created for developing a centralized place for updating, installing, and managing [Source Engine](https://en.wikipedia.org/wiki/Source_(game_engine)) mods.',
-        'website' => 'https://adastral.net',
-        'items' => process_data_items($data_adastral)
-    ],
-    [
-        'name' => 'Day-Job Projects',
-        'description' => 'Various projects I\'ve worked on with previous (and maybe current) employers. This is not a complete list, and you can request for my résumé by [sending me an email](mailto:kate@dariox.club).',
-        'items' => process_data_items($data_work)
-    ]
-];
-
-$dataTags = [
-    'csharp' => [
-        'id' => 'lang-csharp',
-        'name' => 'C#'
-    ],
-    'asp.net core' => [
-        'id' => 'framework-aspdotnet-core',
-        'name' => 'ASP.NET Core'
-    ],
-    'efcore' => [
-        'id' => 'lib-entityframeworkcore',
-        'name' => 'EF Core'
-    ],
-    'mongodb' => [
-        'id' => 'db-mongodb',
-        'name' => 'MongoDB'
-    ],
-    'postgres' => [
-        'id' => 'db-postgres',
-        'name' => 'PostgreSQL'
-    ],
-    'rust' => [
-        'id' => 'lang-rust',
-        'name' => 'Rust'
-    ],
-    'javascript' => [
-        'id' => 'lang-js',
-        'name' => 'JavaScript'
-    ],
-    'php' => [
-        'id' => 'lang-php',
-        'name' => 'PHP'
-    ],
-    'filemaker' => [
-        'id' => 'platform-filemaker',
-        'name' => 'FileMaker'
-    ],
-    'dotnet-aot' => [
-        'id' => 'lang-dotnet-aot',
-        'name' => '.NET AoT'
-    ],
-    'winforms' => [
-        'id' => 'framework-winforms',
-        'name' => 'WinForms'
-    ],
-    'fltk' => [
-        'id' => 'lib-fltk',
-        'name' => 'FLTK'
-    ],
-    'docker' => [
-        'id' => 'platform-docker',
-        'name' => 'Docker'
-    ],
-    'asp.net mvc' => [
-        'id' => 'framework-aspnet-mvc',
-        'name' => 'ASP.NET MVC'
-    ],
-    'redis' => [
-        'id' => 'software-redis',
-        'name' => 'Redis'
-    ],
-    'asp.net identity' => [
-        'id' => 'framework-aspnet-identity',
-        'name' => 'ASP.NET Identity'
-    ],
-    'vue.js' => [
-        'id' => 'lib-vuejs',
-        'name' => 'Vue.js'
-    ],
-    'electron' => [
-        'id' => 'platform-electron',
-        'name' => 'Electron'
-    ],
-    'deno' => [
-        'id' => 'runtime-deno',
-        'name' => 'Deno (runtime)'
-    ],
-    'asp.net web api' => [
-        'id' => 'framework-aspnet-webapi',
-        'name' => 'ASP.NET Web API'
-    ],
-    'cpp' => [
-        'id' => 'lang-cpp',
-        'name' => 'C++'
-    ],
-    'source-engine' => [
-        'id' => 'engine-valvesource',
-        'name' => 'Source Engine'
-    ],
-    'htmx' => [
-        'id' => 'lib-htmx',
-        'name' => 'HTMX'
-    ],
-    'typescript' => [
-        'id' => 'framework-typescript',
-        'name' => 'TypeScript'
-    ]
-];
-function containsTag($data, $tag) {
-    foreach ($data as $k => $_) {
-        if ($k == $tag) {
-            return true;
-        }
-    }
-    return false;
-}
-
-$unknownTags = [];
-foreach ($data as $d) {
-    foreach ($d['items'] as $i) {
-        if (isset($i['tags'])) {
-            foreach ($i['tags'] as $t) {
-                if (!containsTag($dataTags, $t) && !in_array($t, $unknownTags)) {
-                    array_push($unknownTags, $t);
-                }
+                array_push($this->sections, $s);
             }
         }
-    }
-}
+        if (isset($json['tags']) && is_array($json['tags'])) {
+            foreach ($json['tags'] as $jsonTagKey => $jsonTagValue) {
+                array_push(
+                    $this->tags,
+                    new PortfolioTag([ $jsonTagKey, $jsonTagValue ])
+                );
+            }
+        }
+        if (isset($json['icons']) && is_array($json['icons'])) {
+            foreach ($json['icons'] as $jsonTagKey => $jsonTagValue) {
+                array_push(
+                    $this->icons,
+                    new PortfolioIcon([ $jsonTagKey, $jsonTagValue ])
+                );
+            }
+        }
 
-$require_archive_section = 0;
-foreach ($data as $k => $d) {
-    if (isset($d['description'])) {
-        $data[$k]['description'] = formatMarkdown($d['description']);
+        self::checkTags();
     }
 
-    if (!isset($d['items'])) {
-        $data[$k]['items'] = [];
-    }
+    /** @var PortfolioSection[] */
+    public $sections = [];
+    /** @var PortfolioTag[] */
+    public $tags = [];
+    /** @var PortfolioIcon[] */
+    public $icons = [];
 
-    $archived_item_count = 0;
-    foreach ($d['items'] as $i) {
-        if ($i['archived'] == 1) {
-            $archived_item_count++;
+    public $errors = [];
+
+    private function checkTags() {
+        $all = [];
+        $valid = [];
+        $invalidTags = [];
+
+        // get all tags
+        foreach ($this->sections as $section) {
+            foreach ($section->items as $sectionItem) {
+                array_push($all, ...$sectionItem->tags);
+            }
+        }
+        // get all registered tags
+        foreach ($this->tags as $tag) {
+            array_push($valid, $tag->id);
+        }
+
+        $all = array_unique($all);
+        $valid = array_unique($valid);
+
+        // find invalid tags
+        foreach ($all as $tag) {
+            if (!in_array($tag, $valid)) {
+                array_push($invalidTags, $tag);
+            }
+        }
+
+        // if there are any, add to errors
+        $invalidTags = array_unique($invalidTags);
+        sort($invalidTags, SORT_NATURAL | SORT_FLAG_CASE);
+        if (count($invalidTags) > 0) {
+            array_push($this->errors, '**'.count($invalidTags)." invalid tag(s):**\n" . implode(', ', $invalidTags));
         }
     }
-    $data[$k]['archived_items_count'] = $archived_item_count;
-    if ($data[$k]['archived_items_count'] == count($d['items'])) {
-        $require_archive_section = 1;
-    }
 }
 
-$smarty->assign('sections', $data);
-$smarty->assign('require_archive_section', $require_archive_section);
-$smarty->assign('data_tags', $dataTags);
-$smarty->assign('unknown_tags', $unknownTags);
+$data = new PortfolioData(JsonUtil::load(K_WEB_ROOT . '/pages/portfolio-data.json'));
+foreach ($data->errors as $ek => $ev) {
+    $data->errors[$ek] = formatMarkdown($ev);
+}
+
+$smarty->assign('tags', $data->tags);
+$smarty->assign('icons', $data->icons);
+$smarty->assign('parse_errors', $data->errors);
+$sections = [];
+$sections_archived = [];
+foreach ($data->sections as $s) {
+    if ($s->isArchived()) {
+        array_push($sections_archived, $s);
+    } else {
+        array_push($sections, $s);
+    }
+}
+$smarty->assign('sections', $sections);
+$smarty->assign('sections_archived', $sections_archived);

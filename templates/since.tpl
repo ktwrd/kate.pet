@@ -10,7 +10,7 @@
                 <div class="col"></div>
                 <div class="col-auto pr-1">
                     <div data-component="time-since-container" data-timestamp="{$i[0]}"
-                    {if sizeof($i) >= 3}
+                    {if count($i) >= 3}
                         data-complete-text="{$i[2]}"
                     {/if}
                     ></div>

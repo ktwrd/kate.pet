@@ -1,14 +1,25 @@
 <?php
-
+use Smarty\Smarty;
 require_once(K_WEB_ROOT . '/include.markdown.php');
+class JsonUtil {
+    /**
+     * From https://stackoverflow.com/a/10252511/319266
+     * @return array|false
+     */
+    public static function load($filename) {
+        $contents = @file_get_contents($filename);
+        if ($contents === false) {
+            return false;
+        }
+        return json_decode($contents, true);
+    }
+}
 function createSmarty()
 {
-    require_once(K_WEB_ROOT . '/smarty/libs/Smarty.class.php');
-
     $smarty = new Smarty();
     $smarty->setTemplateDir(K_WEB_ROOT . '/templates');
     $smarty->setCompileDir('/tmp/smarty_compile');
-    $smarty->cache_dir = "/tmp/smarty_cache";
+    $smarty->setCacheDir('/tmp/smarty_cache');
 
     return $smarty;
 }
@@ -67,4 +78,3 @@ function generate_navbar_data() {
     return $data;
 }
 require_once(K_WEB_ROOT . '/include.blog.php');
-?>

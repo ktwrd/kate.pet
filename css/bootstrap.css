@@ -131,30 +131,12 @@
 }
 
 @media (max-width: 572px) {
-    [pagename=nlinks] .col-auto,
-    [pagename=portfolio] .col-auto {
+    [pagename=nlinks] .col-auto {
         width: calc(100% - 4px) !important;
         margin: 4px 2px;
         padding: 0;
     }
-    [pagename=nlinks] .row,
-    [pagename=portfolio] .row {
+    [pagename=nlinks] .row {
         margin: 0 !important;
-    }
-}
-@media (min-width: 992px) {
-    [pagename=portfolio] .card-body {
-        max-width: calc((calc(960px + 30px) / 2) - 50px);
-    }
-}
-@media (min-width: 1200px) {
-    [pagename=portfolio] .card-body {
-        max-width: calc((calc(1140px + 30px) / 2) - 50px);
-    }
-}
-
-@media print {
-    [pagename=portfolio] .col-auto {
-        width: calc(100% - 100px) !important;
     }
 }

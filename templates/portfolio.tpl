@@ -7,72 +7,76 @@
 <h1 class="italic">portfolio</h1>
 <strong>note:</strong> this <i>isn't a full/complete list</i> of all projects i've contributed to, it's a truncated list of the things i'm actually proud of.<br/>
 
-{if count($unknown_tags) != 0}
-<div class='error-container'>
-    <strong>missing tags:</strong> {join(', ', $unknown_tags)}
-</div>
+{foreach $parse_errors as $e}
+<div class='error-container'>{$e}</div>
+{/foreach}
+
+<p class="mb-0">
+<strong>sections</strong>
+<ul class="list-inline mt-0">
+{foreach $sections as $section}
+<li class="list-inline-item"><a href="#section-{$section->id}">{$section->name}</a></li>
+{/foreach}
+</ul>
+</p>
+
+{if count($sections) > 0}
+{foreach $sections as $k => $section}
+{include file="portfolio_section.tpl" dsTags=$tags dsIcons=$icons section=$section}
+{if $k < (count($sections) - 1)}<hr/>{/if}
+{/foreach}
 {/if}
 
-{foreach $sections as $k => $section}
-{if $section['archived_items_count'] != count($section['items'])}
-{include file="portfolio_section.tpl" group=$section dsTags=$data_tags}
-{if $k != count($sections)}
-<hr/>
-{/if}
-{/if}
-{/foreach}
-{if $require_archive_section != 0}
+{if count($sections_archived) > 0}
     <br/>
     <br/>
-    <h1 id="inactive">archive</h1>
+    <h1 id="archive">archive</h1>
     <hr/>
-    {foreach $sections as $k => $section}
-        {if $section['archived_items_count'] == count($section['items'])}
-            {include file="portfolio_section.tpl" group=$section dsTags=$data_tags}
-            {if $k < (count($sections) - 1)}<hr/>{/if}
-        {/if}
+    {foreach $sections_archived as $k => $section}
+    {include file="portfolio_section.tpl" dsTags=$tags dsIcons=$icons section=$section}
+    {if $k < (count($sections_archived) - 1)}<hr/>{/if}
     {/foreach}
 {/if}
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        $('.card#beans-rs [alt=openfortress-logo]').tooltip({
+        $('.card#beans-rs [data-id=openfortress]').tooltip({
             placement: 'bottom',
             title: 'Created for Open Fortress'
         });
-        $('[alt=cpp-logo]').tooltip({
+        $('[data-id=cpp-logo]').tooltip({
             placement: 'bottom',
             title: 'Uses C++'
         });
-        $('[alt=source-engine]').tooltip({
+        $('[data-id=source-engine]').tooltip({
             placement: 'bottom',
             title: 'Created in the Source Engine'
         });
-        $('[alt=adastral-logo]').tooltip({
+        $('[data-id=adastral-logo]').tooltip({
             placement: 'bottom',
             title: 'Developed in collaboration with Adastral Group'
         });
-        $('[alt=csharp-logo]').tooltip({
+        $('[data-id=csharp-logo]').tooltip({
             placement: 'bottom',
             title: 'Made with C#'
         });
-        $('[alt=rustlang-logo]').tooltip({
+        $('[data-id=rustlang-logo]').tooltip({
             placement: 'bottom',
             title: 'Made with Rust'
         });
-        $('[alt=php-logo]').tooltip({
+        $('[data-id=php-logo]').tooltip({
             placement: 'bottom',
             title: 'Made with PHP'
         });
-        $('[alt=js-logo]').tooltip({
+        $('[data-id=js-logo]').tooltip({
             placement: 'bottom',
             title: 'Made with JavaScript'
         });
-        $('[alt=vue-logo]').tooltip({
+        $('[data-id=vue-logo]').tooltip({
             placement: 'bottom',
             title: 'Made with Vue.JS'
         });
-        $('[alt=electron-logo]').tooltip({
+        $('[data-id=electron-logo]').tooltip({
             placement: 'bottom',
             title: 'Made with Electron'
         });

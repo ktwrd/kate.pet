@@ -31,6 +31,9 @@ if (isset($_REQUEST['i']))
         }
         $smarty->assign('postTitle', $subject . ' - ' . $defaultTitle);
         $smarty->assign('postDescription', $postContent['description']);
+        if (isset($postContent['description'])) {
+            $smarty->assign('description', $postContent['description']);
+        }
     }
 
     if (displayBlogPostToUser($postContent))

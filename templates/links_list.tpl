@@ -1,9 +1,7 @@
 {include file="header.tpl" title="kate's homepage - links" description="links to all of my stuff"}
 
 <h1 class="italic">Links</h1>
-<p>
-<i>just a collection of all my links to my active social media pages & projects</i>
-</p>
+<p>just a collection of all my links to my active social media pages & projects</p>
 
 <div class="row d-flex flex-row justify-content-center">
 {foreach $data as $group}

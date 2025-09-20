@@ -1,6 +1,6 @@
 <?php
+declare(strict_types=1);
 require 'vendor/autoload.php';
-
 if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == 'beta.kate.pet' || $_SERVER['SERVER_NAME'] == 'local.kate.pet') {
     ini_set('display_errors', '1');
     ini_set('display_startup_errors', '1');

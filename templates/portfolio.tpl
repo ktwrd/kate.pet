@@ -17,6 +17,9 @@
 {foreach $sections as $section}
 <li class="list-inline-item"><a href="#section-{$section->id}">{$section->name}</a></li>
 {/foreach}
+{foreach $sections_archived as $section}
+<li class="list-inline-item"><a href="#section-{$section->id}">{$section->name}</a></li>
+{/foreach}
 </ul>
 </p>
 

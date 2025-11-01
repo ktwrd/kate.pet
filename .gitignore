@@ -1,6 +1,7 @@
 # PHP Composer
-composer.phar
-/vendor/
+**/composer.phar
+**/vendor/
 nginx.current.conf
-.env
+**/*.env
+*.env
 nginx.local.conf

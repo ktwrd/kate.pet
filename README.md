@@ -2,11 +2,11 @@
 Personal website written in PHP, using Smarty for templates, and a lot of home-made CSS.
 
 ## Screenshots
-![image](https://res.kate.pet/upload/e69ead6e068c/firefox_L0q296ra77.png)
+![image](https://res.kate.pet/upload/9a6f27ba76e7/vivaldi_bbuK4U6XZR.png)
 
-![image](https://res.kate.pet/upload/9c85c67c791c/firefox_jbLGSfv23B.png)
+![image](https://res.kate.pet/upload/2a058357f5b8/vivaldi_VdgDhqpLmU.png)
 
-![image](https://res.kate.pet/upload/64614c7e1292/firefox_VHsiQS8cU2.png)
+![image](https://res.kate.pet/upload/49934074b42d/vivaldi_s3lrCM3xHL.png)
 
 ## Setup development environment
 For a development environment you must have the following installed;

@@ -1,11 +1,5 @@
 <?php
 
-if ($_SERVER['REQUEST_URI'] != '/p/portfolio' ||
-    $_SERVER['REQUEST_URI'] != `/p/portfolio/`) {
-    header('Location: /p/portfolio');
-    return;
-}
-
 class PortfolioSectionItemLink {
     function __construct($json) {
         $this->name = $json[0];

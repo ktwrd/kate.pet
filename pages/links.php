@@ -24,6 +24,7 @@ $linkData = array(
                 'link_alt' => ['twitter', 'twt', 'x'],
                 'link_txt' => '@SeedVEVO'
             ],
+            /*
             [
                 'name' => 'Reddit',
                 'id' => 'reddit',
@@ -34,6 +35,7 @@ $linkData = array(
                 'name' => '4chan',
                 'txt' => 'kate !!VLYeqd98O/o'
             ]
+            */
         ]
     ],
     [
@@ -103,7 +105,6 @@ $linkData = array(
 );
 
 $smarty->assign('pageLinks', $linkData);
-// $smarty->assign('pageLinks', $linkData);
 
 $found = 0;
 if (isset($_REQUEST['i']))

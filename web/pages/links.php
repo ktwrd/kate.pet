@@ -67,6 +67,16 @@ $linkData = array(
                 'name' => 'Kasta',
                 'id' => 'kasta',
                 'link' => 'https://github.com/ktwrd/Kasta'
+            ],
+            [
+                'name' => 'beans-rs',
+                'id' => 'beans-rs',
+                'link' => 'https://github.com/ktwrd/beans-rs'
+            ],
+            [
+                'name' => '88x31',
+                'id' => '88x31',
+                'link' => 'https://github.com/ktwrd/88x31'
             ]
         ]
     ],

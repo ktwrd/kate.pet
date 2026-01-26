@@ -87,6 +87,32 @@ def get_string_arr(
         resultArr.append(x)
     return resultArr
 
+def php_write(name, subject, hide_state, post_tags):
+    filename = './web/blog_posts/%s.php' % name
+    content = [
+        '<?php',
+        '$generate_blog_post = array(',
+        '\t\'subject\' => \'%s\',' % subject.replace('\'', '\\\''),
+        '\t\'description\' => \'\',',
+        '\t' + ('\'created_at\' => mktime(%s),' % now.strftime(' %H, %M, %S, %m, %d, %Y').strip(' 0')).strip('mktime( '),
+        '\t\'hide_state\' => %s,' % hide_state,
+        '\t\'tags\' => array(%s)' % post_tags,
+        ');',
+        '?>'
+    ]
+    fphp = open(filename, 'x')
+    fphp.write('\n'.join(content))
+    fphp.close()
+def md_write_blank(name):
+    filename = './web/blog_posts/%s.md' % name
+    fmd = open(filename, 'x')
+    fmd.write('')
+    fmd.close()
+
+def write_all(name, subject, hide_state, post_tags):
+    php_write(name, subject, hide_state, post_tags)
+    md_write_blank(name)
+
 name = get_string('PostId name', required=False, defaultValue=str(now.strftime('%Y%m%d')))
 subject = get_string('Subject', required=True)
 hide_state = get_enum_value_single('Hide state', required=True, defaultIndex=None, possibleValues=['0', '1', '2'], possibleValuesDesc=[
@@ -95,25 +121,4 @@ hide_state = get_enum_value_single('Hide state', required=True, defaultIndex=Non
     'Hidden. Can only be access via URL'
 ])
 post_tags = ','.join(get_string_arr('Tags', required=False))
-
-_target_basename = './blog_posts/%s' % name
-
-fphp = open('%s.php' % _target_basename, 'x')
-fphp.write('\n'.join([
-'<?php',
-'',
-'$generate_blog_post = array(',
-'    \'subject\' => \'%s\',' % subject.replace('\'', '\\\''),
-'    \'description\' => \'\',',
-'    ' + ('\'created_at\' => mktime(%s),' % now.strftime(' %H, %M, %S, %m, %d, %Y').strip(' 0')).strip('mktime( '),
-'    \'hide_state\' => %s,' % hide_state,
-'    \'tags\' => array(%s)' % post_tags,
-');',
-'',
-'?>'
-]))
-fphp.close()
-
-fmd = open('%s.md' % _target_basename, 'x')
-fmd.write('')
-fmd.close()
+write_all(name, subject, hide_state, post_tags)

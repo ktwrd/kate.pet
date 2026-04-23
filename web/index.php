@@ -10,8 +10,9 @@ if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == 'beta.k
 $time = explode(' ', microtime());
 $begintime = $time[1] + $time[0];
 
-global $smarty, $_META;
+global $smarty, $_META, $config;
 $_META=array();
+$config=array();
 
 // parse target page
 if (isset($_REQUEST['p']) && !isset($pageName)) {

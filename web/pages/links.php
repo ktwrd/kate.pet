@@ -24,6 +24,10 @@ $linkData = array(
                 'link_alt' => ['twitter', 'twt', 'x'],
                 'link_txt' => '@SeedVEVO'
             ],
+            [
+                'name' => 'XMPP',
+                'txt' => 'kate@redfur.cloud'
+            ]
             /*
             [
                 'name' => 'Reddit',

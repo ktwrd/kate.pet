@@ -5,3 +5,4 @@ nginx.current.conf
 **/*.env
 *.env
 nginx.local.conf
+**/include.config.php

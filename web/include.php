@@ -23,7 +23,7 @@ if (!isset($skipWebsite))
     if (!isset($kweb))
         $kapp = createKApp();
 
-    $base_domain = (isset($config) ? $config['server_name'] : 'kate.pet');
+    $base_domain = 'kate.pet';
     $smarty->assign('DOMAIN', $base_domain);
 
     $DOMAIN = 'http://' . $base_domain;

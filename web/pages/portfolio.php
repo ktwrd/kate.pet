@@ -1,7 +1,7 @@
 <?php
 
 class PortfolioSectionItemLink {
-    function __construct($json) {
+    function __construct(array $json) {
         $this->name = $json[0];
         $this->url = $json[1];
     }
@@ -12,7 +12,7 @@ class PortfolioSectionItemLink {
     public $url;
 }
 class PortfolioSectionItemActive {
-    function __construct($json) {
+    function __construct(array $json) {
         $this->is = isset($json) && is_array($json) && count($json) == 2;
         $this->start = null;
         $this->end = null;
@@ -42,12 +42,12 @@ class PortfolioSectionItemActive {
     public $end;
 
     /** @return bool */
-    public function canFormat() {
+    public function canFormat(): bool {
         return $this->is && $this->start != null;
     }
 
     /** @return string */
-    public function format() {
+    public function format(): string {
         if (!$this->canFormat()) return '';
         $s = $this->start->format('Y M') . ' - ';
         if ($this->end == null) {
@@ -58,7 +58,7 @@ class PortfolioSectionItemActive {
 }
 
 class PortfolioSectionItem {
-    public function __construct($json) {
+    public function __construct(array &$json) {
         $this->id = $json['id'];
         if (isset($json['name'])) {
             $this->name = $json['name'];
@@ -96,13 +96,15 @@ class PortfolioSectionItem {
 
         $this->content = self::readContent($this->id);
     }
-    private static function readContent($id) {
+    private static function readContent(string &$id): string {
         return formatMarkdown(
             file_get_contents(K_WEB_ROOT. "/pages/portfolio/$id.md")
         );
     }
 
+    /** @var string */
     public $id;
+    /** @var string */
     public $name;
 
     /** @var PortfolioSectionItemActive */
@@ -114,17 +116,18 @@ class PortfolioSectionItem {
     /** @var PortfolioSectionItemLink[] */
     public $links = [];
     
+    /** @var string */
     public $content;
 
 
-    public function isArchived() {
+    public function isArchived(): bool {
         return $this->active->is == false
             || $this->active->end != null;
     }
 }
 
 class PortfolioSection {
-    function __construct($json) {
+    function __construct(array &$json) {
         $this->id = $json['id'];
         $this->name = $json['name'];
         $this->description = null;
@@ -164,8 +167,7 @@ class PortfolioSection {
      */
     public $refItemIds = [];
 
-    /** @param string $id */
-    public function containsItemById($id) {
+    public function containsItemById(string &$id): bool {
         foreach ($this->items as $i) {
             if ($i->id == $id) {
                 return true;
@@ -175,7 +177,7 @@ class PortfolioSection {
     }
 
     /** @param PortfolioSectionItem[] $items */
-    public function populateFromReferences($items) {
+    public function populateFromReferences(array &$items) {
         foreach ($this->refItemIds as $refItemId) {
             $found = false;
             foreach ($items as $item) {
@@ -191,6 +193,9 @@ class PortfolioSection {
         }
     }
 
+    /**
+     * Does this section exclusively have archived items?
+     */
     public function isArchived() {
         $c = 0;
         foreach ($this->items as $item) {
@@ -265,7 +270,7 @@ class PortfolioSection {
     }
 }
 class PortfolioIcon {
-    function __construct($json) {
+    function __construct(array $json) {
         $this->id = $json[0];
         $this->filename = $json[1]['filename'];
         $this->altText = null;
@@ -274,13 +279,17 @@ class PortfolioIcon {
         }
     }
 
+    /** @var string */
     public $id;
+    /** @var string */
     public $filename;
+    /** @var string|null */
     public $altText;
-    public function getUrl() {
+    
+    public function getUrl(): string {
         return '/img/' . $this->filename; 
     }
-    public function getAlt() {
+    public function getAlt(): string {
         if (isset($this->altText) && strlen($this->altText) > 0) {
             return $this->altText;
         }
@@ -289,7 +298,7 @@ class PortfolioIcon {
 }
 
 class PortfolioTag {
-    function __construct($json) {
+    function __construct(array $json) {
         $this->id = $json[0];
         $this->type = $json[1]['type'];
         $this->name = $json[1]['name'];
@@ -310,7 +319,7 @@ class PortfolioTag {
 }
 
 class PortfolioData {
-    function __construct($json) {
+    function __construct(array &$json) {
         $items = [];
         if (isset($json['items']) && is_array($json['items'])) {
             foreach ($json['items'] as $jsonItem) {
@@ -356,7 +365,7 @@ class PortfolioData {
 
     public $errors = [];
 
-    private function checkTags() {
+    private function checkTags(): void {
         $all = [];
         $valid = [];
         $invalidTags = [];
@@ -391,7 +400,8 @@ class PortfolioData {
     }
 }
 
-$data = new PortfolioData(JsonUtil::load(K_WEB_ROOT . '/pages/portfolio-data.json'));
+$data_raw = JsonUtil::load(K_WEB_ROOT . '/pages/portfolio-data.json');
+$data = new PortfolioData($data_raw);
 foreach ($data->errors as $ek => $ev) {
     $data->errors[$ek] = formatMarkdown($ev);
 }

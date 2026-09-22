@@ -147,7 +147,7 @@
         },
         {
             "id": "website-v2",
-            "name": "Personal Website v2",
+            "name": "Personal Website",
             "links": {
                 "git": "https://github.com/ktwrd/kate.pet/"
             },
@@ -218,6 +218,7 @@
             "id": "website-v1",
             "name": "Personal Website v1",
             "active": ["2022/01", "2023/11"],
+            "archived": true,
             "icons": ["js-logo", "vue-logo"],
             "tags": [
                 "lang-javascript",

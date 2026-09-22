@@ -200,6 +200,69 @@ class PortfolioSection {
         }
         return $c == count($this->items);
     }
+
+    /**
+     * Does this section have any archived items?
+     */
+    public function hasAnyArchived(): bool {
+        $c = 0;
+        foreach ($this->items as $item) {
+            if ($item->isArchived()) {
+                $c += 1;
+            }
+        }
+        return $c > 0;
+    }
+
+    /**
+     * Create a copy of this section, but only has archived sections.
+     * @return PortfolioSection
+     */
+    public function createArchived(): PortfolioSection {
+        $a_items = [];
+        $a_refItemIds = [];
+        foreach ($this->items as $item) {
+            if ($item->isArchived()) {
+                array_push($a_items, $item);
+                array_push($a_refItemIds, $item->id);
+            }
+        }
+        $a = [
+            'name' => $this->name,
+            'id' => $this->id.'_archive',
+            'description' => '',
+            'website' => '',
+            'refItemIds' => $a_refItemIds
+        ];
+        $r = new PortfolioSection($a);
+        $r->items = $a_items;
+        return $r;
+    }
+
+    /**
+     * Create a copy of this section, without any archived items.
+     * @return PortfolioSection
+     */
+    public function createWithoutArchives(): PortfolioSection {
+        $a_items = [];
+        $a_refItemIds = [];
+        foreach ($this->items as $item) {
+            if (!$item->isArchived()) {
+                array_push($a_items, $item);
+                array_push($a_refItemIds, $item->id);
+            }
+        }
+        $a = [
+            'name' => $this->name,
+            'id' => $this->id,
+            'description' => $this->description,
+            'website' => $this->website,
+            'refItemIds' => $a_refItemIds
+        ];
+        $r = new PortfolioSection($a);
+        $r->items = $a_items;
+        return $r;
+    }
 }
 class PortfolioIcon {
     function __construct($json) {
@@ -342,7 +405,10 @@ foreach ($data->sections as $s) {
     if ($s->isArchived()) {
         array_push($sections_archived, $s);
     } else {
-        array_push($sections, $s);
+        array_push($sections, $s->createWithoutArchives());
+        if ($s->hasAnyArchived()) {
+            array_push($sections_archived, $s->createArchived());
+        }
     }
 }
 $smarty->assign('sections', $sections);

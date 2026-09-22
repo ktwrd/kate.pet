@@ -91,15 +91,7 @@ function retrieveBlogPost($postId)
 
             if (isset($res['meta']))
             {
-                if (isset($_META))
-                {
-                    // concat post meta before current meta to override things
-                    array_merge($res['meta'], $_META);
-                }
-                else
-                {
-                    $_META = $res['meta'];
-                }
+                $kapp->meta_insert_range($res['meta']);
             }
         }
     }

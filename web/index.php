@@ -39,10 +39,8 @@ try
     $smarty->assign('img_preload', $kapp->image_preload);
     if (file_exists(K_WEB_ROOT . "/templates/$templateName.tpl"))
     {
-        if (isset($_META))
-        {
-            $smarty->assign('_META', $_META);
-        }
+        $smarty->assign('_META', $kapp->meta);
+        
         // handle custom stuff for blogs
         if (str_starts_with($templateName, 'blog'))
         {

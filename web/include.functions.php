@@ -3,9 +3,16 @@ use Smarty\Smarty;
 class KApp {
     function __construct() {
         $this->image_preload = array();
+        $this->meta = array();
+        foreach (self::get_navbar_data() as $navbar_item) {
+            array_push($this->image_preload, $navbar_item['icon_url']);
+        }
     }
     /** @var string[] */
     public $image_preload;
+
+    /** @var array */
+    public $meta;
 
     public static function get_navbar_data() {
         return array(
@@ -51,6 +58,11 @@ class KApp {
         array_unique($a);
         $this->image_preload = $a;
     }
+    public function meta_insert_range(array $data) {
+        foreach ($data as $key=>$value) {
+            $this->meta[$key] = $value;
+        }
+    }
 }
 require_once(K_WEB_ROOT . '/include.markdown.php');
 class JsonUtil {
@@ -66,8 +78,7 @@ class JsonUtil {
         return json_decode($contents, true);
     }
 }
-function createSmarty()
-{
+function createSmarty(): Smarty {
     $smarty = new Smarty();
     $smarty->setTemplateDir(K_WEB_ROOT . '/templates');
     $smarty->setCompileDir('/tmp/smarty_compile_kate');
@@ -75,11 +86,10 @@ function createSmarty()
 
     return $smarty;
 }
-function createKApp() {
+function createKApp(): KApp {
     return new KApp();
 }
-function displayBlogPostToUser($post)
-{
+function displayBlogPostToUser(array $post): bool {
     if (isset($post) && $post != null)
     {
         if (isset($post['hide_state']))
@@ -89,7 +99,7 @@ function displayBlogPostToUser($post)
     }
     return false;
 }
-function show_not_found($smarty) {
+function show_not_found(Smarty $smarty) {
     $pagesAvailable = array(
         '404/1.tpl',
     );

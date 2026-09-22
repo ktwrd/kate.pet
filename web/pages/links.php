@@ -27,7 +27,7 @@ $linkData = array(
             [
                 'name' => 'XMPP',
                 'txt' => 'kate@redfur.cloud'
-            ]
+            ],
             /*
             [
                 'name' => 'Reddit',
@@ -38,7 +38,7 @@ $linkData = array(
             [
                 'name' => '4chan',
                 'txt' => 'kate !!VLYeqd98O/o'
-            ]
+            ],
             */
         ]
     ],

@@ -55,7 +55,12 @@ $linkData = array(
                 'name' => 'Gitea',
                 'id' => 'gitea',
                 'link' => 'https://git.redfur.cloud/kate'
-            ]
+            ],
+            [
+                'name' => 'Codeberg',
+                'id' => 'codeberg',
+                'link' => 'https://codeberg.org/ktwrd'
+            ],
         ]
     ],
     [
@@ -81,7 +86,7 @@ $linkData = array(
                 'name' => '88x31',
                 'id' => '88x31',
                 'link' => 'https://github.com/ktwrd/88x31'
-            ]
+            ],
         ]
     ],
     [
@@ -109,11 +114,16 @@ $linkData = array(
                 'link' => 'https://discord.gg/PMrqTQPZFE'
             ],
             [
+                'name' => 'Open Fortress',
+                'id' => 'openfortress',
+                'link' => 'https://openfortress.fun'
+            ],
+            [
                 'name' => 'Email',
                 'id' => 'email',
                 'link' => 'mailto:kate@dariox.club',
                 'link_txt' => 'kate@dariox.club'
-            ]
+            ],
         ]
     ]
 );

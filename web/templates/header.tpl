@@ -47,32 +47,7 @@
     <body>
         <a rel="me" href="https://dariox.club/@kate" style="display: none">Mastodon</a>
         <main>
-            <div class="navbar">
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-auto navbar-items">
-                        <span class="text navbar-page-text">
-                            kate's homepage
-                        </span>
-                        {foreach $navbarData as $item}
-                            <a  {if $pageName == $item['pagename']}
-                                    class="label label-primary"
-                                {else}
-                                    class="label"
-                                {/if}
-                                href="{$item['link']}">
-
-                                {if isset($item['icon_url'])}
-                                    <img class="label-icon" src="{$item['icon_url']}" width="12px" height="12px" />
-                                {/if}
-
-                                {$item['alt']}
-                            </a>
-                        {/foreach}
-                    </div>
-                    <div class="col"></div>
-                </div>
-            </div>
+{include file="include/navbar.tpl"}
             <div class="container" {if isset($pageName)} pageName="{$pageName}" {/if}>
             {if isset($js_required)}
                 <h1 aria-label="js-required" class="center">Javascript is required for this page.</h1>

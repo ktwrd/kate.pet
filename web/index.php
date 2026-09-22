@@ -10,7 +10,8 @@ if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == 'beta.k
 $time = explode(' ', microtime());
 $begintime = $time[1] + $time[0];
 
-global $smarty, $_META, $config;
+global $smarty, $_META, $config, $img_preload;
+global $kapp;
 $_META=array();
 $config=array();
 
@@ -34,7 +35,8 @@ try
 {
     if (file_exists(K_WEB_ROOT . "/pages/$pageName.php"))
         include(K_WEB_ROOT . "/pages/$pageName.php");
-
+    $kapp->img_preload_unique();
+    $smarty->assign('img_preload', $kapp->image_preload);
     if (file_exists(K_WEB_ROOT . "/templates/$templateName.tpl"))
     {
         if (isset($_META))
@@ -79,7 +81,6 @@ try
     {
         show_not_found($smarty);
         return;
-        // $smarty->display("not_found.tpl");
     }
 }
 catch (Exception $ex)

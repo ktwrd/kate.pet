@@ -8,6 +8,7 @@ if (!headers_sent())
 date_default_timezone_set('Australia/Perth');
 
 global $smarty;
+global $kapp;
 global $config;
 if (file_exists(K_WEB_ROOT . '/include.config.php')) {
     require_once(K_WEB_ROOT . '/include.config.php');
@@ -19,6 +20,8 @@ if (!isset($skipWebsite))
 {
     if (!isset($smarty))
         $smarty = createSmarty();
+    if (!isset($kweb))
+        $kapp = createKApp();
 
     $base_domain = (isset($config) ? $config['server_name'] : 'kate.pet');
     $smarty->assign('DOMAIN', $base_domain);

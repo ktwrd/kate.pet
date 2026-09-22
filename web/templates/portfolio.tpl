@@ -6,6 +6,7 @@
     use_bootstrap_js=""}
 <h1 class="italic">portfolio</h1>
 <strong>note:</strong> this <i>isn't a full/complete list</i> of all projects i've contributed to, it's a truncated list of the things i'm actually proud of.<br/>
+if you're someone looking to hire me, <a href="mailto:kate@dariox.club">please flick me an email</a> if you have any questions.</br>
 
 {foreach $parse_errors as $e}
 <div class='error-container'>{$e}</div>

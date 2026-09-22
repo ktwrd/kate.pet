@@ -22,6 +22,136 @@ define("MDF_EXT_TOC", 0x08); // table of contents
 define("MDF_EXT_HEADING_PERMALINK", 0x16);
 define("MDF_EXT_TASK_LIST", 0x32);
 
+class UnderlineNode extends League\CommonMark\Node\Inline\AbstractInline implements League\CommonMark\Node\Inline\DelimitedInterface
+{
+    private string $delimiter;
+
+    public function __construct(string $delimiter = '_')
+    {
+        parent::__construct();
+
+        $this->delimiter = $delimiter;
+    }
+
+    public function getOpeningDelimiter(): string
+    {
+        return $this->delimiter;
+    }
+
+    public function getClosingDelimiter(): string
+    {
+        return $this->delimiter;
+    }
+}
+
+class UnderlineDelimiterProcessor implements League\CommonMark\Delimiter\Processor\CacheableDelimiterProcessorInterface, League\Config\ConfigurationAwareInterface
+{
+    /** @psalm-readonly */
+    private string $char;
+
+    /** @psalm-readonly-allow-private-mutation */
+    private League\Config\ConfigurationInterface $config;
+
+    /**
+     * @param string $char The emphasis character to use (typically '*' or '_')
+     */
+    public function __construct(string $char)
+    {
+        $this->char = $char;
+    }
+
+    public function getOpeningCharacter(): string
+    {
+        return $this->char;
+    }
+
+    public function getClosingCharacter(): string
+    {
+        return $this->char;
+    }
+
+    public function getMinLength(): int
+    {
+        return 1;
+    }
+
+    public function getDelimiterUse(League\CommonMark\Delimiter\DelimiterInterface $opener, League\CommonMark\Delimiter\DelimiterInterface $closer): int
+    {
+        // "Multiple of 3" rule for internal delimiter runs
+        if (($opener->canClose() || $closer->canOpen()) && $closer->getOriginalLength() % 3 !== 0 && ($opener->getOriginalLength() + $closer->getOriginalLength()) % 3 === 0) {
+            return 0;
+        }
+
+        return 1;
+    }
+
+    public function process(League\CommonMark\Node\Inline\AbstractStringContainer $opener, League\CommonMark\Node\Inline\AbstractStringContainer $closer, int $delimiterUse): void
+    {
+        if ($delimiterUse === 1) {
+            $emphasis = new UnderlineNode($this->char);
+        } else {
+            return;
+        }
+
+        $next = $opener->next();
+        while ($next !== null && $next !== $closer) {
+            $tmp = $next->next();
+            $emphasis->appendChild($next);
+            $next = $tmp;
+        }
+
+        $opener->insertAfter($emphasis);
+    }
+
+    public function setConfiguration(League\Config\ConfigurationInterface $configuration): void
+    {
+        $this->config = $configuration;
+    }
+
+    public function getCacheKey(League\CommonMark\Delimiter\DelimiterInterface $closer): string
+    {
+        return \sprintf(
+            '%s-%s-%d-%d',
+            $this->char,
+            $closer->canOpen() ? 'canOpen' : 'cannotOpen',
+            $closer->getOriginalLength() % 3,
+            $closer->getLength(),
+        );
+    }
+}
+
+class UnderlineRenderer implements League\CommonMark\Renderer\NodeRendererInterface, League\CommonMark\Xml\XmlNodeRendererInterface
+{
+    /**
+     * @param UnderlineNode $node
+     *
+     * {@inheritDoc}
+     *
+     * @psalm-suppress MoreSpecificImplementedParamType
+     */
+    public function render(League\CommonMark\Node\Node $node, League\CommonMark\Renderer\ChildNodeRendererInterface $childRenderer): \Stringable
+    {
+        UnderlineNode::assertInstanceOf($node);
+
+        $attrs = $node->data->get('attributes');
+
+        return new League\CommonMark\Util\HtmlElement('u', $attrs, $childRenderer->renderNodes($node->children()));
+    }
+
+    public function getXmlTagName(League\CommonMark\Node\Node $node): string
+    {
+        return 'u';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getXmlAttributes(League\CommonMark\Node\Node $node): array
+    {
+        return [];
+    }
+}
+
 if (!function_exists('formatMarkdown'))
 {
     function formatMarkdown($text, $flags = MDF_DEFAULT)
@@ -34,9 +164,14 @@ if (!function_exists('formatMarkdown'))
                     'attributes' => ['class' => 'table-responsive'],
                 ]
             ],
+            'commonmark' => [
+                'use_underscore' => false
+            ]
         ];
         $environment = new Environment($config);
         $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(UnderlineNode::class, new UnderlineRenderer(),    0);
+        $environment->addDelimiterProcessor(new UnderlineDelimiterProcessor('_'));
 
         // add optional extensions
         if ($flags & MDF_EXT_TABLE) {

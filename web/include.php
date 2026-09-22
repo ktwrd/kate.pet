@@ -8,6 +8,10 @@ if (!headers_sent())
 date_default_timezone_set('Australia/Perth');
 
 global $smarty;
+global $config;
+if (file_exists(K_WEB_ROOT . '/include.config.php')) {
+    require_once(K_WEB_ROOT . '/include.config.php');
+}
 require_once(K_WEB_ROOT . '/include.markdown.php');
 require_once(K_WEB_ROOT . '/include.functions.php');
 

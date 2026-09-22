@@ -154,8 +154,7 @@ class UnderlineRenderer implements League\CommonMark\Renderer\NodeRendererInterf
 
 if (!function_exists('formatMarkdown'))
 {
-    function formatMarkdown($text, $flags = MDF_DEFAULT)
-    {
+    function formatMarkdown(string $text, $flags = MDF_DEFAULT): string {
         $config = [
             'table' => [
                 'wrap' => [

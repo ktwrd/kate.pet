@@ -1,11 +1,10 @@
 <?php
-
-function isNewBlogPost($post)
+function isNewBlogPost(array $post): bool
 {
 	$weekAgo = strtotime('-1 week');
 	return $post['created_at'] > $weekAgo;
 }
-function retrieveBlogPost($postId)
+function retrieveBlogPost(string $postId): array
 {
     $post = array();
     if ($postId != null)
@@ -98,7 +97,7 @@ function retrieveBlogPost($postId)
     return $post;
 }
 
-function getAllBlogPosts()
+function getAllBlogPosts(): array
 {
     $files = scandir(K_WEB_ROOT . "/blog_posts/");
     $result = array();
@@ -130,7 +129,7 @@ function getAllBlogPosts()
     return $result;
 }
 
-function doesPostHaveTag($post, $filterTag) {
+function doesPostHaveTag(array $post, string $filterTag): bool {
     if (!isset($filterTag) || strlen($filterTag) < 1) {
         return True;
     }

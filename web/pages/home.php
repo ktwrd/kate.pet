@@ -1,15 +1,15 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include.php');
 $eightButtons = [
-    [88, 31, 'https://res.kate.pet/88x31/emma.gif', 'https://heckscaper.com'],
-    [88, 31, 'https://res.kate.pet/88x31/exopet_newbutton.gif', 'https://exo.pet'],
-    [88, 31, 'https://res.kate.pet/88x31/lapfoxgrad.gif', 'https://halleylabs.com'],
+    [88, 31, 'https://res.kate.pet/88x31/msx8831.gif', 'https://msx.horse'],
+    //[88, 31, 'https://res.kate.pet/88x31/exopet_newbutton.gif', 'https://exo.pet'],
+    //[88, 31, 'https://res.kate.pet/88x31/lapfoxgrad.gif', 'https://halleylabs.com'],
     [88, 31, 'https://res.kate.pet/88x31/sanya.png', 'https://sanya.gay'],
     [88, 31, 'https://88x31.kate.pet/8831trans_nyannyanmachine.png', 'https://nyanyamachine.dev/'],
     [88, 31, 'https://res.kate.pet/88x31/therian.png', 'https://otherkin.fandom.com/wiki/Therians'],
     [88, 31, 'https://88x31.kate.pet/redhat.gif'],
     [120, 31, 'https://res.kate.pet/88x31/CGG_big.gif', 'https://kernel.org'],
-    [88, 31, 'https://res.kate.pet/88x31/vscode.gif', 'https://code.visualstudio.com'],
+    //[88, 31, 'https://res.kate.pet/88x31/vscode.gif', 'https://code.visualstudio.com'],
     [88, 31, 'https://88x31.kate.pet/php.gif', 'https://php.net'],
 ];
 $headerImages = [

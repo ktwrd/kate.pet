@@ -6,6 +6,7 @@
 @import "bootstrap-tooltip.css";
 :root {
     --text-font: Arial, Helvetica, sans-serif;
+    --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
     --text-color: #dee2e6;
     --background: #121212;
     --link-color: #619eff;

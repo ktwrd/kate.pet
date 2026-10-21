@@ -34,7 +34,7 @@
             <article class="blog-card__box block no-anim">
                 <h1>
                     <a href="/blog/{$post['id']}">{$post['subject']}</a>
-                    {if isset($post['_new'])} <img src="img/icon-new-text.png" /> {/if}
+                    {if isset($post['_new'])} <img src="/img/icon-new-text.png" /> {/if}
                 </h1>
                 <div class="entry-content">
                     {if isset($post['description'])}
